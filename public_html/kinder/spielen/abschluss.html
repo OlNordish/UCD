@@ -39,14 +39,28 @@
     button:hover {
       background-color: #1f2f2f;
     }
+    #fuchs-avatar {
+      width: 120px;
+      height: 120px;
+      background-color: #ff4500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 40px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
   <h1>🎉 Super gemacht!</h1>
-  <p>Du hast alle 8 Level erfolgreich abgeschlossen und den Wald ganz genau beobachtet. Der Fuchs ist stolz auf dich!</p>
+  <div id="fuchs-avatar">F</div>
+  <p>Du hast alle 8 Level erfolgreich abgeschlossen und den Wald ganz genau beobachtet.<br>Der Fuchs ist stolz auf dich!</p>
 
   <div>
-    <button onclick="window.location.href='spielen.html'">Zur Startseite</button>
+    <button onclick="window.location.href='../spielen.html'">Zur Startseite</button>
     <button onclick="neustart()">Spiel zurücksetzen</button>
   </div>
 
