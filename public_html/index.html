@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waldtiere entdecken</title>
-  <style>body {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wald entdecken – Startseite</title>
+  <style>
+    body {
       margin: 0;
       font-family: sans-serif;
       background-color: #8fbc8f;
     }
+
     nav {
       background-color: #2f4f4f;
       color: white;
@@ -19,15 +21,18 @@
       position: relative;
       z-index: 10;
     }
+
     .nav-left {
       display: flex;
       align-items: center;
       gap: 20px;
     }
+
     .burger-menu {
       font-size: 24px;
       cursor: pointer;
     }
+
     .nav-logo {
       position: absolute;
       left: 50%;
@@ -35,6 +40,7 @@
       font-weight: bold;
       font-size: 20px;
     }
+
     .sidebar {
       position: fixed;
       top: 0;
@@ -48,9 +54,11 @@
       transition: left 0.3s ease-in-out;
       z-index: 9;
     }
+
     .sidebar.active {
       left: 0;
     }
+
     .sidebar h3 {
       margin-top: 40px;
       font-size: 18px;
@@ -58,48 +66,76 @@
       border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
     }
+
     .sidebar section {
       margin-bottom: 20px;
     }
+
     .sidebar a {
       display: block;
       color: white;
       text-decoration: none;
       margin: 5px 0;
     }
-    #waldszene {
-      position: relative;
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: calc(100vh - 60px);
-      overflow: hidden;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 8;
+      display: none;
     }
-    .tier {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      cursor: pointer;
+
+    main {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
+      padding: 60px 20px;
+      text-align: center;
     }
+
+    .start-buttons {
+      display: flex;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .start-buttons a {
+      background-color: #3cb371;
+      color: white;
+      text-decoration: none;
+      padding: 20px 40px;
+      font-size: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .start-buttons a:hover {
+      background-color: #2e8b57;
+    }
+
     #sprechblase-container {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
+      position: relative;
+      margin-top: 60px;
       display: flex;
       align-items: flex-end;
       gap: 10px;
     }
+
     #sprechblase {
       background: #ffffaa;
       padding: 10px;
       border-radius: 10px;
-      width: 300px;
-      font-size: 18px;
+      width: 280px;
+      font-size: 16px;
     }
+
     #fuchs-avatar {
       width: 80px;
       height: 80px;
@@ -112,17 +148,35 @@
       border-radius: 10px;
       flex-shrink: 0;
     }
+
+    #loslegen-btn {
+      margin-top: 20px;
+      background-color: #2f4f4f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #loslegen-btn:hover {
+      background-color: #1f2f2f;
+    }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <nav>
     <div class="nav-left">
       <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-      <div>Seite 1</div>
+      <div>Start</div>
     </div>
     <div class="nav-logo">Waldlogo</div>
   </nav>
 
+  <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <section>
       <h3>Erwachsene</h3>
@@ -137,50 +191,39 @@
     </section>
   </div>
 
-  <div id="waldszene">
-    <div class="tier" id="eichhoernchen" style="top: 10%; left: 10%; background-color: #d2691e;">E</div>
-    <div class="tier" id="maus" style="top: 20%; left: 30%; background-color: #808080;">M</div>
-    <div class="tier" id="eule" style="top: 30%; left: 50%; background-color: #4b0082;">Eu</div>
-    <div class="tier" id="specht" style="top: 40%; left: 70%; background-color: #8b0000;">S</div>
-    <div class="tier" id="fuchs" style="top: 60%; left: 20%; background-color: #ff4500;">F</div>
-    <div class="tier" id="kaninchen" style="top: 70%; left: 40%; background-color: #f5deb3; color: black;">K</div>
-    <div class="tier" id="reh" style="top: 50%; left: 60%; background-color: #deb887; color: black;">R</div>
-    <div class="tier" id="wolf" style="top: 70%; left: 80%; background-color: #2f4f4f;">W</div>
+  <!-- OVERLAY -->
+  <div id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- MAIN -->
+  <main>
+    <h1>Willkommen im Wald!</h1>
+    <p>Wähle aus, was du entdecken möchtest:</p>
+
+    <div class="start-buttons">
+      <a href="kinder.html">Kinder</a>
+      <a href="erwachsene.html">Erwachsene</a>
+    </div>
 
     <div id="sprechblase-container">
-      <div id="sprechblase">
-        <p id="textfeld">Lerne den Wald kennen:<br>Klicke auf ein Tier, um mit ihm zu reden!</p>
-      </div>
       <div id="fuchs-avatar">F</div>
+      <div id="sprechblase">
+        Hallo! Schön, dass du da bist. <br />
+        Willst du direkt loslegen?
+        <br><br>
+        <button id="loslegen-btn" onclick="location.href='kinder/spielen.html'">Loslegen</button>
+      </div>
     </div>
-  </div>
+  </main>
 
+  <!-- SCRIPT -->
   <script>
     function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  const overlay = document.getElementById("overlay");
-  sidebar.classList.toggle("active");
-  overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
-}
-
-    const tierTexte = {
-      eichhoernchen: "Hallo, ich bin das Eichhörnchen! Ich liebe es, Nüsse, Samen und Beeren zu futtern.",
-      maus: "Pieps! Ich bin die kleine Maus. Am liebsten knabbere ich an Körnern und Samen. Aber ich muss gut aufpassen – der Fuchs und die Eule würden mich sonst schnell fressen!",
-      eule: "Huhuu! Ich bin die Eule. Nachts jage ich Mäuse, Frösche und kleine Vögel. Mein bester Freund? Die dunkle Nacht – dann bin ich am stärksten!",
-      specht: "Klopf, klopf – ich bin der Specht! Ich hacke mit meinem Schnabel Löcher in Bäume, um Insekten zu fressen.",
-      fuchs: "Hallo! Ich bin der schlaue Fuchs. Ich esse Mäuse, Kaninchen und manchmal auch Beeren. Die Maus ist zwar lecker – aber ich respektiere auch meine Nachbarn im Wald!",
-      kaninchen: "Hopp, hopp! Ich bin das flinke Kaninchen. Ich knabbere gerne an jungen Pflanzen und Kräutern. Mein größter Feind ist der Fuchs – deshalb bleibe ich immer wachsam!",
-      reh: "Grüß dich! Ich bin das Reh. Am liebsten fresse ich frische Triebe und junge Blätter. Ich passe gut auf die kleinen Bäumchen auf – aber wenn es zu wenig gibt, wird es schwer.",
-      wolf: "Auuu! Ich bin der Wolf. Ich jage Kaninchen und Rehe, damit der Wald im Gleichgewicht bleibt. Ich bin wichtig für den Wald – auch wenn viele mich fürchten."
-    };
-
-    document.querySelectorAll(".tier").forEach(tier => {
-      tier.addEventListener("click", () => {
-        const text = tierTexte[tier.id];
-        document.getElementById("textfeld").innerText = text;
-      });
-    });
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      sidebar.classList.toggle("active");
+      overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+    }
   </script>
-  <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 8; display: none;"></div>
+
 </body>
 </html>
