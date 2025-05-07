@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waldtiere entdecken</title>
-  <style>
-    body {
+  <style>body {
       margin: 0;
       font-family: sans-serif;
       background-color: #8fbc8f;
@@ -53,7 +52,11 @@
       left: 0;
     }
     .sidebar h3 {
-      margin-top: 0;
+      margin-top: 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
     }
     .sidebar section {
       margin-bottom: 20px;
@@ -122,19 +125,15 @@
 
   <div class="sidebar" id="sidebar">
     <section>
-      <h3>Eltern</h3>
-      <h3>Eltern</h3>
-      <a href="#">Seite 1</a>
-      <a href="#">Seite 2</a>
-      <a href="#">Seite 3</a>
-      <a href="#">Seite 4</a>
+      <h3>Erwachsene</h3>
+      <a href="erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
+      <a href="erwachsene/medientipps.html">Medientipps</a>
     </section>
     <section>
       <h3>Kinder</h3>
-      <a href="#">Seite 1</a>
-      <a href="#">Seite 2</a>
-      <a href="#">Seite 3</a>
-      <a href="#">Seite 4</a>
+      <a href="kinder/entdecken.html">Entdecken</a>
+      <a href="kinder/spielen.html">Spielen</a>
+      <a href="kinder/quiz.html">Quiz</a>
     </section>
   </div>
 
@@ -158,8 +157,11 @@
 
   <script>
     function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("active");
-    }
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("overlay");
+  sidebar.classList.toggle("active");
+  overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+}
 
     const tierTexte = {
       eichhoernchen: "Hallo, ich bin das Eichhörnchen! Ich liebe es, Nüsse, Samen und Beeren zu futtern.",
@@ -179,5 +181,6 @@
       });
     });
   </script>
+  <div id="overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 8; display: none;"></div>
 </body>
 </html>
