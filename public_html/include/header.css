@@ -1,86 +1,4 @@
-
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .start-buttons {
-      display: flex;
-      gap: 30px;
-      margin: 40px 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .start-buttons a {
-      background-color: #3cb371;
-      color: white;
-      text-decoration: none;
-      padding: 20px 40px;
-      font-size: 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .start-buttons a:hover {
-      background-color: #2e8b57;
-    }
-
-    #sprechblase-container {
-      position: relative;
-      margin-top: 60px;
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-    }
-
-    #sprechblase {
-      background: #ffffaa;
-      padding: 10px;
-      border-radius: 10px;
-      width: 280px;
-      font-size: 16px;
-    }
-
-    #fuchs-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #ff4500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      flex-shrink: 0;
-    }
-
-    #loslegen-btn {
-      margin-top: 20px;
-      background-color: #2f4f4f;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    #loslegen-btn:hover {
-      background-color: #1f2f2f;
-			
-    }
-	  nav {
+nav {
   background-color: #2f4f4f;
   color: white;
   display: flex;
@@ -149,19 +67,20 @@
 
 .submenu-sidebar {
   position: fixed;
-  top: 50px;
+  top: 60px;
   left: -300px;
   width: 250px;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   background-color: #3a5f5f;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.5);
   transition: left 0.3s ease-in-out;
   z-index: 8;
+  color: white;
 }
 
 .submenu-sidebar.active {
-  left: 290px;
+  left: 250px;
 }
 
 .submenu-sidebar h3 {

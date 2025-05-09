@@ -1,27 +1,38 @@
 <nav>
   <div class="nav-left">
     <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-    <div>Wald</div>
+    <div>Menü</div>
   </div>
-  <div class="nav-logo">Waldlogo</div>
+  <a href="/index.php" class="nav-logo">🌳</a>
 </nav>
 
 <div class="sidebar" id="sidebar">
   <section>
-    <h3>Erwachsene</h3>
-    <a href="erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-    <a href="erwachsene/medientipps.html">Medientipps</a>
+    <h3><a href="/index.php">Startseite</a></h3>
   </section>
   <section>
-    <h3>Kinder</h3>
-    <a href="kinder/entdecken.html">Entdecken</a>
-    <a href="kinder/spielen.html">Spielen</a>
-    <a href="kinder/quiz.html">Quiz</a>
+    <h3><a href="/erwachsene/erwachsene.php">Erwachsene</a></h3>
+    <a id="bastelvorlagen-link">Bastelvorlagen</a>
+    <a href="/erwachsene/medientipps.php">Medientipps</a>
+  </section>
+  <section>
+    <h3><a href="/kinder/kinder.php">Kinder</a></h3>
+    <a href="/kinder/entdecken.php">Entdecken</a>
+    <a href="/kinder/spielen.php">Spielen</a>
+    <a href="/kinder/quiz.php">Quiz</a>
+  </section>
+  <section style="margin-top: auto;">
+    <a href="/impressum.php">Impressum</a>
+    <a href="/about.php">Über diese Seite</a>
   </section>
 </div>
 
-<div id="overlay"
-     style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); z-index: 8; display: none;"
-     onclick="toggleSidebar()">
+<div class="submenu-sidebar" id="submenu">
+  <h3>Bastelvorlagen</h3>
+  <a href="#">Tiere des Waldes</a>
+  <a href="#">Bäume und Pflanzen</a>
+  <a href="#">Umweltschutz</a>
+  <a href="#">Jahreszeiten und Wetter</a>
 </div>
+
+<div id="overlay" onclick="toggleSidebar(); hideSubmenu();"></div>

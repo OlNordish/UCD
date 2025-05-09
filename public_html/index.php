@@ -4,103 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wald entdecken – Startseite</title>
+
+  <link rel="stylesheet" href="include/header.css">
+  <script src="include/header.js" defer></script>
+
   <style>
     body {
       margin: 0;
       font-family: sans-serif;
       background-color: #8fbc8f;
     }
-
-    nav {
-      background-color: #2f4f4f;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .nav-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .burger-menu {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -300px;
-      width: 250px;
-      height: 100%;
-      background-color: #2f4f4f;
-      color: white;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-      transition: left 0.3s ease-in-out;
-      z-index: 9;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar h3 {
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .sidebar section {
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 5px 0;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 8;
-      display: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
     main {
       display: flex;
       flex-direction: column;
@@ -108,7 +21,6 @@
       padding: 60px 20px;
       text-align: center;
     }
-
     .start-buttons {
       display: flex;
       gap: 30px;
@@ -116,7 +28,6 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-
     .start-buttons a {
       background-color: #3cb371;
       color: white;
@@ -127,11 +38,9 @@
       font-weight: bold;
       transition: background-color 0.3s;
     }
-
     .start-buttons a:hover {
       background-color: #2e8b57;
     }
-
     #sprechblase-container {
       position: relative;
       margin-top: 60px;
@@ -139,7 +48,6 @@
       align-items: flex-end;
       gap: 10px;
     }
-
     #sprechblase {
       background: #ffffaa;
       padding: 10px;
@@ -147,7 +55,6 @@
       width: 280px;
       font-size: 16px;
     }
-
     #fuchs-avatar {
       width: 80px;
       height: 80px;
@@ -160,7 +67,6 @@
       border-radius: 10px;
       flex-shrink: 0;
     }
-
     #loslegen-btn {
       margin-top: 20px;
       background-color: #2f4f4f;
@@ -171,7 +77,6 @@
       font-size: 16px;
       cursor: pointer;
     }
-
     #loslegen-btn:hover {
       background-color: #1f2f2f;
     }
@@ -179,65 +84,27 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <nav>
-    <div class="nav-left">
-      <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-      <div class="nav-links">
-        <a href="index.php">Startseite</a>
-      </div>
-    </div>
-    <div class="nav-logo">Waldlogo</div>
-  </nav>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <section>
-      <h3>Erwachsene</h3>
-      <a href="erwachsene/bastelvorlagen.php">Bastelvorlagen</a>
-      <a href="erwachsene/medientipps.php">Medientipps</a>
-    </section>
-    <section>
-      <h3>Kinder</h3>
-      <a href="kinder/entdecken.html">Entdecken</a>
-      <a href="kinder/spielen.html">Spielen</a>
-      <a href="kinder/quiz.html">Quiz</a>
-    </section>
-  </div>
-
-  <!-- OVERLAY -->
-  <div id="overlay" onclick="toggleSidebar()"></div>
-
-  <!-- MAIN -->
   <main>
     <h1>Willkommen im Wald!</h1>
     <p>Wähle aus, was du entdecken möchtest:</p>
 
     <div class="start-buttons">
-      <a href="kinder/kinder.html">Kinder</a>
+      <a href="kinder/kinder.php">Kinder</a>
       <a href="erwachsene/erwachsene.php">Erwachsene</a>
     </div>
 
     <div id="sprechblase-container">
       <div id="fuchs-avatar">F</div>
       <div id="sprechblase">
-        Hallo! Schön, dass du da bist. <br />
+        Hallo! Schön, dass du da bist.<br>
         Willst du direkt loslegen?
         <br><br>
-        <button id="loslegen-btn" onclick="location.href='kinder/spielen.html'">Loslegen</button>
+        <button id="loslegen-btn" onclick="location.href='kinder/spielen.php'">Loslegen</button>
       </div>
     </div>
   </main>
-
-  <!-- SCRIPT -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      sidebar.classList.toggle("active");
-      overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
-    }
-  </script>
 
 </body>
 </html>

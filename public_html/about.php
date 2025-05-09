@@ -6,5 +6,9 @@
 </head>
 
 <body>
+	<body>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
+  <!-- dein Seiteninhalt hier -->
+</body>
 </body>
 </html>
