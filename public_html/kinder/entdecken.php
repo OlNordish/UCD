@@ -157,18 +157,18 @@
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <section>
-      <h3><a href="../index.html">Startseite</a></h3>
+      <h3><a href="../index.php">Startseite</a></h3>
     </section>
     <section>
       <h3><a href="../erwachsene.html">Erwachsene</a></h3>
-      <a href="../erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-      <a href="../erwachsene/medientipps.html">Medientipps</a>
+      <a href="../erwachsene/bastelvorlagen.php">Bastelvorlagen</a>
+      <a href="../erwachsene/medientipps.php">Medientipps</a>
     </section>
     <section>
       <h3><a href="../kinder.html">Kinder</a></h3>
-      <a href="../kinder/entdecken.html">Entdecken</a>
-      <a href="../kinder/spielen.html">Spielen</a>
-      <a href="../kinder/quiz.html">Quiz</a>
+      <a href="entdecken.php">Entdecken</a>
+      <a href="spielen.php">Spielen</a>
+      <a href="quiz.php">Quiz</a>
     </section>
   </div>
 

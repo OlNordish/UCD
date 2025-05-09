@@ -182,24 +182,24 @@
       <div class="burger-menu" onclick="toggleSidebar()">☰</div>
       <div>Wald aufräumen</div>
     </div>
-   <a href="../index.html" class="nav-logo" >🌳</a>
+   <a href="../index.php" class="nav-logo" >🌳</a>
   </nav>
 
   <!-- SIDEBAR -->
   <div class="sidebar" id="sidebar">
     <section>
-      <h3><a href="../index.html">Startseite</a></h3>
+      <h3><a href="../index.php">Startseite</a></h3>
     </section>
     <section>
-      <h3><a href="../erwachsene/erwachsene.html">Erwachsene</a></h3>
-      <a href="../erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-      <a href="../erwachsene/medientipps.html">Medientipps</a>
+      <h3><a href="../erwachsene/erwachsene.php">Erwachsene</a></h3>
+      <a href="../erwachsene/bastelvorlagen.php">Bastelvorlagen</a>
+      <a href="../erwachsene/medientipps.php">Medientipps</a>
     </section>
     <section>
-      <h3><a href="../kinder/kinder.html">Kinder</a></h3>
-      <a href="../kinder/entdecken.html">Entdecken</a>
-      <a href="../kinder/spielen.html">Spielen</a>
-      <a href="../kinder/quiz.html">Quiz</a>
+      <h3><a href="kinder.php">Kinder</a></h3>
+      <a href="entdecken.php">Entdecken</a>
+      <a href="spielen.php">Spielen</a>
+      <a href="quiz.php">Quiz</a>
     </section>
   </div>
 

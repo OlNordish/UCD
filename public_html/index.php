@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Für Kinder – Wald entdecken</title>
+  <title>Wald entdecken – Startseite</title>
   <style>
     body {
       margin: 0;
@@ -28,17 +28,17 @@
       gap: 20px;
     }
 
-    .burger-menu {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
     .nav-logo {
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
       font-weight: bold;
       font-size: 20px;
+    }
+
+    .burger-menu {
+      font-size: 24px;
+      cursor: pointer;
     }
 
     .sidebar {
@@ -89,62 +89,62 @@
       display: none;
     }
 
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
     main {
-      padding: 60px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 60px 20px;
       text-align: center;
     }
 
-    h1 {
-      color: #2f4f4f;
-    }
-
-    .info-text {
-      font-size: 18px;
-      margin: 10px 0 40px;
-      max-width: 600px;
-    }
-
-    .kinder-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    .start-buttons {
+      display: flex;
       gap: 30px;
-      width: 100%;
-      max-width: 600px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .kachel {
+    .start-buttons a {
       background-color: #3cb371;
       color: white;
       text-decoration: none;
-      padding: 30px 20px;
-      border-radius: 15px;
+      padding: 20px 40px;
       font-size: 20px;
+      border-radius: 10px;
       font-weight: bold;
       transition: background-color 0.3s;
     }
 
-    .kachel:hover {
+    .start-buttons a:hover {
       background-color: #2e8b57;
     }
 
     #sprechblase-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
+      position: relative;
+      margin-top: 60px;
       display: flex;
       align-items: flex-end;
       gap: 10px;
-      z-index: 10;
     }
 
     #sprechblase {
       background: #ffffaa;
       padding: 10px;
       border-radius: 10px;
-      width: 250px;
+      width: 280px;
       font-size: 16px;
     }
 
@@ -160,6 +160,21 @@
       border-radius: 10px;
       flex-shrink: 0;
     }
+
+    #loslegen-btn {
+      margin-top: 20px;
+      background-color: #2f4f4f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #loslegen-btn:hover {
+      background-color: #1f2f2f;
+    }
   </style>
 </head>
 <body>
@@ -168,7 +183,9 @@
   <nav>
     <div class="nav-left">
       <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-      <div>Kinder</div>
+      <div class="nav-links">
+        <a href="index.php">Startseite</a>
+      </div>
     </div>
     <div class="nav-logo">Waldlogo</div>
   </nav>
@@ -177,8 +194,8 @@
   <div class="sidebar" id="sidebar">
     <section>
       <h3>Erwachsene</h3>
-      <a href="erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-      <a href="erwachsene/medientipps.html">Medientipps</a>
+      <a href="erwachsene/bastelvorlagen.php">Bastelvorlagen</a>
+      <a href="erwachsene/medientipps.php">Medientipps</a>
     </section>
     <section>
       <h3>Kinder</h3>
@@ -191,26 +208,26 @@
   <!-- OVERLAY -->
   <div id="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- INHALT -->
+  <!-- MAIN -->
   <main>
-    <h1>Hallo, Entdecker!</h1>
-    <p class="info-text">Was möchtest du heute im Wald erleben? Wähle aus, was dir Spaß macht!</p>
+    <h1>Willkommen im Wald!</h1>
+    <p>Wähle aus, was du entdecken möchtest:</p>
 
-    <div class="kinder-grid">
-      <a href="entdecken.html" class="kachel">🌲 Entdecken<br><small>Entdecke den Wald</small></a>
-      <a href="spielen.html" class="kachel">🧩 Spielen<br><small>Was bewirkt Veränderung?</small></a>
-      <a href="quiz.html" class="kachel">❓ Quiz<br><small>Teste dein Waldwissen</small></a>
+    <div class="start-buttons">
+      <a href="kinder/kinder.html">Kinder</a>
+      <a href="erwachsene/erwachsene.php">Erwachsene</a>
+    </div>
+
+    <div id="sprechblase-container">
+      <div id="fuchs-avatar">F</div>
+      <div id="sprechblase">
+        Hallo! Schön, dass du da bist. <br />
+        Willst du direkt loslegen?
+        <br><br>
+        <button id="loslegen-btn" onclick="location.href='kinder/spielen.html'">Loslegen</button>
+      </div>
     </div>
   </main>
-
-  <!-- FUCHS-SPRECHBLASE -->
-  <div id="sprechblase-container">
-    <div id="fuchs-avatar">F</div>
-    <div id="sprechblase">
-      Hallo! Ich bin dein Begleiter.<br>
-      Ich helfe dir beim Entdecken, Spielen und Rätseln.
-    </div>
-  </div>
 
   <!-- SCRIPT -->
   <script>
