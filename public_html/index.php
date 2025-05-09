@@ -2,89 +2,121 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wald entdecken – Startseite</title>
 
+  <!-- Schrift & Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="include/header.css">
-  <script src="include/header.js" defer></script>
 
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
+      font-family: 'Nunito', sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji';
+      background: url('assets/wald-startbild.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
+
     main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
+      padding: 4rem 2rem;
       text-align: center;
     }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
     .start-buttons {
       display: flex;
-      gap: 30px;
-      margin: 40px 0;
-      flex-wrap: wrap;
       justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
     }
+
     .start-buttons a {
-      background-color: #3cb371;
+      padding: 1.2rem 2.5rem;
+      font-size: 1.5rem;
+      background-color: #2f4f4f;
       color: white;
+      border-radius: 12px;
       text-decoration: none;
-      padding: 20px 40px;
-      font-size: 20px;
-      border-radius: 10px;
-      font-weight: bold;
-      transition: background-color 0.3s;
+      transition: background-color 0.3s ease;
     }
+
     .start-buttons a:hover {
-      background-color: #2e8b57;
+      background-color: #4f6f6f;
     }
+
     #sprechblase-container {
-      position: relative;
-      margin-top: 60px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
       display: flex;
       align-items: flex-end;
       gap: 10px;
+      max-width: 320px;
+      z-index: 100;
     }
-    #sprechblase {
-      background: #ffffaa;
-      padding: 10px;
-      border-radius: 10px;
-      width: 280px;
-      font-size: 16px;
-    }
+
     #fuchs-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #ff4500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      flex-shrink: 0;
+      font-size: 3.5rem;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));
     }
+
+    #sprechblase {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 1.3rem;
+      border-radius: 14px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
     #loslegen-btn {
-      margin-top: 20px;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
       background-color: #2f4f4f;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
     }
+
     #loslegen-btn:hover {
-      background-color: #1f2f2f;
+      background-color: #4f6f6f;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .start-buttons a {
+        font-size: 1.2rem;
+        padding: 1rem 2rem;
+      }
+
+      #sprechblase-container {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
     }
   </style>
 </head>
 <body>
 
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
+  <?php include("include/header.php"); ?>
 
   <main>
     <h1>Willkommen im Wald!</h1>
@@ -94,17 +126,18 @@
       <a href="kinder/kinder.php">Kinder</a>
       <a href="erwachsene/erwachsene.php">Erwachsene</a>
     </div>
-
-    <div id="sprechblase-container">
-      <div id="fuchs-avatar">F</div>
-      <div id="sprechblase">
-        Hallo! Schön, dass du da bist.<br>
-        Willst du direkt loslegen?
-        <br><br>
-        <button id="loslegen-btn" onclick="location.href='kinder/spielen.php'">Loslegen</button>
-      </div>
-    </div>
   </main>
 
+  <div id="sprechblase-container">
+    <div id="sprechblase">
+      Hallo! Schön, dass du da bist.<br>
+      Willst du direkt loslegen?
+      <br><br>
+      <button id="loslegen-btn" onclick="location.href='kinder/spielen.php'">Loslegen</button>
+    </div>
+    <div id="fuchs-avatar">🦊</div>
+  </div>
+
+  <script src="include/header.js"></script>
 </body>
 </html>

@@ -1,15 +1,13 @@
-<html>
-<head>
 <!-- CSS einbinden -->
 <link rel="stylesheet" href="../include/header.css">
 </head>
 <body>
 
 <!-- PHP-Header einbinden -->
-<?php include("../include/header.php"); ?>
+<?php include("../include/testheader.php"); ?>
 
 <main>
-    <h1>Medientipps für Erwachsene</h1>
+    <h1>Erwachsene</h1>
     <!-- Weitere Inhalte hier -->
 </main>
 

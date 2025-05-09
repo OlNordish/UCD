@@ -208,7 +208,7 @@
     <h3><a href="../index.php">Startseite</a></h3>
   </section>
   <section>
-    <h3><a href="../erwachsene/erwachsene.php">Erwachsene</a></h3>
+    <h3><a href="../erwachsene.php">Erwachsene</a></h3>
     <a id="bastelvorlagen-link">Bastelvorlagen</a>
     <a href="../erwachsene/medientipps.php">Medientipps</a>
   </section>

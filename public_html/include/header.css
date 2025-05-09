@@ -57,7 +57,8 @@ nav {
   color: white;
 }
 
-.sidebar a {
+.sidebar a,
+#bastelvorlagen-link {
   display: block;
   color: white;
   text-decoration: none;
@@ -67,20 +68,19 @@ nav {
 
 .submenu-sidebar {
   position: fixed;
-  top: 60px;
+  top: 50px;
   left: -300px;
   width: 250px;
-  height: calc(100% - 60px);
+  height: calc(100% - 50px);
   background-color: #3a5f5f;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.5);
   transition: left 0.3s ease-in-out;
   z-index: 8;
-  color: white;
 }
 
 .submenu-sidebar.active {
-  left: 250px;
+  left: 290px;
 }
 
 .submenu-sidebar h3 {
@@ -110,3 +110,5 @@ nav {
   z-index: 7;
   display: none;
 }
+
+

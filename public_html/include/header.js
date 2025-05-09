@@ -1,32 +1,31 @@
-function toggleSidebar() {
+document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.getElementById("sidebar");
-  const submenu = document.getElementById("submenu");
   const overlay = document.getElementById("overlay");
+  const submenu = document.getElementById("submenu");
+  const bastelLink = document.getElementById("bastelvorlagen-link");
 
-  sidebar.classList.toggle("active");
-  overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+  function toggleSidebar() {
+    sidebar.classList.toggle("active");
+    overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
 
-  if (!sidebar.classList.contains("active")) {
+    if (!sidebar.classList.contains("active")) {
+      submenu.classList.remove("active");
+    }
+  }
+
+  function hideSubmenu() {
     submenu.classList.remove("active");
   }
-}
 
-function hideSubmenu() {
-  const submenu = document.getElementById("submenu");
-  submenu.classList.remove("active");
-}
+  bastelLink?.addEventListener("mouseenter", () => {
+    submenu.classList.add("active");
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const bastelLink = document.getElementById("bastelvorlagen-link");
-  const submenu = document.getElementById("submenu");
+  submenu?.addEventListener("mouseleave", () => {
+    submenu.classList.remove("active");
+  });
 
-  if (bastelLink && submenu) {
-    bastelLink.addEventListener("mouseenter", () => {
-      submenu.classList.add("active");
-    });
-
-    submenu.addEventListener("mouseleave", () => {
-      submenu.classList.remove("active");
-    });
-  }
+  // exportieren für onclick
+  window.toggleSidebar = toggleSidebar;
+  window.hideSubmenu = hideSubmenu;
 });
