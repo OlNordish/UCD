@@ -2,134 +2,125 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bastelvorlagen – Übersicht</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bastelvorlagen</title>
+  <link rel="stylesheet" href="/include/headerneu.css">
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-    }
-
-    nav {
-      background-color: #2f4f4f;
-      color: white;
-      padding: 10px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 10;
-    }
-
-    .nav-logo {
-      text-align: center;
-      font-weight: bold;
-      font-size: 20px;
+      font-family: 'Nunito', sans-serif;
+      background: url('/img/Background1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
 
     main {
-      padding: 100px 40px 40px 40px;
-      max-width: 800px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
     }
 
     h1 {
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
 
-		.theme-grid {
-	  display: grid;
-	  grid-template-columns: 1fr 1fr;
-	  gap: 40px;
-	  margin-top: 30px;
-	}
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
 
-	.theme-card {
-	  border-radius: 10px;
-	  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	  padding: 20px;
-	  text-align: center;
-	  transition: transform 0.2s ease;
-	  color: #333;
-	}
+    .bastelbox {
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
 
-	.theme-card:hover {
-	  transform: scale(1.03);
-	}
+    .bastelbox img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+      background: #f0f0f0;
+      padding: 1rem;
+    }
 
-	.theme-card h3 {
-	  margin-bottom: 10px;
-	}
+    .bastelbox-content {
+      padding: 1rem 1.5rem;
+    }
 
-	.theme-card a {
-	  display: inline-block;
-	  margin-top: 10px;
-	  background-color: #3cb371;
-	  color: white;
-	  text-decoration: none;
-	  padding: 10px 16px;
-	  border-radius: 6px;
-	}
+    .bastelbox-content h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #2f4f4f;
+    }
 
-	.theme-card a:hover {
-	  background-color: #2e8b57;
-	}
+    .bastelbox-content a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #2f4f4f;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
 
-	/* Farbliche Differenzierung */
-	.theme-tiere {
-	  background-color: #eafbe0;
-	}
-
-	.theme-pflanzen {
-	  background-color: #dff0e1;
-	}
-
-	.theme-umweltschutz {
-	  background-color: #f0f9ea;
-	}
-
-	.theme-jahreszeiten {
-	  background-color: #f3f3da;
-	}
-
+    .bastelbox-content a:hover {
+      background-color: #4f6f6f;
+    }
   </style>
 </head>
 <body>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-logo">Bastelvorlagen für Eltern</div>
-  </nav>
-
-  <!-- Hauptinhalt -->
   <main>
-    <h1>Wählen Sie eine Themenwelt</h1>
-    <p>Hier finden Sie kindgerechte Bastelvorlagen zum Ausdrucken und Entdecken – sortiert nach spannenden Themenwelten.</p>
+    <h1>Bastelvorlagen</h1>
+    <p>Kreative Ideen zum Basteln – Tiere, Pflanzen, Wetter und mehr!</p>
 
-    <div class="theme-grid">
-      <div class="theme-card">
+    <div class="bastelbox">
+      <img src="/img/tiere-icon.png" alt="Tiere Icon" />
+      <div class="bastelbox-content">
         <h3>Tiere des Waldes</h3>
-        <p>Masken und Figuren zum Ausschneiden und Basteln.</p>
+        <p>Male und bastle deine Lieblingstiere – vom Fuchs bis zum Reh.</p>
         <a href="bastelvorlagen/tiere.php">Ansehen</a>
       </div>
-      <div class="theme-card">
+    </div>
+
+    <div class="bastelbox">
+      <img src="/img/pflanzen-icon.png" alt="Pflanzen Icon" />
+      <div class="bastelbox-content">
         <h3>Bäume und Pflanzen</h3>
-        <p>Blätterdruck, Bastelbäume &amp; mehr rund um das Waldgrün.</p>
+        <p>Lerne Blätter und Bäume kennen – mit Vorlagen zum Sammeln und Malen.</p>
         <a href="bastelvorlagen/pflanzen.php">Ansehen</a>
       </div>
-      <div class="theme-card">
+    </div>
+
+    <div class="bastelbox">
+      <img src="/img/umweltschutz-icon.png" alt="Umweltschutz Icon" />
+      <div class="bastelbox-content">
         <h3>Umweltschutz</h3>
-        <p>Kreatives Lernen über Müll, Recycling und den Wald als Lebensraum.</p>
+        <p>Wie können wir dem Wald helfen? Tipps und kreative Bastelideen.</p>
         <a href="bastelvorlagen/umweltschutz.php">Ansehen</a>
       </div>
-      <div class="theme-card">
-        <h3>Jahreszeiten und Wetter</h3>
-        <p>Frühling, Sommer, Herbst und Winter zum Ausmalen und Basteln.</p>
+    </div>
+
+    <div class="bastelbox">
+      <img src="/img/jahreszeiten-icon.png" alt="Jahreszeiten Icon" />
+      <div class="bastelbox-content">
+        <h3>Jahreszeiten & Wetter</h3>
+        <p>Was passiert im Frühling, Sommer, Herbst und Winter? Bastel das Jahr!</p>
         <a href="bastelvorlagen/jahreszeiten.php">Ansehen</a>
       </div>
     </div>
   </main>
 
+  <script src="/include/headerneu.js"></script>
 </body>
 </html>

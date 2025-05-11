@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Über uns – Wald entdecken</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="include/header.css">
+  <link rel="stylesheet" href="include/headerneu.css">
 
   <style>
     body {
@@ -38,7 +37,7 @@
 </head>
 <body>
 
-  <?php include("include/header.php"); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
   <main>
     <h1>Über uns</h1>
@@ -55,6 +54,6 @@
     </p>
   </main>
 
-  <script src="include/header.js"></script>
+  <script src="include/headerneu.js"></script>
 </body>
 </html>

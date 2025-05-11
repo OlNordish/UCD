@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Impressum – Wald entdecken</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="include/header.css">
 
   <style>
@@ -41,28 +40,17 @@
   <?php include("include/header.php"); ?>
 
   <main>
-    <h1>Impressum</h1>
-    <p>Angaben gemäß § 5 TMG:</p>
+    <h1>Über uns</h1>
     <p>
-      Wald entdecken e.V.<br>
-      Musterstraße 12<br>
-      12345 Walddorf
+      „Wald entdecken“ ist eine Initiative, die Kindern und Erwachsenen den Lebensraum Wald auf spielerische und kreative Weise näherbringen möchte.
     </p>
 
     <p>
-      Vertreten durch: Max Mustermann
+      Unsere Plattform bietet altersgerechte Inhalte, Bastelideen, Medientipps und interaktive Elemente, um die Natur mit Freude zu erkunden.
     </p>
 
     <p>
-      Kontakt:<br>
-      Telefon: 01234 / 567890<br>
-      E-Mail: info@wald-entdecken.de
-    </p>
-
-    <p>
-      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:<br>
-      Max Mustermann<br>
-      Musterstraße 12, 12345 Walddorf
+      Das Projekt wird von Naturpädagog:innen, Medienexpert:innen und engagierten Ehrenamtlichen gemeinsam getragen.
     </p>
   </main>
 

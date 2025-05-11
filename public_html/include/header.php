@@ -1,38 +1,45 @@
-<nav>
-  <div class="nav-left">
-    <div class="burger-menu" onclick="toggleSidebar()">?</div>
-  </div>
-  <a href="index.php" class="nav-logo">?</a>
+<!-- Navigation -->
+<nav class="header-nav">
+  <div class="burger" onclick="toggleSidebar()">?</div>
+  <a href="/index.php" class="logo">? Mein Wald</a>
 </nav>
 
-<div class="sidebar" id="sidebar">
-  <section>
-    <h3><a href="index.php">Startseite</a></h3>
-  </section>
-  <section>
-    <h3><a href="erwachsene/erwachsene.php">Erwachsene</a></h3>
-    <div id="bastelvorlagen-link" onclick="window.location.href='erwachsene/bastelvorlagen.php'">Bastelvorlagen</div>
-    <a href="erwachsene/medientipps.php">Medientipps</a>
-  </section>
-  <section>
-    <h3><a href="kinder/kinder.php">Kinder</a></h3>
-    <a href="kinder/entdecken.php">Entdecken</a>
-    <a href="kinder/spielen.php">Spielen</a>
-    <a href="kinder/quiz.php">Quiz</a>
-  </section>
-  <section style="margin-top: auto;">
-    <h3>Info</h3>
-    <a href="impressum.php">Impressum</a>
-    <a href="about.php">About</a>
-  </section>
-</div>
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <ul>
+    <li><a href="/index.php">Startseite</a></li>
+    <li>
+      <button class="submenu-btn" data-submenu="submenu-bastel">Bastelvorlagen</button>
+    </li>
+    <li>
+      <button class="submenu-btn" data-submenu="submenu-medien">Medientipps</button>
+    </li>
+    <li><a href="/kinder/kinder.php">Kinderbereich</a></li>
+    <li><a href="/about.php">Über uns</a></li>
+    <li><a href="/impressum.php">Impressum</a></li>
+  </ul>
+</aside>
 
-<div class="submenu-sidebar" id="submenu">
-  <h3>Bastelvorlagen</h3>
-  <a href="erwachsene/bastelvorlagen/tiere.php">Tiere</a>
-  <a href="erwachsene/bastelvorlagen/pflanzen.php">Pflanzen</a>
-  <a href="erwachsene/bastelvorlagen/umweltschutz.php">Umweltschutz</a>
-  <a href="erwachsene/bastelvorlagen/jahreszeiten.php">Jahreszeiten</a>
-</div>
+<!-- Submenu für Bastelvorlagen -->
+<aside class="submenu-sidebar" id="submenu-bastel" onmouseleave="hideSubmenus()">
+  <ul>
+    <li><a href="/erwachsene/bastelvorlagen/tiere.php">Tiere</a></li>
+    <li><a href="/erwachsene/bastelvorlagen/pflanzen.php">Pflanzen</a></li>
+    <li><a href="/erwachsene/bastelvorlagen/umweltschutz.php">Umweltschutz</a></li>
+    <li><a href="/erwachsene/bastelvorlagen/jahreszeiten.php">Jahreszeiten</a></li>
+  </ul>
+</aside>
 
-<div id="overlay" onclick="toggleSidebar(); hideSubmenu();"></div>
+<!-- Submenu für Medientipps -->
+<aside class="submenu-sidebar" id="submenu-medien" onmouseleave="hideSubmenus()">
+  <ul>
+    <li><a href="/erwachsene/medientipps/buecher.php">Bücher</a></li>
+    <li><a href="/erwachsene/medientipps/hoerspiele.php">Hörspiele</a></li>
+    <li><a href="/erwachsene/medientipps/dokus.php">Dokumentationen</a></li>
+    <li><a href="/erwachsene/medientipps/apps.php">Apps</a></li>
+    <li><a href="/erwachsene/medientipps/lernmaterial.php">Lernmaterialien</a></li>
+  </ul>
+</aside>
+
+<!-- Overlay -->
+<div id="overlay" onclick="closeSidebar()"></div>

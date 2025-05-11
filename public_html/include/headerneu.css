@@ -1,0 +1,160 @@
+/* Navigation */
+.header-nav {
+  display: flex;
+  align-items: center;
+  background-color: #2f4f4f;
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;
+  position: relative;
+}
+
+.burger {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logo {
+  margin: 0 auto;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background-color: #2f4f4f;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a,
+.submenu-btn {
+  display: block;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 15px;
+  padding: 5px 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+/* Bereichsüberschriften mit Link */
+.sidebar h2 {
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar h2 a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar h2 a:hover {
+  text-decoration: underline;
+}
+
+/* Submenü-Sidebar */
+.submenu-sidebar {
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background-color: #3a5f5f;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.submenu-sidebar.active {
+  left: 220px;
+}
+
+.submenu-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.submenu-sidebar li {
+  margin: 10px 0;
+}
+
+.submenu-sidebar a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer in Sidebar */
+.sidebar-footer {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 13px;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  display: none;
+}

@@ -4,74 +4,100 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Geschafft!</title>
+
+  <!-- Einheitliche Navigation + Sidebar -->
+  <link rel="stylesheet" href="/include/headerneu.css" />
+
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-      color: #2f4f4f;
+      font-family: 'Nunito', sans-serif;
+      background: url('/img/Background1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 6rem 2rem 3rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       text-align: center;
     }
+
     h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
     }
+
     p {
-      font-size: 20px;
-      max-width: 500px;
-      margin-bottom: 30px;
+      font-size: 1.4rem;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
     }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
     button {
       background-color: #2f4f4f;
       color: white;
       border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 16px;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
       border-radius: 10px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
+
     button:hover {
-      background-color: #1f2f2f;
+      background-color: #4f6f6f;
     }
+
     #fuchs-avatar {
-      width: 120px;
-      height: 120px;
-      background-color: #ff4500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      font-size: 40px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      font-size: 4rem;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Super gemacht!</h1>
-  <div id="fuchs-avatar">F</div>
-  <p>Du hast alle 8 Level erfolgreich abgeschlossen und den Wald ganz genau beobachtet.<br>Der Fuchs ist stolz auf dich!</p>
 
-  <div>
-    <button onclick="window.location.href='../spielen.html'">Zur Startseite</button>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+
+<main>
+  <h1>🎉 Super gemacht!</h1>
+  <div id="fuchs-avatar">🦊</div>
+  <p>Du hast alle 8 Level erfolgreich abgeschlossen und den Wald genau beobachtet.<br>Der Fuchs ist stolz auf dich!</p>
+
+  <div class="button-group">
+    <button onclick="window.location.href='/kinder/spielen.php'">Zurück zur Spielübersicht</button>
     <button onclick="neustart()">Spiel zurücksetzen</button>
   </div>
+</main>
 
-  <script>
-    function neustart() {
-      const sicher = confirm("Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.");
-      if (sicher) {
-        localStorage.clear();
-        window.location.href = '../spielen.html';
-      }
+<script src="/include/headerneu.js"></script>
+<script>
+  function neustart() {
+    const sicher = confirm("Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.");
+    if (sicher) {
+      localStorage.clear();
+      window.location.href = '/kinder/spielen.php';
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>

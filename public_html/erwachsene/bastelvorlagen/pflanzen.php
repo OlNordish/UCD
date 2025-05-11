@@ -3,136 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bastelvorlagen – Bäume &amp; Pflanzen</title>
+  <title>Pflanzen &amp; Bäume</title>
+  <link rel="stylesheet" href="../../include/headerneu.css">
+
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-    }
-
-    nav {
-      background-color: #2f4f4f;
-      color: white;
-      padding: 10px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 10;
-    }
-
-    .nav-logo {
-      text-align: center;
-      font-weight: bold;
-      font-size: 20px;
+      font-family: 'Nunito', sans-serif;
+      background: url('/img/Background1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
 
     main {
-      padding: 100px 40px 60px 40px;
-      max-width: 800px;
-      margin: auto;
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
     }
 
     h1 {
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .bastelbox {
-      background-color: #dff0e1;
-      border-radius: 10px;
       display: flex;
-      align-items: center;
-      padding: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+      overflow: hidden;
     }
 
     .bastelbox img {
-      width: 80px;
-      height: 80px;
-      margin-right: 20px;
-      border-radius: 8px;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
-      background-color: white;
-      padding: 5px;
+      background: #f0f0f0;
+      padding: 1rem;
     }
 
     .bastelbox-content {
-      flex-grow: 1;
+      padding: 1rem 1.5rem;
     }
 
     .bastelbox-content h3 {
-      margin: 0 0 10px 0;
-    }
-
-    .bastelbox-content p {
-      margin: 0 0 10px 0;
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: #2f4f4f;
     }
 
     .bastelbox-content a {
       display: inline-block;
-      background-color: #3cb371;
+      margin-top: 1rem;
+      background: #2f4f4f;
       color: white;
-      text-decoration: none;
-      padding: 8px 16px;
+      padding: 0.5rem 1rem;
       border-radius: 6px;
+      text-decoration: none;
     }
 
     .bastelbox-content a:hover {
-      background-color: #2e8b57;
+      background-color: #4f6f6f;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-logo">Bäume &amp; Pflanzen – Bastelvorlagen</div>
-  </nav>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-  <!-- Hauptinhalt -->
-  <main>
-    <h1>Bäume &amp; Pflanzen</h1>
-    <p>Hier finden Sie kreative Bastelideen rund um das Thema Waldpflanzen, Blätter und Bäume – ideal für Kinder, um die Natur spielerisch zu entdecken.</p>
+<main>
+  <h1>Pflanzen und Bäume</h1>
+  <p>Bastelideen und Lernmaterialien über das grüne Herz des Waldes.</p>
 
-    <div class="bastelbox">
-      <img src="../img/baum-icon.png" alt="Baum Icon" />
-      <div class="bastelbox-content">
-        <h3>Bastelbaum mit Fingerabdruck-Blättern</h3>
-        <p>Ein Baum zum Ausdrucken, bei dem Kinder mit Fingerfarben bunte Blätter stempeln können.</p>
-        <a href="../downloads/fingerabdruck-baum.pdf" download>PDF herunterladen</a>
-      </div>
+  <div class="bastelbox">
+    <img src="/img/baum-icon.png" alt="Baum Icon" />
+    <div class="bastelbox-content">
+      <h3>Laubbaum-Puzzle</h3>
+      <p>Ein einfaches Ausschneide-Puzzle, um Baumteile kennenzulernen.</p>
+      <a href="/downloads/baum-puzzle.pdf" download>PDF herunterladen</a>
     </div>
+  </div>
 
-    <div class="bastelbox">
-      <img src="../img/blaetter-icon.png" alt="Blätter Icon" />
-      <div class="bastelbox-content">
-        <h3>Blätterdruck-Bild</h3>
-        <p>Herbstblätter sammeln und abdrucken – eine einfache Naturbastelei mit großem Effekt.</p>
-        <a href="../downloads/blaetterdruck.pdf" download>PDF herunterladen</a>
-      </div>
+  <div class="bastelbox">
+    <img src="/img/blatt-icon.png" alt="Blatt Icon" />
+    <div class="bastelbox-content">
+      <h3>Blätter-Sammelkarte</h3>
+      <p>Eine Sammelkarte zum Bestimmen und Aufkleben echter Blätter.</p>
+      <a href="/downloads/blaetterkarte.pdf" download>PDF herunterladen</a>
     </div>
+  </div>
+</main>
 
-    <div class="bastelbox">
-      <img src="../img/pflanze-icon.png" alt="Pflanze Icon" />
-      <div class="bastelbox-content">
-        <h3>Pflanzen-Memory</h3>
-        <p>Ein selbst auszuschneidendes Memory-Spiel mit Pflanzenarten des Waldes.</p>
-        <a href="../downloads/pflanzen-memory.pdf" download>PDF herunterladen</a>
-      </div>
-    </div>
-
-    <div class="bastelbox">
-      <img src="../img/wald-icon.png" alt="Wald Icon" />
-      <div class="bastelbox-content">
-        <h3>Waldlandschaft basteln</h3>
-        <p>Mit Papier, Stoffresten oder Naturmaterialien den eigenen kleinen Wald gestalten.</p>
-        <a href="../downloads/waldlandschaft.pdf" download>PDF herunterladen</a>
-      </div>
-    </div>
-
-  </main>
-
+<script src="../../include/headerneu.js"></script>
 </body>
 </html>

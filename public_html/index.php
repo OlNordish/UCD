@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wald entdecken – Startseite</title>
-
-  <!-- Schrift & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="include/header.css">
+  <base href="/" />
+  
+	<!-- Schriftart und Styles -->
+  <link rel="stylesheet" href="include/headerneu.css">
 
   <style>
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji';
-      background: url('assets/wald-startbild.jpg') no-repeat center center fixed;
+      background: url('/assets/wald-startbild.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
     }
@@ -116,28 +115,31 @@
 </head>
 <body>
 
-  <?php include("include/header.php"); ?>
+  <!-- PHP-Header (Navigation + Sidebar) -->
+  <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/headerneu.php"; ?>
 
   <main>
     <h1>Willkommen im Wald!</h1>
     <p>Wähle aus, was du entdecken möchtest:</p>
 
     <div class="start-buttons">
-      <a href="kinder/kinder.php">Kinder</a>
-      <a href="erwachsene/erwachsene.php">Erwachsene</a>
+      <a href="/kinder/kinder.php">Kinder</a>
+      <a href="/erwachsene/erwachsene.php">Erwachsene</a>
     </div>
   </main>
 
+  <!-- Fuchs mit Sprechblase -->
   <div id="sprechblase-container">
     <div id="sprechblase">
       Hallo! Schön, dass du da bist.<br>
       Willst du direkt loslegen?
       <br><br>
-      <button id="loslegen-btn" onclick="location.href='kinder/spielen.php'">Loslegen</button>
+      <button id="loslegen-btn" onclick="location.href='/kinder/spielen.php'">Loslegen</button>
     </div>
     <div id="fuchs-avatar">🦊</div>
   </div>
 
-  <script src="include/header.js"></script>
+  <!-- JavaScript -->
+  <script src="/include/headerneu.js"></script>
 </body>
 </html>

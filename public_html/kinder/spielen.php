@@ -4,142 +4,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Waldspiel – Levelauswahl</title>
+
+  <!-- Einheitliche Navigation & Sidebar -->
+  <link rel="stylesheet" href="/include/headerneu.css">
+
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-    }
-
-    nav {
-      background-color: #2f4f4f;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .burger-menu {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .nav-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -300px;
-      width: 250px;
-      height: 100%;
-      background-color: #2f4f4f;
-      color: white;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-      transition: left 0.3s ease-in-out;
-      z-index: 9;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar h3 {
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .sidebar section {
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 5px 0;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 8;
-      display: none;
+      font-family: 'Nunito', sans-serif;
+      background: url('/img/Background1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
 
     main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 30px;
+      text-align: center;
+      padding: 80px 20px 40px;
     }
 
     h1 {
-      margin: 20px 0 10px;
-      color: #2f4f4f;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .start-btn {
+      margin: 20px 0;
+      padding: 14px 30px;
+      background-color: #3cb371;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .start-btn:hover {
+      background-color: #2e8b57;
     }
 
     .level-grid {
       display: grid;
-      grid-template-columns: repeat(4, 120px);
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 20px;
-      margin: 30px;
+      margin: 30px 0;
+      width: 100%;
+      max-width: 700px;
     }
 
     .level-tile {
-      width: 120px;
-      height: 120px;
-      background-color: #2f4f4f;
-      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       font-size: 18px;
       font-weight: bold;
       border-radius: 10px;
       text-decoration: none;
+      color: white;
+      background-color: #2f4f4f;
+      transition: background-color 0.3s;
+      width: 100%;
+      aspect-ratio: 1 / 1;
       pointer-events: none;
       opacity: 0.4;
-      transition: all 0.3s;
     }
 
     .level-tile.active {
       pointer-events: auto;
       opacity: 1;
       background-color: #3cb371;
+      cursor: pointer;
+    }
+
+    .level-tile.active:hover {
+      background-color: #369d60;
     }
 
     #reset-btn {
-      margin-bottom: 30px;
-      padding: 10px 20px;
+      margin-top: 20px;
+      padding: 12px 24px;
       background-color: #d9534f;
       color: white;
       border: none;
       border-radius: 10px;
       font-size: 16px;
       cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     #reset-btn:hover {
@@ -149,79 +106,53 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <nav>
-    <div class="nav-left">
-      <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-      <div>Spielen</div>
-    </div>
-    <div class="nav-logo">Waldlogo</div>
-  </nav>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <section>
-      <h3>Erwachsene</h3>
-      <a href="erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-      <a href="erwachsene/medientipps.html">Medientipps</a>
-    </section>
-    <section>
-      <h3>Kinder</h3>
-      <a href="kinder/entdecken.html">Entdecken</a>
-      <a href="kinder/spielen.html">Spielen</a>
-      <a href="kinder/quiz.html">Quiz</a>
-    </section>
-  </div>
+<div id="overlay" onclick="toggleSidebar()"></div>
 
-  <!-- Overlay für Sidebar -->
-  <div id="overlay" onclick="toggleSidebar()"></div>
+<main>
+  <h1>Wähle ein Level</h1>
 
-  <!-- MAIN -->
-  <main>
-    <h1>Wähle ein Level</h1>
+  <button class="start-btn" onclick="startSpiel()">🔴 Spiel starten</button>
 
-    <div class="level-grid" id="levelGrid">
-      <!-- Level-Kacheln -->
-    </div>
+  <div class="level-grid" id="levelGrid"></div>
 
-    <button id="reset-btn" onclick="resetSpiel()">Neu beginnen</button>
-  </main>
+  <button id="reset-btn" onclick="resetSpiel()">🔄 Neu beginnen</button>
+</main>
 
-  <!-- SCRIPT -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      sidebar.classList.toggle("active");
-      overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
+<script src="/include/headerneu.js"></script>
+<script>
+  const grid = document.getElementById("levelGrid");
+  const totalLevels = 8;
+
+  for (let i = 1; i <= totalLevels; i++) {
+    const tile = document.createElement("a");
+    tile.classList.add("level-tile");
+    tile.innerText = `Level ${i}`;
+    tile.href = `/kinder/spielen/level${i}.php`;
+
+    const key = `level${i - 1}done`;
+    const unlocked = i === 1 || localStorage.getItem(key) === "true";
+
+    if (unlocked) {
+      tile.classList.add("active");
     }
 
-    const grid = document.getElementById("levelGrid");
-    const totalLevels = 8;
+    grid.appendChild(tile);
+  }
 
-    for (let i = 1; i <= totalLevels; i++) {
-      const tile = document.createElement("a");
-      tile.classList.add("level-tile");
-      tile.innerText = `Level ${i}`;
-      tile.href = `spielen/level${i}.html`;
-
-      const key = `level${i - 1}done`;
-      const unlocked = i === 1 || localStorage.getItem(key) === "true";
-
-      if (unlocked) {
-        tile.classList.add("active");
-      }
-
-      grid.appendChild(tile);
+  function resetSpiel() {
+    const sicher = confirm("Willst du wirklich neu beginnen? Dein Fortschritt wird gelöscht.");
+    if (sicher) {
+      localStorage.clear();
+      location.reload();
     }
+  }
 
-    function resetSpiel() {
-      const sicher = confirm("Willst du wirklich neu beginnen? Dein Fortschritt wird gelöscht.");
-      if (sicher) {
-        localStorage.clear();
-        location.reload();
-      }
-    }
-  </script>
+  function startSpiel() {
+    window.location.href = "/kinder/spielen/level1.php";
+  }
+</script>
+
 </body>
 </html>

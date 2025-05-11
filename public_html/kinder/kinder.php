@@ -2,91 +2,19 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Für Kinder – Wald entdecken</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinderseite – Wald entdecken</title>
+
+  <!-- Header-CSS einbinden -->
+  <link rel="stylesheet" href="/include/headerneu.css">
+
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background-color: #8fbc8f;
-    }
-
-    nav {
-      background-color: #2f4f4f;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      position: relative;
-      z-index: 10;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .burger-menu {
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    .nav-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      font-weight: bold;
-      font-size: 20px;
-    }
-
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -300px;
-      width: 250px;
-      height: 100%;
-      background-color: #2f4f4f;
-      color: white;
-      padding: 20px;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-      transition: left 0.3s ease-in-out;
-      z-index: 9;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar h3 {
-      margin-top: 40px;
-      font-size: 18px;
-      font-weight: bold;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-    }
-
-    .sidebar section {
-      margin-bottom: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      margin: 5px 0;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 8;
-      display: none;
+      font-family: 'Nunito', sans-serif;
+      background: url('/img/Background1.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
     }
 
     main {
@@ -98,36 +26,38 @@
     }
 
     h1 {
-      color: #2f4f4f;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
 
     .info-text {
-      font-size: 18px;
-      margin: 10px 0 40px;
-      max-width: 600px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
-    .kinder-grid {
+    .kachel-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
+      gap: 20px;
       width: 100%;
-      max-width: 600px;
+      max-width: 800px;
     }
 
     .kachel {
       background-color: #3cb371;
       color: white;
       text-decoration: none;
-      padding: 30px 20px;
-      border-radius: 15px;
-      font-size: 20px;
+      padding: 2rem 1rem;
+      border-radius: 50px;
+      font-size: 1.3rem;
       font-weight: bold;
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
 
     .kachel:hover {
       background-color: #2e8b57;
+      transform: translateY(-2px);
     }
 
     #sprechblase-container {
@@ -137,90 +67,53 @@
       display: flex;
       align-items: flex-end;
       gap: 10px;
-      z-index: 10;
-    }
-
-    #sprechblase {
-      background: #ffffaa;
-      padding: 10px;
-      border-radius: 10px;
-      width: 250px;
-      font-size: 16px;
+      max-width: 320px;
+      z-index: 100;
     }
 
     #fuchs-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #ff4500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      border-radius: 10px;
-      flex-shrink: 0;
+      font-size: 3.5rem;
+      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));
+    }
+
+    #sprechblase {
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #333;
+      padding: 1rem 1.3rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      border: 2px dashed #2f4f4f;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <nav>
-    <div class="nav-left">
-      <div class="burger-menu" onclick="toggleSidebar()">☰</div>
-      <div>Kinder</div>
-    </div>
-    <div class="nav-logo">Waldlogo</div>
-  </nav>
+<!-- Sidebar & Navigation -->
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar" id="sidebar">
-    <section>
-      <h3>Erwachsene</h3>
-      <a href="erwachsene/bastelvorlagen.html">Bastelvorlagen</a>
-      <a href="erwachsene/medientipps.html">Medientipps</a>
-    </section>
-    <section>
-      <h3>Kinder</h3>
-      <a href="kinder/entdecken.html">Entdecken</a>
-      <a href="kinder/spielen.html">Spielen</a>
-      <a href="kinder/quiz.html">Quiz</a>
-    </section>
+<!-- Inhalt -->
+<main>
+  <h1>Hallo, Entdecker!</h1>
+  <p class="info-text">Was möchtest du heute im Wald erleben? Wähle aus, was dir Spaß macht!</p>
+  <div class="kachel-container">
+    <a class="kachel" href="entdecken.php">🌲 Entdecken</a>
+    <a class="kachel" href="aufraeumen.php">🧹 Aufräumen</a>
+    <a class="kachel" href="veraenderungen.php">🔄 Veränderungen</a>
+    <a class="kachel" href="quiz.php">❓ Quiz</a>
   </div>
+</main>
 
-  <!-- OVERLAY -->
-  <div id="overlay" onclick="toggleSidebar()"></div>
-
-  <!-- INHALT -->
-  <main>
-    <h1>Hallo, Entdecker!</h1>
-    <p class="info-text">Was möchtest du heute im Wald erleben? Wähle aus, was dir Spaß macht!</p>
-
-    <div class="kinder-grid">
-      <a href="entdecken.php" class="kachel">🌲 Entdecken<br><small>Entdecke den Wald</small></a>
-      <a href="spielen.php" class="kachel">🧩 Spielen<br><small>Was bewirkt Veränderung?</small></a>
-      <a href="quiz.php" class="kachel">❓ Quiz<br><small>Teste dein Waldwissen</small></a>
-    </div>
-  </main>
-
-  <!-- FUCHS-SPRECHBLASE -->
-  <div id="sprechblase-container">
-    <div id="fuchs-avatar">F</div>
-    <div id="sprechblase">
-      Hallo! Ich bin dein Begleiter.<br>
-      Ich helfe dir beim Entdecken, Spielen und Rätseln.
-    </div>
+<!-- Sprechblase & Avatar -->
+<div id="sprechblase-container">
+  <div id="sprechblase">
+    Hallo! Ich bin dein Waldfuchs.<br>
+    Ich begleite dich bei deinen Abenteuern.
   </div>
+  <div id="fuchs-avatar">🦊</div>
+</div>
 
-  <!-- SCRIPT -->
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("sidebar");
-      const overlay = document.getElementById("overlay");
-      sidebar.classList.toggle("active");
-      overlay.style.display = sidebar.classList.contains("active") ? "block" : "none";
-    }
-  </script>
-
+<!-- JavaScript: Sidebar & Submenüs -->
+<script src="/include/headerneu.js"></script>
 </body>
 </html>
