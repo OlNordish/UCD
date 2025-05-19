@@ -2,12 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Über uns – Wald entdecken</title>
-
-  <link rel="stylesheet" href="include/headerneu.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns</title>
+  
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
+  
   <style>
     body {
       margin: 0;
@@ -36,13 +36,16 @@
   </style>
 </head>
 <body>
-
+	
+  <!-- Sidebar & Navigation -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
   <main>
     <h1>Über uns</h1>
   </main>
 
-  <script src="include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

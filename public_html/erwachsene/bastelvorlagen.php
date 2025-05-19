@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bastelvorlagen</title>
+  
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
+  
   <style>
     body {
       margin: 0;
@@ -78,6 +81,8 @@
   </style>
 </head>
 <body>
+	
+  <!-- Sidebar & Navigation -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
   <main>
@@ -121,6 +126,8 @@
     </div>
   </main>
 
-  <script src="/include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

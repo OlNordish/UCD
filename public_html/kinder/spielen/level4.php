@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waldspiel – Level 4</title>
+  <title>Level 4</title>
 
   <!-- Navigation + Styles -->
   <link rel="stylesheet" href="/include/headerneu.css">
@@ -31,7 +31,6 @@
   <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
 
-<script src="/include/headerneu.js"></script>
 <script>
   function zurStartseite() {
     window.location.href = "/kinder/spielen.php";
@@ -66,6 +65,6 @@
     });
   });
 </script>
-
+<script src="/include/headerneu.js"></script>
 </body>
 </html>

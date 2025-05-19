@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entdecke den Wald – Interaktives Spiel</title>
-
+  <title>Entdecken</title>
+  
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
-
+  
   <style>
     body {
       margin: 0;
@@ -140,6 +141,7 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="waldszene">
@@ -189,7 +191,6 @@
   </div>
 </div>
 
-<script src="/include/headerneu.js"></script>
 <script>
   const tierTexte = {
     eichhoernchen: ["Hallo, ich bin das Eichhörnchen! Ich liebe Nüsse.", "eichhoernchen.mp3"],
@@ -284,5 +285,9 @@
     fuchsAvatar.classList.add("active");
   }
 </script>
+
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Waldspiel – Levelauswahl</title>
 
-  <!-- Einheitliche Navigation & Sidebar -->
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
@@ -106,6 +106,7 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="overlay" onclick="toggleSidebar()"></div>
@@ -120,7 +121,6 @@
   <button id="reset-btn" onclick="resetSpiel()">🔄 Neu beginnen</button>
 </main>
 
-<script src="/include/headerneu.js"></script>
 <script>
   const grid = document.getElementById("levelGrid");
   const totalLevels = 8;
@@ -154,5 +154,8 @@
   }
 </script>
 
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

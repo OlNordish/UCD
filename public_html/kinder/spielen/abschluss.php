@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Geschafft!</title>
 
-  <!-- Einheitliche Navigation + Sidebar -->
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css" />
 
   <style>
@@ -75,6 +75,7 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
@@ -88,7 +89,6 @@
   </div>
 </main>
 
-<script src="/include/headerneu.js"></script>
 <script>
   function neustart() {
     const sicher = confirm("Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.");
@@ -99,5 +99,8 @@
   }
 </script>
 
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

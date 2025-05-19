@@ -2,12 +2,12 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wald aufräumen – Interaktives Spiel</title>
-
-  <!-- Styles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aufräumen</title>
+  
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
-
+  
   <style>
     body {
       margin: 0;
@@ -110,7 +110,6 @@
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-<!-- Wald-Spielszene -->
 <div id="wald">
   <div class="baum" style="top: 10%; left: 20%;"></div>
   <div class="baum" style="top: 50%; left: 60%;"></div>
@@ -136,8 +135,6 @@
   </div>
 </div>
 
-<!-- Scripts -->
-<script src="/include/headerneu.js"></script>
 <script>
   const gesamtMuell = 3;
   let entfernt = 0;
@@ -167,5 +164,9 @@
     }
   }
 </script>
+
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

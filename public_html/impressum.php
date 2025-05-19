@@ -40,18 +40,7 @@
   <?php include("include/headerneu.php"); ?>
 
   <main>
-    <h1>Über uns</h1>
-    <p>
-      „Wald entdecken“ ist eine Initiative, die Kindern und Erwachsenen den Lebensraum Wald auf spielerische und kreative Weise näherbringen möchte.
-    </p>
-
-    <p>
-      Unsere Plattform bietet altersgerechte Inhalte, Bastelideen, Medientipps und interaktive Elemente, um die Natur mit Freude zu erkunden.
-    </p>
-
-    <p>
-      Das Projekt wird von Naturpädagog:innen, Medienexpert:innen und engagierten Ehrenamtlichen gemeinsam getragen.
-    </p>
+    <h1>Impressum</h1>
   </main>
 
   <script src="include/headerneu.js"></script>

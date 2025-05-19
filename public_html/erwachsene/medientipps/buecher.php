@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buchempfehlungen</title>
+  <title>Bücher</title>
+  
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
+  
   <style>
     body {
       margin: 0;
@@ -52,7 +55,10 @@
   </style>
 </head>
 <body>
+
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+
 <main>
   <h1>Buchempfehlungen</h1>
   <p>Ausgewählte Kinderbücher über Wald, Tiere und Natur für Zuhause oder den Unterricht.</p>
@@ -72,6 +78,9 @@
     <p>Für ältere Kinder: Spannende Fakten, Interviews mit Förstern und DIY-Projekte.</p>
   </div>
 </main>
+
+<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Veränderungen</title>
+  <title>Levelauswahl</title>
 
-  <!-- Styles -->
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
@@ -17,91 +17,90 @@
       color: #ffffff;
     }
 
-    #wald {
-      position: relative;
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    .start-btn {
+      margin: 20px 0;
+      padding: 14px 30px;
+      background-color: #3cb371;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .start-btn:hover {
+      background-color: #2e8b57;
+    }
+
+    .level-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
       width: 100%;
-      height: calc(100vh - 60px);
-      overflow: hidden;
+      max-width: 700px;
     }
 
-    .baum {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      background-color: #228b22;
-      border-radius: 10px;
-    }
-
-    .muell {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      background-color: #696969;
-      border-radius: 10px;
-      text-align: center;
-      line-height: 60px;
-      font-weight: bold;
-      color: white;
-      cursor: grab;
-    }
-
-    .tier {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      font-size: 2rem;
-      border-radius: 10px;
-      display: none;
+    .level-tile {
+      display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #ffffff33;
-    }
-
-    #eimer {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      width: 100px;
-      height: 120px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      text-decoration: none;
+      color: white;
       background-color: #2f4f4f;
-      border-radius: 10px;
+      transition: background-color 0.3s;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .level-tile.active {
+      pointer-events: auto;
+      opacity: 1;
+      background-color: #3cb371;
+      cursor: pointer;
+    }
+
+    .level-tile.active:hover {
+      background-color: #369d60;
+    }
+
+    #reset-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #d9534f;
       color: white;
-      text-align: center;
-      line-height: 120px;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-
-    #sprechblase-container {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      z-index: 100;
-    }
-
-    #sprechblase {
-      background: #ffffaa;
-      padding: 10px;
+      border: none;
       border-radius: 10px;
-      width: 300px;
       font-size: 16px;
-      color: #333;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    #fuchs-avatar {
-      width: 80px;
-      height: 80px;
-      background-color: #ff4500;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      font-size: 2rem;
-      border-radius: 10px;
+    #reset-btn:hover {
+      background-color: #c9302c;
     }
   </style>
 </head>
@@ -110,62 +109,51 @@
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-<!-- Wald-Spielszene -->
-<div id="wald">
-  <div class="baum" style="top: 10%; left: 20%;"></div>
-  <div class="baum" style="top: 50%; left: 60%;"></div>
-  <div class="baum" style="top: 30%; left: 40%;"></div>
+<main>
+  <h1>Wähle ein Level</h1>
 
-  <div class="muell" draggable="true" id="muell1" style="top: 20%; left: 30%;">🗑️</div>
-  <div class="muell" draggable="true" id="muell2" style="top: 60%; left: 50%;">🗑️</div>
-  <div class="muell" draggable="true" id="muell3" style="top: 40%; left: 70%;">🗑️</div>
+  <button class="start-btn" onclick="startSpiel()">🔴 Spiel starten</button>
 
-  <div class="tier" id="eichhoernchen" style="top: 10%; left: 10%;">🐿️</div>
-  <div class="tier" id="eule" style="top: 20%; left: 60%;">🦉</div>
-  <div class="tier" id="reh" style="top: 50%; left: 80%;">🦌</div>
+  <div class="level-grid" id="levelGrid"></div>
 
-  <div id="eimer" ondragover="allowDrop(event)" ondrop="drop(event)">🧺</div>
+  <button id="reset-btn" onclick="resetSpiel()">🔄 Neu beginnen</button>
+</main>
 
-  <div id="sprechblase-container">
-    <div id="sprechblase">
-      Fuchs: Oh nein, jemand hat den Wald verschmutzt!<br>
-      Hilfst du mir, den Wald aufzuräumen?<br>
-      Ziehe den Müll einfach in den Korb!
-    </div>
-    <div id="fuchs-avatar">🦊</div>
-  </div>
-</div>
-
-<!-- Scripts -->
-<script src="/include/headerneu.js"></script>
 <script>
-  const gesamtMuell = 3;
-  let entfernt = 0;
+  const grid = document.getElementById("levelGrid");
+  const totalLevels = 8;
 
-  document.querySelectorAll(".muell").forEach(m => {
-    m.addEventListener("dragstart", event => {
-      event.dataTransfer.setData("text", event.target.id);
-    });
-  });
+  for (let i = 1; i <= totalLevels; i++) {
+    const tile = document.createElement("a");
+    tile.classList.add("level-tile");
+    tile.innerText = `Level ${i}`;
+    tile.href = `/kinder/spielen/level${i}.php`;
 
-  function allowDrop(event) {
-    event.preventDefault();
+    const key = `level${i - 1}done`;
+    const unlocked = i === 1 || localStorage.getItem(key) === "true";
+
+    if (unlocked) {
+      tile.classList.add("active");
+    }
+
+    grid.appendChild(tile);
   }
 
-  function drop(event) {
-    event.preventDefault();
-    const id = event.dataTransfer.getData("text");
-    const element = document.getElementById(id);
-    if (element) {
-      element.remove();
-      entfernt++;
-      if (entfernt === gesamtMuell) {
-        document.getElementById("sprechblase").innerText =
-          "Fuchs: Super, jetzt ist der Wald wieder sauber. Die Tiere fühlen sich wieder wohl!";
-        document.querySelectorAll(".tier").forEach(t => t.style.display = "flex");
-      }
+  function resetSpiel() {
+    const sicher = confirm("Willst du wirklich neu beginnen? Dein Fortschritt wird gelöscht.");
+    if (sicher) {
+      localStorage.clear();
+      location.reload();
     }
   }
+
+  function startSpiel() {
+    window.location.href = "/kinder/spielen/level1.php";
+  }
 </script>
+
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>
