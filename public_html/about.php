@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: url('assets/wald-startbild.jpg') no-repeat center center fixed;
+      background: url('bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
     }
@@ -41,17 +41,6 @@
 
   <main>
     <h1>Über uns</h1>
-    <p>
-      „Wald entdecken“ ist eine Initiative, die Kindern und Erwachsenen den Lebensraum Wald auf spielerische und kreative Weise näherbringen möchte.
-    </p>
-
-    <p>
-      Unsere Plattform bietet altersgerechte Inhalte, Bastelideen, Medientipps und interaktive Elemente, um die Natur mit Freude zu erkunden.
-    </p>
-
-    <p>
-      Das Projekt wird von Naturpädagog:innen, Medienexpert:innen und engagierten Ehrenamtlichen gemeinsam getragen.
-    </p>
   </main>
 
   <script src="include/headerneu.js"></script>

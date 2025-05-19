@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Impressum – Wald entdecken</title>
 
-  <link rel="stylesheet" href="include/header.css">
+  <link rel="stylesheet" href="include/headerneu.css">
 
   <style>
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: url('assets/wald-startbild.jpg') no-repeat center center fixed;
+      background: url('bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
     }
@@ -37,7 +37,7 @@
 </head>
 <body>
 
-  <?php include("include/header.php"); ?>
+  <?php include("include/headerneu.php"); ?>
 
   <main>
     <h1>Über uns</h1>
@@ -54,6 +54,6 @@
     </p>
   </main>
 
-  <script src="include/header.js"></script>
+  <script src="include/headerneu.js"></script>
 </body>
 </html>

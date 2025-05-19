@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Nunito', sans-serif;
-      background: url('/img/Background1.png') no-repeat center center fixed;
+      background: url('/bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
     }
