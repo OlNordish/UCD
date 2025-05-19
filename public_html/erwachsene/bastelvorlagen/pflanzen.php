@@ -80,31 +80,61 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>Pflanzen und Bäume</h1>
-  <p>Bastelideen und Lernmaterialien über das grüne Herz des Waldes.</p>
+  <h1>Tiere des Waldes</h1>
+  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
 
   <div class="bastelbox">
-    <img src="/img/baum-icon.png" alt="Baum Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Laubbaum-Puzzle</h3>
-      <p>Ein einfaches Ausschneide-Puzzle, um Baumteile kennenzulernen.</p>
-      <a href="/downloads/baum-puzzle.pdf" download>PDF herunterladen</a>
+      <h3>Herbstblätter zum Ausmalen</h3>
+      <p>Eine bunte Malvorlage mit verschiedenen Blattformen – lass den Herbst in deinen Lieblingsfarben erstrahlen!</p>
+      <a href="/downloads/herbstblaetter.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 
   <div class="bastelbox">
-    <img src="/img/blatt-icon.png" alt="Blatt Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Blätter-Sammelkarte</h3>
-      <p>Eine Sammelkarte zum Bestimmen und Aufkleben echter Blätter.</p>
-      <a href="/downloads/blaetterkarte.pdf" download>PDF herunterladen</a>
+      <h3>Blätterbuch selber machen</h3>
+      <p>Sammle, presse und entdecke die Blätter der Bäume – gestalte dein eigenes kleines Naturlexikon!</p>
+      <a href="/downloads/blaetterbuch.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Dein eigenes Wald-Memory</h3>
+      <p>Bastle dein persönliches Memory-Spiel mit Waldtieren und Pflanzen und spiele es mit Freunden und Familie!</p>
+      <a href="/downloads/waldmemory.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>VIER</h3>
+      <p>VIER</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>FÜNF</h3>
+      <p>FÜNF</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 </main>
 
-<script src="../../include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

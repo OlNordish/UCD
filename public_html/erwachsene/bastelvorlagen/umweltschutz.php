@@ -80,31 +80,61 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>Umweltschutz</h1>
-  <p>Projekte, die zeigen, wie wir gemeinsam die Natur schützen können.</p>
+  <h1>Tiere des Waldes</h1>
+  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
 
   <div class="bastelbox">
-    <img src="/img/recycling-icon.png" alt="Recycling Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Recycling-Memory</h3>
-      <p>Ein Memory-Spiel, bei dem recycelbare Materialien zugeordnet werden.</p>
-      <a href="/downloads/recycling-memory.pdf" download>PDF herunterladen</a>
+      <h3>Malvorlage zum Umweltschutz</h3>
+      <p>Male bunte Bilder, die zeigen, wie wir unsere Natur schützen können!</p>
+      <a href="/downloads/umweltschutz.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 
   <div class="bastelbox">
-    <img src="/img/energie-icon.png" alt="Energie Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Stromfresser finden</h3>
-      <p>Eine Checkliste für Kinder: Wo kann man im Alltag Energie sparen?</p>
-      <a href="/downloads/stromspar-check.pdf" download>PDF herunterladen</a>
+      <h3>Malvorlage zum Umweltschutz</h3>
+      <p>Gestalte tolle Bilder und lerne, wie wichtig der Schutz unserer Umwelt ist!</p>
+      <a href="/downloads/erde.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Malvorlage zum Recycling</h3>
+      <p>Male die Erde und Recycling-Symbole bunt aus – für mehr Umweltbewusstsein beim Malen!</p>
+      <a href="/downloads/recycling.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>VIER</h3>
+      <p>VIER</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>FÜNF</h3>
+      <p>FÜNF</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 </main>
 
-<script src="../../include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

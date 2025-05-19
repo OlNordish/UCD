@@ -77,29 +77,32 @@
   <p>Hier findest du spannende, lehrreiche und naturbezogene Hörspiel-Empfehlungen für Kindergruppen, Projekte oder ruhige Momente zu Hause.</p>
 
   <div class="media-box">
-    <h3>„Der Wald spricht“ – Abenteuer-Hörspiel</h3>
-    <p>Ein spannendes Hörspiel über Tiere und Geheimnisse im Wald. Perfekt für Kinder ab 5 Jahren.</p>
-    <a href="https://example.com/hoerspiel-wald" target="_blank">Jetzt anhören</a>
+    <h3>WAS IST WAS Junior Hörspiel-CD: "Im Wald" von Friederike Wilhelmi &amp; Luis-Max Anders</h3>
+    <p>Rätsele mit dem Hörspiel mit, es sollen zum Beispiel verschiedene Baumarten bestimmt werden.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1009060835" target="_blank">Jetzt anhören</a>
   </div>
 
   <div class="media-box">
-    <h3>„Kleine Füchse ganz groß“ – Naturpädagogik zum Lauschen</h3>
-    <p>Ein liebevoll gestaltetes Hörspiel über den Lebensraum Wald mit Hintergrundmusik und Geräuschen.</p>
-    <a href="https://example.com/kleine-fuechse" target="_blank">Anhören & herunterladen</a>
+    <h3>WAS IST WAS Hörspiel-CD: "Wilde Wälder / Lebendiger Boden" von Manfred Baur &amp; Kristiane Semar</h3>
+    <p>Erfahre, wie Boden entsteht, weshalb er verloren gehen kann und warum der Regenwurm ein guter Gärtner ist.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1036069846" target="_blank">Jetzt anhören</a>
   </div>
 
   <div class="media-box">
-    <h3>„Das geheime Baumhaus“ – Fantasie trifft Natur</h3>
-    <p>Für Grundschulkinder: Fantastische Geschichten, die auf echten Naturphänomenen basieren.</p>
-    <a href="https://example.com/baumhaus" target="_blank">Reinhören</a>
+    <h3>"Kleine Helden im Wald" von Matthias Meyer-Göllner</h3>
+    <p>Lerne am Abenteuer von Igel, Wildschwein und Kröte und einem Amselbaby die Tiere und Pflanzen des Waldes kennen.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1038147083" target="_blank">Jetzt anhören</a>
   </div>
-</main>
+	
+  <div class="media-box">
+    <h3>"Was hör ich da? Im Wald" von Jens-Uwe Bartholomäus</h3>
+    <p>Hören sich unsere Schritte auf dem Waldboden anders an als die eines Rehs oder eines Fuchses? Und wer kann eine schimpfende Amsel von einem rufenden Schwarzspecht unterscheiden? Finde es heraus!</p>
+    <a href="Hören sich unsere Schritte auf dem Waldboden anders an als die eines Rehs oder eines Fuchses? Und wer kann eine schimpfende Amsel von einem rufenden Schwarzspecht unterscheiden? Finde es heraus!" target="_blank">Jetzt anhören</a>
+  </div>
 </main>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
 	
-</body>
-</html>
 </body>
 </html>

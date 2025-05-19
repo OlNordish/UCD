@@ -96,15 +96,19 @@
   <div class="kachel-container">
     <a href="/erwachsene/buecher.php" class="kachel">
       <span>📖</span>
-      Bücher<br>für Kinder & Eltern
+      Bücher<br>für Kinder &amp; Eltern
     </a>
     <a href="/erwachsene/hoerspiele.php" class="kachel">
       <span>🎧</span>
-      Hörspiele<br>zum Lauschen & Lernen
+      Hörspiele<br>zum Lauschen &amp; Lernen
     </a>
     <a href="/erwachsene/videos.php" class="kachel">
       <span>🎬</span>
-      Videos & Filme<br>zum Wald entdecken
+      Videos &amp; Filme<br>zum Wald entdecken
+    </a>
+    <a href="/erwachsene/videos.php" class="kachel">
+      <span>🎬</span>
+      Spiele<br>für einen langen Nachmittag
     </a>
   </div>
 </main>

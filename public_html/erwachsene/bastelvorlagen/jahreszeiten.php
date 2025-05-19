@@ -117,50 +117,61 @@
 
 <body>
 
-  <!-- PHP-Header mit absolutem Serverpfad einbinden -->
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+<!-- Sidebar & Navigation -->
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
-  <main>
-    <h1>Jahreszeiten &amp; Wetter</h1>
-    <p>Ob Frühling, Sommer, Herbst oder Winter – hier finden Sie kreative Bastelideen für jede Jahreszeit und passendes Wetter, die Kinder das Jahr über begleiten.</p>
+<main>
+  <h1>Tiere des Waldes</h1>
+  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
 
-    <div class="bastelbox">
-      <img src="/img/fruehling-icon.png" alt="Frühling Icon" />
-      <div class="bastelbox-content">
-        <h3>Blumenwiese zum Ausmalen</h3>
-        <p>Eine fröhliche Frühlingsvorlage mit Blumen, Insekten und Sonne zum Ausmalen und Erzählen.</p>
-        <a href="/downloads/blumenwiese.pdf" download>PDF herunterladen</a>
-      </div>
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Jahreszeiten-Lernuhr zum Ausschneiden</h3>
+      <p>Bastle und male deine eigene Uhr, um spielerisch die vier Jahreszeiten zu lernen!</p>
+      <a href="/downloads/umweltschutz.pdf" download>PDF herunterladen</a>
     </div>
+  </div>
 
-    <div class="bastelbox">
-      <img src="/img/sommer-icon.png" alt="Sommer Icon" />
-      <div class="bastelbox-content">
-        <h3>Wetterrad – Sonne, Regen &amp; Co.</h3>
-        <p>Ein drehbares Bastelrad, das verschiedene Wetterlagen zeigt – ideal für Gespräche über das Wetter.</p>
-        <a href="/downloads/wetterrad.pdf" download>PDF herunterladen</a>
-      </div>
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Jahreszeitenbaum zum Anmalen und Basteln</h3>
+      <p>Gestalte deinen eigenen Baum und entdecke, wie sich die Jahreszeiten verändern!</p>
+      <a href="/downloads/erde.pdf" download>PDF herunterladen</a>
     </div>
-
-    <div class="bastelbox">
-      <img src="/img/herbst-icon.png" alt="Herbst Icon" />
-      <div class="bastelbox-content">
-        <h3>Laub-Igel basteln</h3>
-        <p>Ein süßer Igel mit echten oder ausgeschnittenen Blättern – perfekt für den Herbst.</p>
-        <a href="/downloads/laub-igel.pdf" download>PDF herunterladen</a>
-      </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Herbstdrachen zum Basteln</h3>
+      <p>Baue deinen eigenen Drachen und lass ihn im Herbstwind fliegen!</p>
+      <a href="/downloads/recycling.pdf" download>PDF herunterladen</a>
     </div>
+  </div>
 
-    <div class="bastelbox">
-      <img src="/img/winter-icon.png" alt="Winter Icon" />
-      <div class="bastelbox-content">
-        <h3>Schneekristalle falten</h3>
-        <p>Filigrane Schneeflocken aus Papier – eine schöne Bastelidee für kalte Wintertage.</p>
-        <a href="/downloads/schneekristalle.pdf" download>PDF herunterladen</a>
-      </div>
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Malvorlage zu den Jahreszeiten</h3>
+      <p>Male die bunten Szenen der vier Jahreszeiten aus und entdecke ihre Besonderheiten!</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
     </div>
-  </main>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Symbolbilder der Jahreszeiten</h3>
+      <p>Entdecke die typischen Motive für Frühling, Sommer, Herbst und Winter zum Ausmalen!</p>
+      <a href="/downloads/.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+</main>
 
-  <script src="../../include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

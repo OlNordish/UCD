@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Level 4</title>
+  <title>Level 1</title>
 
-  <!-- Navigation + Styles -->
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
+
+  <!-- CSS für Level -->
   <link rel="stylesheet" href="/kinder/spielen/level.css">
 </head>
+
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="waldszene">
@@ -65,6 +69,9 @@
     });
   });
 </script>
+
+<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

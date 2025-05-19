@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tiere des Waldes</title>
+  <title>Tiere</title>
 	<link rel="stylesheet" href="../../include/headerneu.css">
 
   <style>
@@ -80,31 +80,61 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
   <h1>Tiere des Waldes</h1>
-  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule & Co.</p>
+  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
 
   <div class="bastelbox">
-    <img src="/img/fuchs-icon.png" alt="Fuchs Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Fuchs-Maske zum Ausschneiden</h3>
-      <p>Eine schöne Bastelvorlage für eine Fuchsmaske mit Gummiband oder Stiel.</p>
-      <a href="/downloads/fuchsmaske.pdf" download>PDF herunterladen</a>
+      <h3>Origami-Fuchs falten</h3>
+      <p>Bastele den cleveren Waldbewohner aus nur einem Blatt Papier und einem Stift.</p>
+      <a href="/downloads/fuchs.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 
   <div class="bastelbox">
-    <img src="/img/eule-icon.png" alt="Eule Icon" />
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
     <div class="bastelbox-content">
-      <h3>Papierrolle-Eule</h3>
-      <p>Ein Bastelprojekt mit leeren Klopapierrollen – bunt, kreativ und kinderleicht.</p>
-      <a href="/downloads/eule-basteln.pdf" download>PDF herunterladen</a>
+      <h3>Kastanienfiguren basteln</h3>
+      <p>Gestalte Tiere und Fantasiewesen aus kleinen Waldschätzen.</p>
+      <a href="/downloads/kastanienfiguren.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Eule aus Pappteller basteln</h3>
+      <p>Deine eigene Wald-Eule – einfach, bunt und zum Aufhängen.</p>
+      <a href="/downloads/eule.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Waldtiere aus Klorollen</h3>
+      <p>Fuchs, Igel &amp; Eichhörnchen ganz einfach selber machen – mit Rollen, Papier &amp; Naturmaterialien</p>
+      <a href="/downloads/igel.pdf" download>PDF herunterladen</a>
+    </div>
+  </div>
+	
+  <div class="bastelbox">
+    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
+    <div class="bastelbox-content">
+      <h3>Fliegender Papier-Vogel zum Basteln</h3>
+      <p>Ein bunter Vogel aus Papier, der mit Wind sogar flattern kann – bastel dir deinen eigenen Himmelsfreund!</p>
+      <a href="/downloads/vogel.pdf" download>PDF herunterladen</a>
     </div>
   </div>
 </main>
 
-<script src="../../include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>

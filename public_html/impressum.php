@@ -2,11 +2,11 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Impressum – Wald entdecken</title>
+  <title>Impressum</title>
 
-  <link rel="stylesheet" href="include/headerneu.css">
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
     body {
@@ -36,13 +36,16 @@
   </style>
 </head>
 <body>
-
+	
+  <!-- Sidebar & Navigation -->
   <?php include("include/headerneu.php"); ?>
 
   <main>
     <h1>Impressum</h1>
   </main>
 
-  <script src="include/headerneu.js"></script>
+<!-- Sidebar & Navigation -->
+<script src="/include/headerneu.js"></script>
+	
 </body>
 </html>
