@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Entdecken</title>
-  
-  <!-- Sidebar & Navigation -->
+
   <link rel="stylesheet" href="/include/headerneu.css">
-  
+
   <style>
     body {
       margin: 0;
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Fredoka', sans-serif;
       background: url("../bilder/bg1.svg") no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
@@ -55,13 +54,48 @@
     }
 
     #sprechblase {
-      background: #ffffaa;
-      padding: 10px;
-      border-radius: 10px;
-      width: 300px;
-      font-size: 16px;
-      color: #000;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      background: #fff9c4;
+      padding: 20px 24px;
+      border-radius: 20px;
+      width: 360px;
+      height: 160px;
+      font-size: 26px;
+      color: #333;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      line-height: 1.5;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #textfeld {
+      margin: 0;
+    }
+
+    .pfeile {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .pfeil {
+      background: #ffeb3b;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .pfeil:disabled {
+      opacity: 0.4;
+      cursor: default;
     }
 
     .avatar-tier {
@@ -84,105 +118,46 @@
     #eule svg { transform: scale(0.7); }
     #fuchs-avatar svg { transform: scale(1.2); }
     #kaninchen svg { transform: scale(0.8); }
-
-    #audio-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    #play-button {
-      padding: 8px 14px;
-      background-color: #66a832;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    #play-button:hover {
-      background-color: #4e8a25;
-    }
-
-    #volume-slider {
-      width: 100px;
-      appearance: none;
-      height: 6px;
-      background: #ccc;
-      border-radius: 4px;
-      outline: none;
-      transition: background 0.3s;
-    }
-
-    #volume-slider::-webkit-slider-thumb {
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #66a832;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    }
-
-    #volume-slider::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #66a832;
-      cursor: pointer;
-      border: none;
-    }
   </style>
 </head>
 <body>
 
-<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="waldszene">
+  <!-- Tiere -->
   <div class="tier" id="eichhoernchen" style="top: 22%; left: 5%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/eichhoernchen.svg'); ?>
   </div>
-
   <div class="tier" id="maus" style="top: 90%; left: 8%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/maus.svg'); ?>
   </div>
-
   <div class="tier" id="eule" style="top: 8%; left: 96%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/eule.svg'); ?>
   </div>
-
   <div class="tier" id="specht" style="top: 14%; left: 53%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/specht.svg'); ?>
   </div>
-
   <div class="tier" id="kaninchen" style="top: 67%; left: 50%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/kaninchen.svg'); ?>
   </div>
-
   <div class="tier" id="reh" style="top: 50%; left: 40%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/reh.svg'); ?>
   </div>
-
   <div class="tier" id="wolf" style="top: 55%; left: 85%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/wolf.svg'); ?>
   </div>
-
   <div class="tier" id="kaefer" style="top: 60%; left: 2%;">
     <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/kaefer.svg'); ?>
   </div>
 
+  <!-- Sprechblase -->
   <div id="sprechblase-container">
     <div id="sprechblase">
       <p id="textfeld">Klicke auf ein Tier, um mit ihm zu reden!</p>
-      <div id="audio-controls">
-        <button id="play-button">🔊 Abspielen</button>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1" />
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
       </div>
     </div>
     <div class="avatar-tier" id="fuchs-avatar">
@@ -193,101 +168,115 @@
 
 <script>
   const tierTexte = {
-    eichhoernchen: ["Hallo, ich bin das Eichhörnchen! Ich liebe Nüsse.", "eichhoernchen.mp3"],
-    maus: ["Ich bin die Maus – vorsichtig und flink!", "maus.mp3"],
-    eule: ["Ich bin die Eule. Nachts bin ich unterwegs!", "eule.mp3"],
-    specht: ["Ich bin der Specht – ich klopfe gern.", "specht.mp3"],
-    fuchs: ["Hallo! Ich bin der schlaue Fuchs.", "fuchs.mp3"],
-    kaninchen: ["Ich bin das Kaninchen. Immer auf Zack!", "kaninchen.mp3"],
-    reh: ["Ich bin das Reh und liebe junge Blätter.", "reh.mp3"],
-    wolf: ["Ich bin der Wolf – auuu!", "wolf.mp3"],
-    kaefer: ["Ich bin der Borkenkäfer. Die Baumrinde schmeckt super!", "kaefer.mp3"]
+    eichhoernchen: [
+      "Hallo, ich bin das Eichhörnchen!",
+      "Ich liebe es, Nüsse, Samen und Beeren zu futtern."
+    ],
+    maus: [
+      "Pieps! Ich bin die kleine Maus.",
+      "Am liebsten knabbere ich an Körnern und Samen.",
+      "Aber ich muss gut aufpassen – der Fuchs und die Eule würden mich sonst schnell fressen!"
+    ],
+    eule: [
+      "Huhuu! Ich bin die Eule.",
+      "Nachts jage ich Mäuse, Frösche und kleine Vögel.",
+      "Mein bester Freund? Die dunkle Nacht – dann bin ich am stärksten!"
+    ],
+    specht: [
+      "Klopf, klopf – ich bin der Specht!",
+      "Ich hacke mit meinem Schnabel Löcher in Bäume, um Insekten zu fressen."
+    ],
+    fuchs: [
+      "Hallo! Ich bin der schlaue Fuchs.",
+      "Ich esse Mäuse, Kaninchen und manchmal auch Beeren.",
+      "Die Maus ist zwar lecker – aber ich respektiere auch meine Nachbarn im Wald!"
+    ],
+    kaninchen: [
+      "Hopp, hopp! Ich bin das flinke Kaninchen.",
+      "Ich knabbere gerne an jungen Pflanzen und Kräutern.",
+      "Mein größter Feind ist der Fuchs – deshalb bleibe ich immer wachsam!"
+    ],
+    reh: [
+      "Grüß dich! Ich bin das Reh.",
+      "Am liebsten fresse ich frische Triebe und junge Blätter.",
+      "Ich passe gut auf die kleinen Bäumchen auf – aber wenn es zu wenig gibt, wird es schwer."
+    ],
+    wolf: [
+      "Auuu! Ich bin der Wolf.",
+      "Ich jage Kaninchen und Rehe, damit der Wald im Gleichgewicht bleibt.",
+      "Ich bin wichtig für den Wald – auch wenn viele mich fürchten."
+    ],
+    kaefer: [
+      "Ich bin der Borkenkäfer.",
+      "Die Baumrinde schmeckt super!",
+      "Aber Vorsicht – zu viele von uns schaden dem Wald."
+    ]
   };
 
-  let currentAudio = null;
+  let aktuellerIndex = 0;
+  let aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
 
-  const playButton = document.getElementById('play-button');
-  const volumeSlider = document.getElementById('volume-slider');
-  const audioControls = document.getElementById('audio-controls');
-  const textfeld = document.getElementById('textfeld');
-  const fuchsAvatar = document.getElementById('fuchs-avatar');
+  const textfeld = document.getElementById("textfeld");
+  const nextBtn = document.getElementById("next");
+  const prevBtn = document.getElementById("prev");
+  const fuchsAvatar = document.getElementById("fuchs-avatar");
 
-  // Tier-Klick
+  function zeigeText(index) {
+    textfeld.innerText = aktuellerText[index];
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index >= aktuellerText.length - 1;
+  }
+
+  function zeigeTierText(tierId) {
+    aktuellerText = tierTexte[tierId];
+    aktuellerIndex = 0;
+    zeigeText(aktuellerIndex);
+    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
+    document.getElementById(tierId)?.classList.add("active");
+  }
+
   document.querySelectorAll(".tier").forEach(tier => {
     tier.addEventListener("click", (event) => {
       event.stopPropagation();
-
-      const [text, audioFile] = tierTexte[tier.id];
-      textfeld.innerText = text;
-
-      if (currentAudio) {
-        currentAudio.pause();
-        currentAudio = null;
-      }
-
-      currentAudio = new Audio(`/audio/${audioFile}`);
-      currentAudio.volume = volumeSlider.value;
-
-      audioControls.style.display = "flex";
-
-      document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
-      tier.classList.add("active");
+      zeigeTierText(tier.id);
     });
   });
 
-  // Play
-  playButton.addEventListener("click", () => {
-    if (currentAudio) {
-      currentAudio.currentTime = 0;
-      currentAudio.play();
-    }
-  });
-
-  // Volume
-  volumeSlider.addEventListener("input", () => {
-    if (currentAudio) {
-      currentAudio.volume = volumeSlider.value;
-    }
-  });
-
-  // Hintergrund-Klick → Reset
-  document.getElementById("waldszene").addEventListener("click", () => {
-    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
-    textfeld.innerText = "Klicke auf ein Tier, um mit ihm zu reden!";
-    if (currentAudio) {
-      currentAudio.pause();
-      currentAudio = null;
-    }
-    audioControls.style.display = "none";
-  });
-
-  // Fuchs bei Start
-  window.addEventListener("DOMContentLoaded", () => {
-    zeigeFuchsDialog();
-  });
-
-  // Fuchs bei Klick
   fuchsAvatar.addEventListener("click", (event) => {
     event.stopPropagation();
-    zeigeFuchsDialog();
+    zeigeTierText("fuchs");
+    fuchsAvatar.classList.add("active");
   });
 
-  // Fuchs-Funktion
-  function zeigeFuchsDialog() {
-    textfeld.innerText = "Hallo! Ich bin der schlaue Fuchs.";
-    audioControls.style.display = "flex";
-
-    if (currentAudio) currentAudio.pause();
-    currentAudio = new Audio("/audio/fuchs.mp3");
-    currentAudio.volume = volumeSlider.value;
-
-    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
-    fuchsAvatar.classList.add("active");
+  nextBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  if (aktuellerIndex < aktuellerText.length - 1) {
+    aktuellerIndex++;
+    zeigeText(aktuellerIndex);
   }
+});
+
+prevBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
+  if (aktuellerIndex > 0) {
+    aktuellerIndex--;
+    zeigeText(aktuellerIndex);
+  }
+
+  });
+
+  document.getElementById("waldszene").addEventListener("click", () => {
+    aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
+    aktuellerIndex = 0;
+    zeigeText(aktuellerIndex);
+    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    zeigeTierText("fuchs");
+  });
 </script>
 
-<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
 </body>
 </html>
