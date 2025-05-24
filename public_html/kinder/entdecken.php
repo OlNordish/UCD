@@ -4,71 +4,57 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Entdecken</title>
-
-  <link rel="stylesheet" href="/include/headerneu.css">
+  <link rel="stylesheet" href="/include/headerneu.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     body {
       margin: 0;
       font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Fredoka', sans-serif;
-      background: url("../bilder/bg1.svg") no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
+      background-color: #22724E;
+      color: #fff;
     }
 
     #waldszene {
-      position: relative;
       width: 100%;
-      height: calc(100vh - 60px);
-      overflow: hidden;
+      max-height: calc(100vh - 60px);
+      position: relative;
     }
 
-    .tier {
-      position: absolute;
-      width: 80px;
-      height: 80px;
-      font-size: 2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
-    .tier.active,
-    .avatar-tier.active {
-      filter: drop-shadow(0 0 10px yellow);
-      transform: scale(1.1);
-      z-index: 99;
-      transition: all 0.3s ease;
-    }
-
+    /* Sprechblase über der Szene */
     #sprechblase-container {
       position: absolute;
-      bottom: 20px;
-      right: 20px;
+      bottom: 2%;
+      right: 15%;
       display: flex;
       align-items: flex-end;
       gap: 10px;
       z-index: 100;
+      pointer-events: none; /* verhindert versehentliche Klickblockaden */
     }
 
     #sprechblase {
-      background: #fff9c4;
+      background: rgba(255, 249, 196, 0.5); /* sanft gelblich-transparent */
+      backdrop-filter: blur(12px);         /* Milchglas-Unschärfe */
+      -webkit-backdrop-filter: blur(12px); /* Safari Support */
       padding: 20px 24px;
       border-radius: 20px;
       width: 360px;
       height: 160px;
-      font-size: 26px;
-      color: #333;
+      font-size: 28px;
+      color: #222;
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
       line-height: 1.5;
       overflow: hidden;
       position: relative;
-    }
-
-    #textfeld {
-      margin: 0;
+      font-family: 'Baloo 2', sans-serif;
+      pointer-events: auto; /* erlaubt wieder Klicks auf die Buttons */
     }
 
     .pfeile {
@@ -98,58 +84,48 @@
       cursor: default;
     }
 
-    .avatar-tier {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      font-size: 2rem;
-      border-radius: 10px;
-      cursor: pointer;
+    g.active {
+      filter: drop-shadow(0 0 10px yellow);
+      transform: scale(1.1);
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.3s ease;
     }
 
-    #wolf svg { transform: scale(2.5); }
-    #kaefer svg { transform: scale(0.3); }
-    #reh svg { transform: scale(1.6); }
-    #specht svg { transform: scale(0.5); }
-    #eule svg { transform: scale(0.7); }
-    #fuchs-avatar svg { transform: scale(1.2); }
-    #kaninchen svg { transform: scale(0.8); }
+    #counter {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 20px;
+      z-index: 200;
+      pointer-events: none;
+    }
+
+    @keyframes wackeln {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(2deg); }
+      75% { transform: rotate(-2deg); }
+    }
+
+    g.wackel {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: wackeln 0.6s ease;
+    }
   </style>
 </head>
 <body>
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
-
 <div id="waldszene">
-  <!-- Tiere -->
-  <div class="tier" id="eichhoernchen" style="top: 22%; left: 5%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/eichhoernchen.svg'); ?>
-  </div>
-  <div class="tier" id="maus" style="top: 90%; left: 8%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/maus.svg'); ?>
-  </div>
-  <div class="tier" id="eule" style="top: 8%; left: 96%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/eule.svg'); ?>
-  </div>
-  <div class="tier" id="specht" style="top: 14%; left: 53%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/specht.svg'); ?>
-  </div>
-  <div class="tier" id="kaninchen" style="top: 67%; left: 50%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/kaninchen.svg'); ?>
-  </div>
-  <div class="tier" id="reh" style="top: 50%; left: 40%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/reh.svg'); ?>
-  </div>
-  <div class="tier" id="wolf" style="top: 55%; left: 85%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/wolf.svg'); ?>
-  </div>
-  <div class="tier" id="kaefer" style="top: 60%; left: 2%;">
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/kaefer.svg'); ?>
-  </div>
+  <div id="counter">0 / 9 Tiere entdeckt</div>
+
+  <!-- VG-Szene inline -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/entdecken.svg'); ?>
 
   <!-- Sprechblase -->
   <div id="sprechblase-container">
@@ -160,121 +136,126 @@
         <button class="pfeil" id="next" disabled>&rarr;</button>
       </div>
     </div>
-    <div class="avatar-tier" id="fuchs-avatar">
-      <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/fuchs.svg'); ?>
-    </div>
   </div>
 </div>
 
 <script>
-  const tierTexte = {
-    eichhoernchen: [
-      "Hallo, ich bin das Eichhörnchen!",
-      "Ich liebe es, Nüsse, Samen und Beeren zu futtern."
-    ],
-    maus: [
-      "Pieps! Ich bin die kleine Maus.",
-      "Am liebsten knabbere ich an Körnern und Samen.",
-      "Aber ich muss gut aufpassen – der Fuchs und die Eule würden mich sonst schnell fressen!"
-    ],
-    eule: [
-      "Huhuu! Ich bin die Eule.",
-      "Nachts jage ich Mäuse, Frösche und kleine Vögel.",
-      "Mein bester Freund? Die dunkle Nacht – dann bin ich am stärksten!"
-    ],
-    specht: [
-      "Klopf, klopf – ich bin der Specht!",
-      "Ich hacke mit meinem Schnabel Löcher in Bäume, um Insekten zu fressen."
-    ],
-    fuchs: [
-      "Hallo! Ich bin der schlaue Fuchs.",
-      "Ich esse Mäuse, Kaninchen und manchmal auch Beeren.",
-      "Die Maus ist zwar lecker – aber ich respektiere auch meine Nachbarn im Wald!"
-    ],
-    kaninchen: [
-      "Hopp, hopp! Ich bin das flinke Kaninchen.",
-      "Ich knabbere gerne an jungen Pflanzen und Kräutern.",
-      "Mein größter Feind ist der Fuchs – deshalb bleibe ich immer wachsam!"
-    ],
-    reh: [
-      "Grüß dich! Ich bin das Reh.",
-      "Am liebsten fresse ich frische Triebe und junge Blätter.",
-      "Ich passe gut auf die kleinen Bäumchen auf – aber wenn es zu wenig gibt, wird es schwer."
-    ],
-    wolf: [
-      "Auuu! Ich bin der Wolf.",
-      "Ich jage Kaninchen und Rehe, damit der Wald im Gleichgewicht bleibt.",
-      "Ich bin wichtig für den Wald – auch wenn viele mich fürchten."
-    ],
-    kaefer: [
-      "Ich bin der Borkenkäfer.",
-      "Die Baumrinde schmeckt super!",
-      "Aber Vorsicht – zu viele von uns schaden dem Wald."
-    ]
-  };
+const tierTexte = {
+  wolf: ["Auuu! Ich bin der Wolf.", "Ich jage Kaninchen und Rehe, damit der Wald im Gleichgewicht bleibt.", "Ich bin wichtig für den Wald – auch wenn viele mich fürchten."],
+  specht: ["Klopf, klopf – ich bin der Specht!", "Ich hacke mit meinem Schnabel Löcher in Bäume, um Insekten zu fressen."],
+  reh: ["Grüß dich! Ich bin das Reh.", "Am liebsten fresse ich frische Triebe und junge Blätter.", "Ich passe gut auf die kleinen Bäumchen auf...", "aber wenn es zu wenig gibt, wird es schwer."],
+  maus: ["Pieps! Ich bin die kleine Maus.", "Am liebsten knabbere ich an Körnern und Samen.", "Aber ich muss gut aufpassen...", "der Fuchs und die Eule würden mich sonst schnell fressen!"],
+  kaninchen: ["Hopp, hopp! Ich bin das flinke Kaninchen.", "Ich knabbere gerne an jungen Pflanzen und Kräutern.", "Mein größter Feind ist der Fuchs – deshalb bleibe ich immer wachsam!"],
+  eule: ["Huhuu! Ich bin die Eule.", "Nachts jage ich Mäuse, Frösche und kleine Vögel.", "Mein bester Freund? Die dunkle Nacht – dann bin ich am stärksten!"],
+  fuchs: ["Hallo! Ich bin der schlaue Fuchs.", "Ich esse Mäuse, Kaninchen und manchmal auch Beeren.", "Die Maus ist zwar lecker – aber ich respektiere auch meine Nachbarn im Wald!"],
+  eichhoernchen: ["Hallo, ich bin das Eichhörnchen!", "Ich liebe es, Nüsse, Samen und Beeren zu futtern."],
+  kaefer: ["Ich bin der Borkenkäfer.", "Die Baumrinde schmeckt super!", "Aber Vorsicht – zu viele von uns schaden dem Wald."]
+};
 
-  let aktuellerIndex = 0;
-  let aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
+let aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
+let aktuellerIndex = 0;
+const bereitsGesehen = new Set();
+const textfeld = document.getElementById("textfeld");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const counterBox = document.getElementById("counter");
 
-  const textfeld = document.getElementById("textfeld");
-  const nextBtn = document.getElementById("next");
-  const prevBtn = document.getElementById("prev");
-  const fuchsAvatar = document.getElementById("fuchs-avatar");
+const fuchs = document.getElementById("fuchs");
+const fuchsHappy = document.getElementById("fuchs_happy");
+if (fuchsHappy) fuchsHappy.style.display = "none";
 
-  function zeigeText(index) {
-    textfeld.innerText = aktuellerText[index];
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index >= aktuellerText.length - 1;
+function zeigeText(index) {
+  textfeld.innerHTML = aktuellerText[index];
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index >= aktuellerText.length - 1;
+}
+
+function zeigeTierText(tierId) {
+  aktuellerText = tierTexte[tierId] || ["🤷‍♂️ Kein Text gefunden."];
+  aktuellerIndex = 0;
+  zeigeText(aktuellerIndex);
+
+  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+  const el = document.getElementById(tierId);
+  if (el) el.classList.add("active");
+
+  if (!bereitsGesehen.has(tierId)) {
+    bereitsGesehen.add(tierId);
+    counterBox.innerText = `${bereitsGesehen.size} / 9 Tiere entdeckt`;
   }
 
-  function zeigeTierText(tierId) {
-    aktuellerText = tierTexte[tierId];
-    aktuellerIndex = 0;
-    zeigeText(aktuellerIndex);
-    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
-    document.getElementById(tierId)?.classList.add("active");
-  }
+  // kein automatischer Umschalttext hier – das machen wir später
+}
 
-  document.querySelectorAll(".tier").forEach(tier => {
-    tier.addEventListener("click", (event) => {
-      event.stopPropagation();
-      zeigeTierText(tier.id);
-    });
-  });
-
-  fuchsAvatar.addEventListener("click", (event) => {
-    event.stopPropagation();
-    zeigeTierText("fuchs");
-    fuchsAvatar.classList.add("active");
-  });
-
-  nextBtn.addEventListener("click", (event) => {
-  event.stopPropagation();
+nextBtn.addEventListener("click", () => {
   if (aktuellerIndex < aktuellerText.length - 1) {
     aktuellerIndex++;
     zeigeText(aktuellerIndex);
   }
 });
 
-prevBtn.addEventListener("click", (event) => {
-  event.stopPropagation();
+prevBtn.addEventListener("click", () => {
   if (aktuellerIndex > 0) {
     aktuellerIndex--;
     zeigeText(aktuellerIndex);
   }
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+  Object.keys(tierTexte).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.cursor = "pointer";
+      el.addEventListener("click", e => {
+        e.stopPropagation();
+        zeigeTierText(id);
+      });
+    }
   });
 
-  document.getElementById("waldszene").addEventListener("click", () => {
-    aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
-    aktuellerIndex = 0;
-    zeigeText(aktuellerIndex);
-    document.querySelectorAll(".tier, .avatar-tier").forEach(t => t.classList.remove("active"));
-  });
+  aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
+  aktuellerIndex = 0;
+  zeigeText(0);
+});
 
-  window.addEventListener("DOMContentLoaded", () => {
-    zeigeTierText("fuchs");
-  });
+document.getElementById("waldszene").addEventListener("click", (event) => {
+  const klickAufTier = event.target.closest("g");
+  const klickAufSprechblase = event.target.closest("#sprechblase-container");
+
+  if (!klickAufTier && !klickAufSprechblase) {
+    document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+
+    if (bereitsGesehen.size === 9) {
+      aktuellerText = [
+        "Du hast alle Tiere kennengelernt!",
+        "Möchtest du mir helfen, den Wald aufzuräumen?",
+        '<a href="aufraeumen.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, ich helfe dir!</a>'
+      ];
+      aktuellerIndex = 0;
+      zeigeText(aktuellerIndex);
+
+if (fuchs && fuchsHappy) {
+  fuchs.style.display = "none";
+  fuchsHappy.style.display = "inline";
+
+  // alle anderen Tiere deselektieren
+  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+
+  // happy Fuchs hervorheben
+  fuchsHappy.classList.add("active", "wackel");
+
+  setTimeout(() => {
+    fuchsHappy.classList.remove("wackel");
+  }, 600);
+}
+
+    } else {
+      aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
+      aktuellerIndex = 0;
+      zeigeText(aktuellerIndex);
+    }
+  }
+});
 </script>
 
 <script src="/include/headerneu.js"></script>
