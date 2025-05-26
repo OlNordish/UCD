@@ -102,16 +102,16 @@
       z-index: 200;
       pointer-events: none;
     }
-	  @keyframes pulse {
-  0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
-  50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
-  100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
-}
 
-#counter.pulse {
-  animation: pulse 0.5s ease;
-}
+    @keyframes pulse {
+      0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+      50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
+      100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+    }
 
+    #counter.pulse {
+      animation: pulse 0.5s ease;
+    }
 
     @keyframes wackeln {
       0%, 100% { transform: rotate(0deg); }
@@ -124,6 +124,26 @@
       transform-origin: center;
       animation: wackeln 0.6s ease;
     }
+
+    #zurueck-btn {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+      z-index: 200;
+      pointer-events: auto;
+      transition: background 0.3s ease;
+    }
+
+    #zurueck-btn:hover {
+      background: rgba(255,255,255,0.35);
+    }
   </style>
 </head>
 <body>
@@ -132,8 +152,8 @@
 <div id="waldszene">
   <div id="counter">0 / 3 Dinge entdeckt</div>
 
-  <!-- Level 1 SVG mit IDs: maeuse, eicheln, samen, fuchs, fuchs_happy -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level1.svg'); ?>
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
@@ -154,19 +174,19 @@ const counterBox = document.getElementById("counter");
 
 const veränderungstexte = {
   maeuse: [
-    "Mehr Mäuse unterwegs.",
-    "Sie finden viele Eicheln, die sonst eingesammelt würden.",
-    "Die Samen werden gefressen."
+    "Viel mehr Mäuse hier im Wald!",
+    "Sie finden viele Eicheln, die sonst eingesammelt werden.",
+    "Die Samen der Bäume werden alle gefressen."
   ],
   eicheln: [
     "Überall liegen Eicheln herum.",
-    "Niemand sammelt sie ein – das ist ungewöhnlich.",
-    "Wachsen daraus neue Bäume?"
+    "Keiner gräbt sie ein – wer hat das sonst gemacht?",
+    "Sie bleiben liegen, aber nichts wächst."
   ],
   samen: [
     "Weniger junge Bäumchen!",
-    "Die Eicheln bleiben liegen, aber nichts wächst.",
-    "Fehlt da nicht jemand?"
+    "Die vielen Mäuse fressen die Samen.",
+    "Wie soll jetzt noch etwas wachsen?"
   ]
 };
 
@@ -181,7 +201,6 @@ function zeigeText(index) {
   prevBtn.disabled = index === 0;
   nextBtn.disabled = index >= aktuellerText.length - 1;
 
-  // Wenn letzter Text einer Veränderung fertig gelesen ist UND 3 entdeckt wurden → Zusammenfassung
   if (index === aktuellerText.length - 1 && bereitZurZusammenfassung) {
     bereitZurZusammenfassung = false;
     setTimeout(() => zeigeZusammenfassung(), 300);
@@ -192,25 +211,20 @@ function zeigeVeränderung(id) {
   aktuellerText = veränderungstexte[id];
   aktuellerIndex = 0;
   zeigeText(0);
-
   letzterVeränderungsId = id;
 
   document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
   const el = document.getElementById(id);
   if (el) el.classList.add("active");
 
+  if (!entdeckte.has(id)) {
+    entdeckte.add(id);
+    counterBox.innerText = `${entdeckte.size} / 3 Dinge entdeckt`;
+    counterBox.classList.remove("pulse");
+    void counterBox.offsetWidth;
+    counterBox.classList.add("pulse");
+  }
 
-if (!entdeckte.has(id)) {
-  entdeckte.add(id);
-  counterBox.innerText = `${entdeckte.size} / 3 Dinge entdeckt`;
-
-  // Trigger Animation
-  counterBox.classList.remove("pulse"); // reset
-  void counterBox.offsetWidth; // force reflow
-  counterBox.classList.add("pulse");
-}
-
-  // Wenn alle entdeckt, warte bis Text zu Ende gelesen → danach Zusammenfassung
   if (entdeckte.size === 3) {
     bereitZurZusammenfassung = true;
   }
@@ -221,13 +235,14 @@ function zeigeZusammenfassung() {
     "Du hast es herausgefunden!",
     "Weil das Eichhörnchen fehlt, bleiben die Eicheln liegen.",
     "Die Mäuse fressen sie, aber es wachsen keine neuen Bäume mehr.",
-    "Willst du weiter ins nächste Level?",
-    '<a href="level2.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, weiter!</a>'
+    "Hilfst du mir weiter im nächsten Level?",
+    '<a href="level2.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, weiter!</a><br><a href="/kinder/spielen.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ccc;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Zurück zur Übersicht</a>'
   ];
   aktuellerIndex = 0;
   zeigeText(0);
 
-  // happy Fuchs zeigen
+  localStorage.setItem("level1done", "true");
+
   const fuchs = document.getElementById("fuchs");
   const fuchsHappy = document.getElementById("fuchs_happy");
   if (fuchs && fuchsHappy) {
@@ -279,9 +294,15 @@ document.getElementById("waldszene").addEventListener("click", (e) => {
 
   if (!aufElement && !aufBlase) {
     document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
-    aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
-    aktuellerIndex = 0;
-    zeigeText(0);
+
+    if (entdeckte.size === 3 && bereitZurZusammenfassung) {
+      bereitZurZusammenfassung = false;
+      zeigeZusammenfassung();
+    } else {
+      aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
+      aktuellerIndex = 0;
+      zeigeText(0);
+    }
   }
 });
 </script>

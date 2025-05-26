@@ -101,11 +101,16 @@
       font-size: 20px;
       z-index: 200;
       pointer-events: none;
-      transition: transform 0.3s ease;
     }
 
-    #counter.puls {
-      transform: scale(1.2);
+    @keyframes pulse {
+      0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+      50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
+      100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+    }
+
+    #counter.pulse {
+      animation: pulse 0.5s ease;
     }
 
     @keyframes wackeln {
@@ -119,6 +124,26 @@
       transform-origin: center;
       animation: wackeln 0.6s ease;
     }
+
+    #zurueck-btn {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 20px;
+      color: white;
+      text-decoration: none;
+      z-index: 200;
+      pointer-events: auto;
+      transition: background 0.3s ease;
+    }
+
+    #zurueck-btn:hover {
+      background: rgba(255,255,255,0.35);
+    }
   </style>
 </head>
 <body>
@@ -126,8 +151,8 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 <div id="waldszene">
   <div id="counter">0 / 3 Dinge entdeckt</div>
-
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level2.svg'); ?>
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
@@ -145,12 +170,6 @@ const textfeld = document.getElementById("textfeld");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const counterBox = document.getElementById("counter");
-
-const entdeckte = new Set();
-let aktuellerText = ["Oh nein! Die Mäuse sind weg – was passiert jetzt im Wald?"];
-let aktuellerIndex = 0;
-let letzteID = null;
-let abschlusstextGeplant = false;
 
 const veränderungstexte = {
   fuchs_sad: [
@@ -170,56 +189,89 @@ const veränderungstexte = {
   ]
 };
 
+let aktuellerText = ["Oh nein! Die Mäuse sind weg – was passiert jetzt im Wald?"];
+let aktuellerIndex = 0;
+const entdeckte = new Set();
+let letzterVeränderungsId = null;
+let bereitZurZusammenfassung = false;
+
 function zeigeText(index) {
   textfeld.innerHTML = aktuellerText[index];
   prevBtn.disabled = index === 0;
   nextBtn.disabled = index >= aktuellerText.length - 1;
+
+  if (index === aktuellerText.length - 1 && bereitZurZusammenfassung) {
+    bereitZurZusammenfassung = false;
+    setTimeout(() => zeigeZusammenfassung(), 300);
+  }
 }
 
 function zeigeVeränderung(id) {
   aktuellerText = veränderungstexte[id];
   aktuellerIndex = 0;
   zeigeText(0);
+  letzterVeränderungsId = id;
 
   document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
   const el = document.getElementById(id);
   if (el) el.classList.add("active");
 
-  letzteID = id;
-
   if (!entdeckte.has(id)) {
     entdeckte.add(id);
     counterBox.innerText = `${entdeckte.size} / 3 Dinge entdeckt`;
-    counterBox.classList.add("puls");
-    setTimeout(() => counterBox.classList.remove("puls"), 300);
+    counterBox.classList.remove("pulse");
+    void counterBox.offsetWidth;
+    counterBox.classList.add("pulse");
   }
 
   if (entdeckte.size === 3) {
-    abschlusstextGeplant = true;
+    bereitZurZusammenfassung = true;
   }
 }
 
-function zeigeAbschluss() {
+function zeigeZusammenfassung() {
   aktuellerText = [
     "Super, du hast alle Veränderungen entdeckt!",
     "Die Mäuse fehlen – dadurch gibt es zu viele Samen und leere Mägen.",
     "Das stört viele Tiere im Wald.",
-    '<a href="level3.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Weiter</a>'
+    '<a href="level3.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Weiter</a><br><a href="/kinder/spielen.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ccc;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Zurück zur Übersicht</a>'
   ];
   aktuellerIndex = 0;
   zeigeText(0);
+
+  localStorage.setItem("level2done", "true");
 
   const fuchs = document.getElementById("fuchs");
   const fuchsHappy = document.getElementById("fuchs_happy");
   if (fuchs && fuchsHappy) {
     fuchs.style.display = "none";
     fuchsHappy.style.display = "inline";
+    document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
     fuchsHappy.classList.add("active", "wackel");
     setTimeout(() => fuchsHappy.classList.remove("wackel"), 600);
   }
 }
 
+nextBtn.addEventListener("click", () => {
+  if (aktuellerIndex < aktuellerText.length - 1) {
+    aktuellerIndex++;
+    zeigeText(aktuellerIndex);
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (aktuellerIndex > 0) {
+    aktuellerIndex--;
+    zeigeText(aktuellerIndex);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+  const fuchs = document.getElementById("fuchs");
+  const fuchsHappy = document.getElementById("fuchs_happy");
+  if (fuchs) fuchs.style.display = "inline";
+  if (fuchsHappy) fuchsHappy.style.display = "none";
+
   ["fuchs_sad", "junge_baeume", "eule_sad"].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
@@ -234,36 +286,20 @@ document.addEventListener("DOMContentLoaded", () => {
   zeigeText(0);
 });
 
-nextBtn.addEventListener("click", () => {
-  if (aktuellerIndex < aktuellerText.length - 1) {
-    aktuellerIndex++;
-    zeigeText(aktuellerIndex);
-  } else if (abschlusstextGeplant) {
-    abschlusstextGeplant = false;
-    zeigeAbschluss();
-  }
-});
-
-prevBtn.addEventListener("click", () => {
-  if (aktuellerIndex > 0) {
-    aktuellerIndex--;
-    zeigeText(aktuellerIndex);
-  }
-});
-
 document.getElementById("waldszene").addEventListener("click", (e) => {
   const aufElement = e.target.closest("g");
   const aufBlase = e.target.closest("#sprechblase-container");
 
   if (!aufElement && !aufBlase) {
     document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
-    aktuellerText = ["Oh nein! Die Mäuse sind weg – was passiert jetzt im Wald?"];
-    aktuellerIndex = 0;
-    zeigeText(0);
 
-    if (entdeckte.size === 3 && abschlusstextGeplant) {
-      abschlusstextGeplant = false;
-      zeigeAbschluss();
+    if (entdeckte.size === 3 && bereitZurZusammenfassung) {
+      bereitZurZusammenfassung = false;
+      zeigeZusammenfassung();
+    } else {
+      aktuellerText = ["Oh nein! Die Mäuse sind weg – was passiert jetzt im Wald?"];
+      aktuellerIndex = 0;
+      zeigeText(0);
     }
   }
 });
