@@ -1,7 +1,43 @@
 <!-- Navigation -->
 <nav class="header-nav">
-  <div class="burger" onclick="toggleSidebar()">☰</div>
-  <a href="/index.php" class="logo">🌲 Waldspiel</a>
+  <div class="nav-left">
+    <div class="burger" onclick="toggleSidebar()">x</div>
+    <div class="breadcrumb">
+      <?php
+        $path = $_SERVER['REQUEST_URI'];
+        $pathParts = array_filter(explode('/', $path));
+
+        $titles = [
+          'erwachsene' => 'Elternbereich',
+          'kinder' => 'Kinderbereich',
+          'bastelvorlagen' => 'Bastelvorlagen',
+          'medientipps' => 'Medientipps',
+          'videos.php' => 'Videos',
+          'hoerspiele.php' => 'H�rspiele',
+          'buecher.php' => 'B�cher',
+          'spiele.php' => 'Spiele',
+          'tiere.php' => 'Tiere',
+          'pflanzen.php' => 'B�ume & Pflanzen',
+          'umweltschutz.php' => 'Umweltschutz',
+          'jahreszeiten.php' => 'Jahreszeiten & Wetter'
+        ];
+
+        $breadcrumbs = [];
+
+        foreach ($pathParts as $part) {
+          if (isset($titles[$part])) {
+            $breadcrumbs[] = $titles[$part];
+          } else {
+            $breadcrumbs[] = ucfirst(str_replace('.php', '', $part));
+          }
+        }
+
+        echo implode(' - ', $breadcrumbs);
+      ?>
+    </div>
+  </div>
+
+  <a href="/index.php" class="logo">Waldlogo</a>
 </nav>
 
 <!-- Sidebar -->
@@ -36,7 +72,7 @@
   </div>
 </aside>
 
-<!-- Submenü Bastelvorlagen -->
+<!-- Submen� Bastelvorlagen -->
 <aside class="submenu-sidebar" id="submenu-bastel" onmouseleave="hideSubmenus()">
   <nav aria-label="Bastelvorlagen Untermenü">
     <ul>
@@ -48,13 +84,14 @@
   </nav>
 </aside>
 
-<!-- Submenü Medientipps -->
+<!-- Submenu Medientipps -->
 <aside class="submenu-sidebar" id="submenu-medien" onmouseleave="hideSubmenus()">
   <nav aria-label="Medientipps Untermenü">
     <ul>
       <li><a href="/erwachsene/medientipps/buecher.php">Bücher</a></li>
       <li><a href="/erwachsene/medientipps/hoerspiele.php">Hörspiele</a></li>
       <li><a href="/erwachsene/medientipps/videos.php">Videos</a></li>
+      <li><a href="/erwachsene/medientipps/spiele.php">Spiele</a></li>
     </ul>
   </nav>
 </aside>

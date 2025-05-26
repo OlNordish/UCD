@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Tiere</title>
-	<link rel="stylesheet" href="../../include/headerneu.css">
+  <title>Tiere des Waldes</title>
+
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
     body {
@@ -18,7 +20,7 @@
     main {
       max-width: 1000px;
       margin: 4rem auto;
-      padding: 0 2rem;
+      padding: 2rem;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
     }
@@ -26,115 +28,94 @@
     h1 {
       font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    p {
+    p.intro {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .bastelbox {
-      display: flex;
+    .entry-box {
       background-color: rgba(255, 255, 255, 0.95);
       color: #333;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
-      overflow: hidden;
+      padding: 1.5rem;
     }
 
-    .bastelbox img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      background: #f0f0f0;
-      padding: 1rem;
-    }
-
-    .bastelbox-content {
-      padding: 1rem 1.5rem;
-    }
-
-    .bastelbox-content h3 {
-      margin-top: 0;
+    .entry-box h2 {
       font-size: 1.4rem;
+      margin: 0 0 0.5rem;
       color: #2f4f4f;
     }
 
-    .bastelbox-content a {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #2f4f4f;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+    .entry-box p {
+      margin: 0 0 0.75rem;
+    }
+
+    .entry-box a {
+      color: #006400;
+      font-weight: bold;
       text-decoration: none;
     }
 
-    .bastelbox-content a:hover {
-      background-color: #4f6f6f;
+    .entry-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>Tiere des Waldes</h1>
-  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
+  <h1>🦊 Tiere des Waldes</h1>
+  <p class="intro">Spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Origami-Fuchs falten</h3>
-      <p>Bastele den cleveren Waldbewohner aus nur einem Blatt Papier und einem Stift.</p>
-      <a href="/downloads/fuchs.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Origami-Fuchs falten</h2>
+    <p>Bastele den cleveren Waldbewohner aus nur einem Blatt Papier und einem Stift.</p>
+    <a href="/downloads/Bastelanleitung_Waldtiere_Fuchs.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Kastanienfiguren basteln</h3>
-      <p>Gestalte Tiere und Fantasiewesen aus kleinen Waldschätzen.</p>
-      <a href="/downloads/kastanienfiguren.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Eule aus Pappteller basteln</h3>
-      <p>Deine eigene Wald-Eule – einfach, bunt und zum Aufhängen.</p>
-      <a href="/downloads/eule.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Kastanienfiguren basteln</h2>
+    <p>Gestalte Tiere und Fantasiewesen aus kleinen Waldschätzen.</p>
+    <a href="/downloads/Bastelanleitung_Waldtiere_Kastanienfiguren.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Waldtiere aus Klorollen</h3>
-      <p>Fuchs, Igel &amp; Eichhörnchen ganz einfach selber machen – mit Rollen, Papier &amp; Naturmaterialien</p>
-      <a href="/downloads/igel.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Fliegender Papier-Vogel zum Basteln</h3>
-      <p>Ein bunter Vogel aus Papier, der mit Wind sogar flattern kann – bastel dir deinen eigenen Himmelsfreund!</p>
-      <a href="/downloads/vogel.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Eule aus Pappteller basteln</h2>
+    <p>Deine eigene Wald-Eule – einfach, bunt und zum Aufhängen.</p>
+    <a href="/downloads/Bastelanleitung_Waldtiere_Eule.pdf" download>PDF herunterladen</a>
+  </article>
+
+  <article class="entry-box">
+    <h2>Waldtiere aus Klorollen basteln</h2>
+    <p>Fuchs, Igel &amp; Eichhörnchen ganz einfach selber machen – mit Rollen, Papier &amp; Naturmaterialien.</p>
+    <a href="/downloads/Bastelanleitung_Waldtiere_Eichhrnchen_Fuchs_Igel.pdf" download>PDF herunterladen</a>
+  </article>
+
+  <article class="entry-box">
+    <h2>Fliegender Papier-Vogel</h2>
+    <p>Ein bunter Vogel aus Papier, der mit Wind sogar flattern kann – bastel dir deinen eigenen Himmelsfreund!</p>
+    <a href="/downloads/Bastelanleitung_Waldtiere_Vogel.pdf" download>PDF herunterladen</a>
+  </article>
 </main>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
+
 </body>
 </html>

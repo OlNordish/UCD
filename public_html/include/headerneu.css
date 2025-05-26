@@ -1,12 +1,19 @@
 /* Navigation */
 .header-nav {
+  position: relative;
   display: flex;
   align-items: center;
+  height: 60px;
   background-color: #2f4f4f;
+  padding: 0 20px;
   color: white;
-  padding: 10px 20px;
-  z-index: 1000;
-  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  z-index: 1; /* damit über der Sidebar */
 }
 
 .burger {
@@ -14,18 +21,32 @@
   cursor: pointer;
 }
 
+.breadcrumb {
+  font-size: 15px;
+  font-weight: 600;
+  color: #eee;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
+
 .logo {
-  margin: 0 auto;
-  color: white;
-  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 20px;
   font-weight: bold;
+  color: white;
+  text-decoration: none;
+  z-index: 0;
 }
+
 
 /* Sidebar */
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 60;
   left: -220px;
   width: 220px;
   height: 100%;
@@ -92,7 +113,7 @@
 /* Submenü-Sidebar */
 .submenu-sidebar {
   position: fixed;
-  top: 0;
+  top: 60;
   left: -220px;
   width: 220px;
   height: 100%;

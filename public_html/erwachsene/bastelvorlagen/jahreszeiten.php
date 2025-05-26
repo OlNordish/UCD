@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jahreszeiten</title>
+  <title>Jahreszeiten &amp; Wetter</title>
 
-  <link rel="stylesheet" href="../../include/headerneu.css">
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
     body {
@@ -19,97 +20,55 @@
     main {
       max-width: 1000px;
       margin: 4rem auto;
-      padding: 0 2rem;
+      padding: 2rem;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
     }
 
-    main h1 {
+    h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
       text-align: center;
+      margin-bottom: 1rem;
     }
 
-    main p {
+    p.intro {
       font-size: 1.2rem;
       text-align: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .bastelbox {
-      display: flex;
+    .entry-box {
       background-color: rgba(255, 255, 255, 0.95);
       color: #333;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
-      overflow: hidden;
-      transition: transform 0.3s ease;
+      padding: 1.5rem;
     }
 
-    .bastelbox:hover {
-      transform: scale(1.01);
-    }
-
-    .bastelbox img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      background: #f0f0f0;
-      padding: 1rem;
-    }
-
-    .bastelbox-content {
-      padding: 1rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .bastelbox-content h3 {
-      margin-top: 0;
+    .entry-box h2 {
       font-size: 1.4rem;
+      margin: 0 0 0.5rem;
       color: #2f4f4f;
     }
 
-    .bastelbox-content p {
-      margin: 0.5rem 0 1rem;
-      line-height: 1.4;
+    .entry-box p {
+      margin: 0 0 0.75rem;
     }
 
-    .bastelbox-content a {
-      align-self: flex-start;
-      padding: 0.6rem 1rem;
-      background-color: #2f4f4f;
-      color: white;
-      border-radius: 6px;
+    .entry-box a {
+      color: #006400;
+      font-weight: bold;
       text-decoration: none;
-      transition: background-color 0.3s ease;
     }
 
-    .bastelbox-content a:hover {
-      background-color: #4f6f6f;
+    .entry-box a:hover {
+      text-decoration: underline;
     }
 
-    @media (max-width: 700px) {
-      .bastelbox {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .bastelbox img {
-        width: 100px;
-        height: 100px;
-      }
-
-      .bastelbox-content {
+    @media (max-width: 600px) {
+      main {
         padding: 1rem;
-        align-items: center;
-      }
-
-      .bastelbox-content a {
-        margin-top: 1rem;
       }
     }
   </style>
@@ -121,57 +80,42 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>Tiere des Waldes</h1>
-  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
+  <h1>📅 Jahreszeiten &amp; Wetter</h1>
+  <p class="intro">Spielerisch durchs Jahr – mit Ausmalbildern, Bastelideen und Wetteruhren.</p>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Jahreszeiten-Lernuhr zum Ausschneiden</h3>
-      <p>Bastle und male deine eigene Uhr, um spielerisch die vier Jahreszeiten zu lernen!</p>
-      <a href="/downloads/umweltschutz.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Jahreszeiten-Lernuhr zum Ausschneiden</h2>
+    <p>Bastle und male deine eigene Uhr, um spielerisch die vier Jahreszeiten zu lernen!</p>
+    <a href="/downloads/Bastelvorlage_Jahreszeiten_Lernuhr.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Jahreszeitenbaum zum Anmalen und Basteln</h3>
-      <p>Gestalte deinen eigenen Baum und entdecke, wie sich die Jahreszeiten verändern!</p>
-      <a href="/downloads/erde.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Herbstdrachen zum Basteln</h3>
-      <p>Baue deinen eigenen Drachen und lass ihn im Herbstwind fliegen!</p>
-      <a href="/downloads/recycling.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Jahreszeitenbaum zum Anmalen und Basteln</h2>
+    <p>Gestalte deinen eigenen Baum und entdecke, wie sich die Jahreszeiten verändern!</p>
+    <a href="/downloads/Bastelvorlage_Jahreszeitenbaum.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Malvorlage zu den Jahreszeiten</h3>
-      <p>Male die bunten Szenen der vier Jahreszeiten aus und entdecke ihre Besonderheiten!</p>
-      <a href="/downloads/.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Symbolbilder der Jahreszeiten</h3>
-      <p>Entdecke die typischen Motive für Frühling, Sommer, Herbst und Winter zum Ausmalen!</p>
-      <a href="/downloads/.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Herbstdrachen zum Basteln</h2>
+    <p>Baue deinen eigenen Drachen und lass ihn im Herbstwind fliegen!</p>
+    <a href="/downloads/Bastelanleitung_Herbstdrachen.pdf" download>PDF herunterladen</a>
+  </article>
+
+  <article class="entry-box">
+    <h2>Malvorlage zu den Jahreszeiten</h2>
+    <p>Male die bunten Szenen der vier Jahreszeiten aus und entdecke ihre Besonderheiten!</p>
+    <a href="/downloads/Malvorlage_Jahreszeiten.pdf" download>PDF herunterladen</a>
+  </article>
+
+  <article class="entry-box">
+    <h2>Symbolbilder der Jahreszeiten</h2>
+    <p>Entdecke die typischen Motive für Frühling, Sommer, Herbst und Winter zum Ausmalen!</p>
+    <a href="/downloads/Malvorlage_Jahreszeiten_Symbolbilder.pdf" download>PDF herunterladen</a>
+  </article>
 </main>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
+
 </body>
 </html>

@@ -20,7 +20,7 @@
     main {
       max-width: 1000px;
       margin: 4rem auto;
-      padding: 0 2rem;
+      padding: 2rem;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
     }
@@ -28,41 +28,54 @@
     h1 {
       font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    p {
+    p.intro {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .media-box {
+    .audio-entry {
       background-color: rgba(255, 255, 255, 0.95);
       color: #333;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
-      overflow: hidden;
-      padding: 1rem 1.5rem;
+      padding: 1.5rem;
     }
 
-    .media-box h3 {
-      margin-top: 0;
+    .audio-entry h2 {
       font-size: 1.4rem;
+      margin: 0 0 0.5rem;
       color: #2f4f4f;
     }
 
-    .media-box p {
+    .audio-entry .author {
+      font-style: italic;
       margin-bottom: 0.5rem;
+      display: block;
     }
 
-    .media-box a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #2f4f4f;
+    .audio-entry p {
+      margin: 0 0 0.75rem;
+    }
+
+    .audio-entry a {
+      color: #006400;
       font-weight: bold;
+      text-decoration: none;
+    }
+
+    .audio-entry a:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -73,32 +86,36 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 	
 <main>
-  <h1>Hörspiele für Kinder</h1>
-  <p>Hier findest du spannende, lehrreiche und naturbezogene Hörspiel-Empfehlungen für Kindergruppen, Projekte oder ruhige Momente zu Hause.</p>
+  <h1>🎧 Hörspiele für Kinder</h1>
+  <p class="intro">Spannende, lehrreiche und naturbezogene Hörspiel-Empfehlungen – ideal für Projekte, Gruppen oder ruhige Momente zu Hause.</p>
 
-  <div class="media-box">
-    <h3>WAS IST WAS Junior Hörspiel-CD: "Im Wald" von Friederike Wilhelmi &amp; Luis-Max Anders</h3>
-    <p>Rätsele mit dem Hörspiel mit, es sollen zum Beispiel verschiedene Baumarten bestimmt werden.</p>
-    <a href="https://www.thalia.de/shop/home/artikeldetails/A1009060835" target="_blank">Jetzt anhören</a>
-  </div>
+  <article class="audio-entry">
+    <h2>WAS IST WAS Junior Hörspiel-CD: Im Wald</h2>
+    <span class="author">Friederike Wilhelmi, Luis-Max Anders</span>
+    <p>Rätsele mit dem Hörspiel mit – es sollen z. B. verschiedene Baumarten bestimmt werden.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1009060835" target="_blank" rel="noopener noreferrer">Bei Thalia anhören</a>
+  </article>
 
-  <div class="media-box">
-    <h3>WAS IST WAS Hörspiel-CD: "Wilde Wälder / Lebendiger Boden" von Manfred Baur &amp; Kristiane Semar</h3>
-    <p>Erfahre, wie Boden entsteht, weshalb er verloren gehen kann und warum der Regenwurm ein guter Gärtner ist.</p>
-    <a href="https://www.thalia.de/shop/home/artikeldetails/A1036069846" target="_blank">Jetzt anhören</a>
-  </div>
+  <article class="audio-entry">
+    <h2>WAS IST WAS Hörspiel-CD: Wilde Wälder / Lebendiger Boden</h2>
+    <span class="author">Manfred Baur, Kristiane Semar</span>
+    <p>Wie entsteht Boden? Warum ist der Regenwurm so wichtig? Höre spannende Antworten.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1036069846" target="_blank" rel="noopener noreferrer">Bei Thalia anhören</a>
+  </article>
 
-  <div class="media-box">
-    <h3>"Kleine Helden im Wald" von Matthias Meyer-Göllner</h3>
-    <p>Lerne am Abenteuer von Igel, Wildschwein und Kröte und einem Amselbaby die Tiere und Pflanzen des Waldes kennen.</p>
-    <a href="https://www.thalia.de/shop/home/artikeldetails/A1038147083" target="_blank">Jetzt anhören</a>
-  </div>
-	
-  <div class="media-box">
-    <h3>"Was hör ich da? Im Wald" von Jens-Uwe Bartholomäus</h3>
-    <p>Hören sich unsere Schritte auf dem Waldboden anders an als die eines Rehs oder eines Fuchses? Und wer kann eine schimpfende Amsel von einem rufenden Schwarzspecht unterscheiden? Finde es heraus!</p>
-    <a href="Hören sich unsere Schritte auf dem Waldboden anders an als die eines Rehs oder eines Fuchses? Und wer kann eine schimpfende Amsel von einem rufenden Schwarzspecht unterscheiden? Finde es heraus!" target="_blank">Jetzt anhören</a>
-  </div>
+  <article class="audio-entry">
+    <h2>Kleine Helden im Wald</h2>
+    <span class="author">Matthias Meyer-Göllner</span>
+    <p>Mit Igel, Wildschwein und Amselbaby spielerisch den Wald und seine Bewohner entdecken.</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1038147083" target="_blank" rel="noopener noreferrer">Bei Thalia anhören</a>
+  </article>
+
+  <article class="audio-entry">
+    <h2>Was hör ich da? Im Wald</h2>
+    <span class="author">Jens-Uwe Bartholomäus</span>
+    <p>Wie klingt ein Reh auf Waldboden? Und wie unterscheidet sich eine schimpfende Amsel vom Schwarzspecht?</p>
+    <a href="https://www.thalia.de/shop/home/artikeldetails/A1000892071" target="_blank" rel="noopener noreferrer">Bei Thalia anhören</a>
+  </article>
 </main>
 
 <!-- Sidebar & Navigation -->

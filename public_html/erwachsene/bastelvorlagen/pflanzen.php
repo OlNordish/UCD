@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pflanzen &amp; Bäume</title>
-  <link rel="stylesheet" href="../../include/headerneu.css">
+  <title>Bäume &amp; Pflanzen</title>
+
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
     body {
@@ -18,7 +20,7 @@
     main {
       max-width: 1000px;
       margin: 4rem auto;
-      padding: 0 2rem;
+      padding: 2rem;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 12px;
     }
@@ -26,115 +28,82 @@
     h1 {
       font-size: 2.5rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    p {
+    p.intro {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .bastelbox {
-      display: flex;
+    .entry-box {
       background-color: rgba(255, 255, 255, 0.95);
       color: #333;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
-      overflow: hidden;
+      padding: 1.5rem;
     }
 
-    .bastelbox img {
-      width: 150px;
-      height: 150px;
-      object-fit: contain;
-      background: #f0f0f0;
-      padding: 1rem;
-    }
-
-    .bastelbox-content {
-      padding: 1rem 1.5rem;
-    }
-
-    .bastelbox-content h3 {
-      margin-top: 0;
+    .entry-box h2 {
       font-size: 1.4rem;
+      margin: 0 0 0.5rem;
       color: #2f4f4f;
     }
 
-    .bastelbox-content a {
-      display: inline-block;
-      margin-top: 1rem;
-      background: #2f4f4f;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
+    .entry-box p {
+      margin: 0 0 0.75rem;
+    }
+
+    .entry-box a {
+      color: #006400;
+      font-weight: bold;
       text-decoration: none;
     }
 
-    .bastelbox-content a:hover {
-      background-color: #4f6f6f;
+    .entry-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>Tiere des Waldes</h1>
-  <p>Hier findest du spannende Bastelideen rund um Reh, Fuchs, Eule &amp; Co.</p>
+  <h1>🌳 Bäume &amp; Pflanzen</h1>
+  <p class="intro">Mal- und Bastelideen rund um Blätter, Bäume und Naturspiele.</p>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Herbstblätter zum Ausmalen</h3>
-      <p>Eine bunte Malvorlage mit verschiedenen Blattformen – lass den Herbst in deinen Lieblingsfarben erstrahlen!</p>
-      <a href="/downloads/herbstblaetter.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Herbstblätter zum Ausmalen</h2>
+    <p>Eine bunte Malvorlage mit verschiedenen Blattformen – lass den Herbst in deinen Lieblingsfarben erstrahlen!</p>
+    <a href="/downloads/Malvorlage_Herbstbltter.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Blätterbuch selber machen</h3>
-      <p>Sammle, presse und entdecke die Blätter der Bäume – gestalte dein eigenes kleines Naturlexikon!</p>
-      <a href="/downloads/blaetterbuch.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>Dein eigenes Wald-Memory</h3>
-      <p>Bastle dein persönliches Memory-Spiel mit Waldtieren und Pflanzen und spiele es mit Freunden und Familie!</p>
-      <a href="/downloads/waldmemory.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Blätterbuch selber machen</h2>
+    <p>Sammle, presse und entdecke die Blätter der Bäume – gestalte dein eigenes kleines Naturlexikon!</p>
+    <a href="/downloads/Bastelanleitung_Bltterbuch.pdf" download>PDF herunterladen</a>
+  </article>
 
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>VIER</h3>
-      <p>VIER</p>
-      <a href="/downloads/.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
-	
-  <div class="bastelbox">
-    <img src="/bilder/eichhoernchen.svg" alt="Vorschau" />
-    <div class="bastelbox-content">
-      <h3>FÜNF</h3>
-      <p>FÜNF</p>
-      <a href="/downloads/.pdf" download>PDF herunterladen</a>
-    </div>
-  </div>
+  <article class="entry-box">
+    <h2>Dein eigenes Wald-Memory</h2>
+    <p>Bastle dein persönliches Memory-Spiel mit Waldtieren und Pflanzen und spiele es mit Freunden und Familie!</p>
+    <a href="/downloads/Bastelanleitung_Wald-Memory.pdf" download>PDF herunterladen</a>
+  </article>
 </main>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
+
 </body>
 </html>

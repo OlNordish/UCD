@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hörspiele für Kinder</title>
-  
+  <title>Medientipps</title>
+
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
-  
+
   <style>
     body {
       margin: 0;
@@ -84,6 +84,7 @@
     }
   </style>
 </head>
+
 <body>
 
 <!-- Sidebar & Navigation -->
@@ -106,18 +107,15 @@
       <span>🎬</span>
       Videos &amp; Filme<br>zum Wald entdecken
     </a>
-    <a href="/erwachsene/videos.php" class="kachel">
-      <span>🎬</span>
+    <a href="/erwachsene/spiele.php" class="kachel">
+      <span>🎲</span>
       Spiele<br>für einen langen Nachmittag
     </a>
   </div>
 </main>
-</main>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
-</body>
-</html>
+
 </body>
 </html>
