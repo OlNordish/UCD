@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entdecken</title>
+  <title>Level 1</title>
   <link rel="stylesheet" href="/include/headerneu.css" />
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-
   <style>
     body {
       margin: 0;
@@ -27,7 +26,6 @@
       display: block;
     }
 
-    /* Sprechblase über der Szene */
     #sprechblase-container {
       position: absolute;
       bottom: 2%;
@@ -36,13 +34,13 @@
       align-items: flex-end;
       gap: 10px;
       z-index: 100;
-      pointer-events: none; /* verhindert versehentliche Klickblockaden */
+      pointer-events: none;
     }
 
     #sprechblase {
-      background: rgba(255, 249, 196, 0.5); /* sanft gelblich-transparent */
-      backdrop-filter: blur(12px);         /* Milchglas-Unschärfe */
-      -webkit-backdrop-filter: blur(12px); /* Safari Support */
+      background: rgba(255, 249, 196, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 20px 24px;
       border-radius: 20px;
       width: 360px;
@@ -54,7 +52,7 @@
       overflow: hidden;
       position: relative;
       font-family: 'Baloo 2', sans-serif;
-      pointer-events: auto; /* erlaubt wieder Klicks auf die Buttons */
+      pointer-events: auto;
     }
 
     .pfeile {
@@ -122,15 +120,13 @@
 
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 <div id="waldszene">
-  <div id="counter">0 / 9 Tiere entdeckt</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
 
-  <!-- VG-Szene inline -->
-  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/entdecken.svg'); ?>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level1.svg'); ?>
 
-  <!-- Sprechblase -->
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Klicke auf ein Tier, um mit ihm zu reden!</p>
+      <p id="textfeld">Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?</p>
       <div class="pfeile">
         <button class="pfeil" id="prev" disabled>&larr;</button>
         <button class="pfeil" id="next" disabled>&rarr;</button>
@@ -140,29 +136,32 @@
 </div>
 
 <script>
-const tierTexte = {
-  wolf: ["Auuu! Ich bin der Wolf.", "Ich jage Kaninchen und Rehe, damit der Wald im Gleichgewicht bleibt.", "Ich bin wichtig für den Wald – auch wenn viele mich fürchten."],
-  specht: ["Klopf, klopf – ich bin der Specht!", "Ich hacke mit meinem Schnabel Löcher in Bäume, um Insekten zu fressen."],
-  reh: ["Grüß dich! Ich bin das Reh.", "Am liebsten fresse ich frische Triebe und junge Blätter.", "Ich passe gut auf die kleinen Bäumchen auf...", "aber wenn es zu wenig gibt, wird es schwer."],
-  maus: ["Pieps! Ich bin die kleine Maus.", "Am liebsten knabbere ich an Körnern und Samen.", "Aber ich muss gut aufpassen...", "der Fuchs und die Eule würden mich sonst schnell fressen!"],
-  kaninchen: ["Hopp, hopp! Ich bin das flinke Kaninchen.", "Ich knabbere gerne an jungen Pflanzen und Kräutern.", "Mein größter Feind ist der Fuchs – deshalb bleibe ich immer wachsam!"],
-  eule: ["Huhuu! Ich bin die Eule.", "Nachts jage ich Mäuse, Frösche und kleine Vögel.", "Mein bester Freund? Die dunkle Nacht – dann bin ich am stärksten!"],
-  fuchs: ["Hallo! Ich bin der schlaue Fuchs.", "Ich esse Mäuse, Kaninchen und manchmal auch Beeren.", "Die Maus ist zwar lecker – aber ich respektiere auch meine Nachbarn im Wald!"],
-  eichhoernchen: ["Hallo, ich bin das Eichhörnchen!", "Ich liebe es, Nüsse, Samen und Beeren zu futtern."],
-  kaefer: ["Ich bin der Borkenkäfer.", "Die Baumrinde schmeckt super!", "Aber Vorsicht – zu viele von uns schaden dem Wald."]
-};
-
-let aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
-let aktuellerIndex = 0;
-const bereitsGesehen = new Set();
 const textfeld = document.getElementById("textfeld");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 const counterBox = document.getElementById("counter");
 
-const fuchs = document.getElementById("fuchs");
-const fuchsHappy = document.getElementById("fuchs_happy");
-if (fuchsHappy) fuchsHappy.style.display = "none";
+const entdeckte = new Set();
+let aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
+let aktuellerIndex = 0;
+
+const veränderungstexte = {
+  maus: [
+    "Mehr Mäuse unterwegs.",
+    "Sie finden viele Eicheln, die sonst eingesammelt würden.",
+    "Die Samen werden gefressen."
+  ],
+  eicheln: [
+    "Überall liegen Eicheln herum.",
+    "Niemand sammelt sie ein – das ist ungewöhnlich.",
+    "Wachsen daraus neue Bäume?"
+  ],
+  baeume: [
+    "Weniger junge Bäumchen!",
+    "Die Eicheln bleiben liegen, aber nichts wächst.",
+    "Fehlt da nicht jemand?"
+  ]
+};
 
 function zeigeText(index) {
   textfeld.innerHTML = aktuellerText[index];
@@ -170,22 +169,59 @@ function zeigeText(index) {
   nextBtn.disabled = index >= aktuellerText.length - 1;
 }
 
-function zeigeTierText(tierId) {
-  aktuellerText = tierTexte[tierId] || ["🤷‍♂️ Kein Text gefunden."];
+function zeigeVeränderung(id) {
+  aktuellerText = veränderungstexte[id];
   aktuellerIndex = 0;
-  zeigeText(aktuellerIndex);
+  zeigeText(0);
 
   document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
-  const el = document.getElementById(tierId);
+  const el = document.getElementById(id);
   if (el) el.classList.add("active");
 
-  if (!bereitsGesehen.has(tierId)) {
-    bereitsGesehen.add(tierId);
-    counterBox.innerText = `${bereitsGesehen.size} / 9 Tiere entdeckt`;
+  if (!entdeckte.has(id)) {
+    entdeckte.add(id);
+    counterBox.innerText = `${entdeckte.size} / 3 Dinge entdeckt`;
   }
 
-  // kein automatischer Umschalttext hier – das machen wir später
+  if (entdeckte.size === 3) {
+    setTimeout(() => {
+      aktuellerText = [
+        "Du hast es herausgefunden!",
+        "Weil das Eichhörnchen fehlt, bleiben die Eicheln liegen.",
+        "Es wachsen keine neuen Bäume mehr.",
+        "Willst du weiter ins nächste Level?",
+        '<a href="level2.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, weiter!</a>'
+      ];
+      aktuellerIndex = 0;
+      zeigeText(0);
+
+      // optional happy fuchs anzeigen
+      const fuchs = document.getElementById("fuchs");
+      const fuchsHappy = document.getElementById("fuchs_happy");
+      if (fuchs && fuchsHappy) {
+        fuchs.style.display = "none";
+        fuchsHappy.style.display = "inline";
+        fuchsHappy.classList.add("active", "wackel");
+        setTimeout(() => fuchsHappy.classList.remove("wackel"), 600);
+      }
+    }, 500);
+  }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  ["maus", "eicheln", "baeume"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.cursor = "pointer";
+      el.addEventListener("click", e => {
+        e.stopPropagation();
+        zeigeVeränderung(id);
+      });
+    }
+  });
+
+  zeigeText(0);
+});
 
 nextBtn.addEventListener("click", () => {
   if (aktuellerIndex < aktuellerText.length - 1) {
@@ -201,59 +237,15 @@ prevBtn.addEventListener("click", () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  Object.keys(tierTexte).forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.style.cursor = "pointer";
-      el.addEventListener("click", e => {
-        e.stopPropagation();
-        zeigeTierText(id);
-      });
-    }
-  });
+document.getElementById("waldszene").addEventListener("click", (e) => {
+  const aufElement = e.target.closest("g");
+  const aufBlase = e.target.closest("#sprechblase-container");
 
-  aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
-  aktuellerIndex = 0;
-  zeigeText(0);
-});
-
-document.getElementById("waldszene").addEventListener("click", (event) => {
-  const klickAufTier = event.target.closest("g");
-  const klickAufSprechblase = event.target.closest("#sprechblase-container");
-
-  if (!klickAufTier && !klickAufSprechblase) {
+  if (!aufElement && !aufBlase) {
     document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
-
-    if (bereitsGesehen.size === 9) {
-      aktuellerText = [
-        "Du hast alle Tiere kennengelernt!",
-        "Möchtest du mir helfen, den Wald aufzuräumen?",
-        '<a href="aufraeumen.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, ich helfe dir!</a>'
-      ];
-      aktuellerIndex = 0;
-      zeigeText(aktuellerIndex);
-
-if (fuchs && fuchsHappy) {
-  fuchs.style.display = "none";
-  fuchsHappy.style.display = "inline";
-
-  // alle anderen Tiere deselektieren
-  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
-
-  // happy Fuchs hervorheben
-  fuchsHappy.classList.add("active", "wackel");
-
-  setTimeout(() => {
-    fuchsHappy.classList.remove("wackel");
-  }, 600);
-}
-
-    } else {
-      aktuellerText = ["Klicke auf ein Tier, um mit ihm zu reden!"];
-      aktuellerIndex = 0;
-      zeigeText(aktuellerIndex);
-    }
+    aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
+    aktuellerIndex = 0;
+    zeigeText(0);
   }
 });
 </script>

@@ -1,77 +1,291 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Level 1</title>
+  <link rel="stylesheet" href="/include/headerneu.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Fredoka', sans-serif;
+      background-color: #22724E;
+      color: #fff;
+    }
 
-  <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
+    #waldszene {
+      width: 100%;
+      max-height: calc(100vh - 60px);
+      position: relative;
+    }
 
-  <!-- CSS für Level -->
-  <link rel="stylesheet" href="/kinder/spielen/level.css">
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #sprechblase-container {
+      position: absolute;
+      bottom: 2%;
+      right: 15%;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    #sprechblase {
+      background: rgba(255, 249, 196, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 20px 24px;
+      border-radius: 20px;
+      width: 360px;
+      height: 160px;
+      font-size: 28px;
+      color: #222;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      line-height: 1.5;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Baloo 2', sans-serif;
+      pointer-events: auto;
+    }
+
+    .pfeile {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .pfeil {
+      background: #ffeb3b;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .pfeil:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    g.active {
+      filter: drop-shadow(0 0 10px yellow);
+      transform: scale(1.1);
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    #counter {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background: rgba(255,255,255,0.2);
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 20px;
+      z-index: 200;
+      pointer-events: none;
+    }
+	  @keyframes pulse {
+  0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+  50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
+  100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+}
+
+#counter.pulse {
+  animation: pulse 0.5s ease;
+}
+
+
+    @keyframes wackeln {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(2deg); }
+      75% { transform: rotate(-2deg); }
+    }
+
+    g.wackel {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: wackeln 0.6s ease;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
-
 <div id="waldszene">
-  <div class="element tier" id="eichhoernchen" style="top: 15%; left: 10%;">🐿️</div>
-  <div class="element pflanze" id="eicheln" style="top: 40%; left: 20%;">🌰</div>
-  <div class="element pflanze" id="baeume" style="top: 60%; left: 15%;">🌱</div>
-  <div class="element tier" style="top: 30%; left: 70%;">🐭</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
+
+  <!-- Level 1 SVG mit IDs: maeuse, eicheln, samen, fuchs, fuchs_happy -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level1.svg'); ?>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Fuchs: Hmm... Irgendwas stimmt hier nicht. Kannst du die 3 Veränderungen entdecken?</p>
-      <button id="weiter-btn" onclick="nextLevel()">Weiter zum nächsten Level</button>
+      <p id="textfeld">Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?</p>
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
+      </div>
     </div>
-    <div id="fuchs-avatar">🦊</div>
   </div>
-
-  <div id="fortschritt">0 von 3 entdeckt</div>
-  <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
 
 <script>
-  function zurStartseite() {
-    window.location.href = "/kinder/spielen.php";
+const textfeld = document.getElementById("textfeld");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const counterBox = document.getElementById("counter");
+
+const veränderungstexte = {
+  maeuse: [
+    "Mehr Mäuse unterwegs.",
+    "Sie finden viele Eicheln, die sonst eingesammelt würden.",
+    "Die Samen werden gefressen."
+  ],
+  eicheln: [
+    "Überall liegen Eicheln herum.",
+    "Niemand sammelt sie ein – das ist ungewöhnlich.",
+    "Wachsen daraus neue Bäume?"
+  ],
+  samen: [
+    "Weniger junge Bäumchen!",
+    "Die Eicheln bleiben liegen, aber nichts wächst.",
+    "Fehlt da nicht jemand?"
+  ]
+};
+
+let aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
+let aktuellerIndex = 0;
+const entdeckte = new Set();
+let letzterVeränderungsId = null;
+let bereitZurZusammenfassung = false;
+
+function zeigeText(index) {
+  textfeld.innerHTML = aktuellerText[index];
+  prevBtn.disabled = index === 0;
+  nextBtn.disabled = index >= aktuellerText.length - 1;
+
+  // Wenn letzter Text einer Veränderung fertig gelesen ist UND 3 entdeckt wurden → Zusammenfassung
+  if (index === aktuellerText.length - 1 && bereitZurZusammenfassung) {
+    bereitZurZusammenfassung = false;
+    setTimeout(() => zeigeZusammenfassung(), 300);
   }
+}
 
-  function nextLevel() {
-    localStorage.setItem("level1done", "true");
-    window.location.href = "level2.php";
+function zeigeVeränderung(id) {
+  aktuellerText = veränderungstexte[id];
+  aktuellerIndex = 0;
+  zeigeText(0);
+
+  letzterVeränderungsId = id;
+
+  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+  const el = document.getElementById(id);
+  if (el) el.classList.add("active");
+
+
+if (!entdeckte.has(id)) {
+  entdeckte.add(id);
+  counterBox.innerText = `${entdeckte.size} / 3 Dinge entdeckt`;
+
+  // Trigger Animation
+  counterBox.classList.remove("pulse"); // reset
+  void counterBox.offsetWidth; // force reflow
+  counterBox.classList.add("pulse");
+}
+
+  // Wenn alle entdeckt, warte bis Text zu Ende gelesen → danach Zusammenfassung
+  if (entdeckte.size === 3) {
+    bereitZurZusammenfassung = true;
   }
+}
 
-  const veränderungen = {
-    eichhoernchen: "Weniger Eichhörnchen! Eicheln bleiben liegen, junge Bäumchen fehlen.",
-    eicheln: "Mehr Samen bleiben liegen – niemand sammelt sie ein!",
-    baeume: "Weniger junge Bäume wachsen, weil niemand die Samen verteilt."
-  };
+function zeigeZusammenfassung() {
+  aktuellerText = [
+    "Du hast es herausgefunden!",
+    "Weil das Eichhörnchen fehlt, bleiben die Eicheln liegen.",
+    "Die Mäuse fressen sie, aber es wachsen keine neuen Bäume mehr.",
+    "Willst du weiter ins nächste Level?",
+    '<a href="level2.php" style="display:inline-block;margin-top:10px;padding:8px 16px;background:#ffeb3b;color:#222;border-radius:10px;font-weight:bold;text-decoration:none;">Ja, weiter!</a>'
+  ];
+  aktuellerIndex = 0;
+  zeigeText(0);
 
-  let gefunden = 0;
+  // happy Fuchs zeigen
+  const fuchs = document.getElementById("fuchs");
+  const fuchsHappy = document.getElementById("fuchs_happy");
+  if (fuchs && fuchsHappy) {
+    fuchs.style.display = "none";
+    fuchsHappy.style.display = "inline";
+    document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+    fuchsHappy.classList.add("active", "wackel");
+    setTimeout(() => fuchsHappy.classList.remove("wackel"), 600);
+  }
+}
 
-  Object.keys(veränderungen).forEach(id => {
+nextBtn.addEventListener("click", () => {
+  if (aktuellerIndex < aktuellerText.length - 1) {
+    aktuellerIndex++;
+    zeigeText(aktuellerIndex);
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (aktuellerIndex > 0) {
+    aktuellerIndex--;
+    zeigeText(aktuellerIndex);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const fuchs = document.getElementById("fuchs");
+  const fuchsHappy = document.getElementById("fuchs_happy");
+  if (fuchs) fuchs.style.display = "inline";
+  if (fuchsHappy) fuchsHappy.style.display = "none";
+
+  ["maeuse", "eicheln", "samen"].forEach(id => {
     const el = document.getElementById(id);
-    el.addEventListener('click', () => {
-      if (!el.classList.contains('gefunden')) {
-        el.classList.add('gefunden');
-        document.getElementById('textfeld').innerText = 'Fuchs: ' + veränderungen[id];
-        gefunden++;
-        document.getElementById('fortschritt').innerText = `${gefunden} von 3 entdeckt`;
-        if (gefunden === 3) {
-          document.getElementById('textfeld').innerText = 'Fuchs: Super! Du hast alle Veränderungen entdeckt!';
-          document.getElementById('weiter-btn').style.display = 'block';
-        }
-      }
-    });
+    if (el) {
+      el.style.cursor = "pointer";
+      el.addEventListener("click", e => {
+        e.stopPropagation();
+        zeigeVeränderung(id);
+      });
+    }
   });
+
+  zeigeText(0);
+});
+
+document.getElementById("waldszene").addEventListener("click", (e) => {
+  const aufElement = e.target.closest("g");
+  const aufBlase = e.target.closest("#sprechblase-container");
+
+  if (!aufElement && !aufBlase) {
+    document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+    aktuellerText = ["Oh nein, das Eichhörnchen fehlt! Was verändert sich jetzt im Wald?"];
+    aktuellerIndex = 0;
+    zeigeText(0);
+  }
+});
 </script>
 
-<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
-	
 </body>
 </html>
