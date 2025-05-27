@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const counterBox = document.getElementById("counter");
   const buttonsContainer = document.getElementById("level-buttons");
 
-  let aktuellerText = window.levelEinleitung || ["Was verändert sich hier im Wald?"];
+  let aktuellerText = window.levelEinleitung || ["Was ver�ndert sich hier im Wald?"];
   let aktuellerIndex = 0;
   const entdeckte = new Set();
   let bereitZurZusammenfassung = false;
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       inZusammenfassung && index === aktuellerText.length - 1 ? "flex" : "none";
   }
 
-  function zeigeVeränderung(id) {
+  function zeigeVer�nderung(id) {
     inZusammenfassung = false;
-    aktuellerText = window.veränderungstexte[id] || ["🤷‍♂️ Keine Infos."];
+    aktuellerText = window.ver�nderungstexte[id] || ["Keine Infos."];
     aktuellerIndex = 0;
     zeigeText(0);
 
@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fuchs = document.getElementById("fuchs");
     const fuchsHappy = document.getElementById("fuchs_happy");
+
     if (fuchs && fuchsHappy) {
       fuchs.style.display = "none";
       fuchsHappy.style.display = "inline";
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.cursor = "pointer";
       el.addEventListener("click", e => {
         e.stopPropagation();
-        zeigeVeränderung(id);
+        zeigeVer�nderung(id);
       });
     }
   });
@@ -94,22 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("waldszene").addEventListener("click", (e) => {
     const aufElement = e.target.closest("g");
     const aufBlase = e.target.closest("#sprechblase-container");
-if (!aufElement && !aufBlase) {
-  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
 
-  if (entdeckte.size === (window.erwartet || 3) && bereitZurZusammenfassung && !inZusammenfassung) {
-    bereitZurZusammenfassung = false;
-    zeigeZusammenfassung();
-  }
+    if (!aufElement && !aufBlase) {
+      document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
 
-  // Nur zurücksetzen, wenn NICHT in der Zusammenfassung
-  if (!inZusammenfassung) {
-    aktuellerText = window.levelEinleitung || ["Was verändert sich hier im Wald?"];
-    aktuellerIndex = 0;
-    zeigeText(0);
-  }
-}
+      if (entdeckte.size === (window.erwartet || 3) && bereitZurZusammenfassung && !inZusammenfassung) {
+        bereitZurZusammenfassung = false;
+        zeigeZusammenfassung();
+      }
 
+      if (!inZusammenfassung) {
+        aktuellerText = window.levelEinleitung || ["Was ver�ndert sich hier im Wald?"];
+        aktuellerIndex = 0;
+        zeigeText(0);
+      }
+    }
   });
 });
-// JavaScript Document

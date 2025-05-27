@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Level 1</title>
-
-  <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
-
-  <!-- CSS für Level -->
-  <link rel="stylesheet" href="/kinder/spielen/level.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 4</title>
+  <link rel="stylesheet" href="/include/headerneu.css" />
+  <link rel="stylesheet" href="/include/level.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="waldszene">
-  <div class="element tier" id="kaninchen" style="top: 20%; left: 15%;">🐰</div>
-  <div class="element pflanze" id="jungpflanzen" style="top: 50%; left: 20%;">🌱</div>
-  <div class="element tier" id="eichhoernchen" style="top: 35%; left: 65%;">🐿️</div>
-  <div class="element tier" id="reh" style="top: 40%; left: 75%;">🦌</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level6.svg'); ?>
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Fuchs: So viele Kaninchen! Irgendwas stimmt nicht – findest du die 3 Veränderungen?</p>
-      <button id="weiter-btn" onclick="nextLevel()">Weiter zum nächsten Level</button>
+      <p id="textfeld">So viele Kaninchen! Irgendwas stimmt nicht...</p>
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
+      </div>
+      <div class="level-buttons" id="level-buttons">
+        <a href="level4.php" class="weiter-btn">Ja, weiter!</a>
+        <a href="/kinder/spielen.php" class="zurueck-btn">Zurück zur Übersicht</a>
+      </div>
     </div>
-    <div id="fuchs-avatar">🦊</div>
   </div>
-
-  <div id="fortschritt">0 von 3 entdeckt</div>
-  <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
-
 <script>
-  function zurStartseite() {
-    window.location.href = "/kinder/spielen.php";
-  }
+  // Konfiguration für Level 6
+  window.erwartet = 3;
+  window.levelDoneKey = "level6done";
+  window.klickbareElemente = ["junge_baeume_kaputt","eichhoernchen_sad", "reh_sad"];
 
-  function nextLevel() {
-    localStorage.setItem("level6done", "true");
-    window.location.href = "level7.php";
-  }
-
-  const veränderungen = {
-    kaninchen: "Huch! So viele Kaninchen – sie fressen alles weg!",
-    jungpflanzen: "Junge Pflanzen werden weggeknabbert – der Boden ist kahl.",
-    eichhoernchen: "Eichhörnchen und Rehe schauen traurig – es gibt kaum noch Futter."
+  window.levelEinleitung = [
+	 "So viele Kaninchen! Irgendwas stimmt nicht...",
+	  "Findest du alle 3 Veränderungen?",
+	  "Klicke in den Wald, wenn du alles gefunden hast!",
+  ];
+  window.veränderungstexte = {
+  junge_baeume_kaputt: [
+    "DIe vielen Kaninchen haben alles angenagt!",
+    "So wachsen die Bäumen nicht.",
+    "Auch kleine Pflanzen und Blumen sind weg."
+  ],
+  eichhoernchen_sad: [
+    "Das Eichhörnchen sieht traurig aus.",
+    "Es sucht überall nach Essen.",
+    "Die vielen Kaninchen mögen sind oft schneller."
+  ],
+  reh_sad: [
+    "Das Reh guckt traurig.",
+    "Ohne Sträucher und Pflanzen gibt es bald wenig Futter!",
+    "Ob noch jemand hungrig ist?"
+  ]
   };
 
-  let gefunden = 0;
-
-  Object.keys(veränderungen).forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener('click', () => {
-      if (!el.classList.contains('gefunden')) {
-        el.classList.add('gefunden');
-        document.getElementById('textfeld').innerText = 'Fuchs: ' + veränderungen[id];
-        gefunden++;
-        document.getElementById('fortschritt').innerText = `${gefunden} von 3 entdeckt`;
-        if (gefunden === 3) {
-          document.getElementById('textfeld').innerText = 'Fuchs: Sehr gut! Der Wald braucht ein Gleichgewicht.';
-          document.getElementById('weiter-btn').style.display = 'block';
-        }
-      }
-    });
-  });
-</script>
-
-<!-- Sidebar & Navigation -->
+  window.zusammenfassung = [
+    "Wow du hast alles entdeckt!",
+    "Bei so vielen Kaninchen ist ist schnell kein Futter übrig.",
+    "Sträucher und Pflanzen versorgen Tiere mit Beeren, Wurzeln und Knospen",
+	"Noch geht es den Kaninchen gut, aber auch sie haben bald kein Essen mehr.",
+	"Möchtest du zum nächsten Level?"
+  ];
+</script>	
+<script src="/include/level.js"></script>
 <script src="/include/headerneu.js"></script>
-	
 </body>
 </html>
+
+
+
+	  
+  
