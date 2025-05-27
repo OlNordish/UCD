@@ -6,7 +6,7 @@
   <title>Wald entdecken – Startseite</title>
   <base href="/" />
   
-	<!-- Schriftart und Styles -->
+  <!-- Schriftart und Styles -->
   <link rel="stylesheet" href="include/headerneu.css">
 
   <style>
@@ -16,6 +16,9 @@
       background: url('/bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
       color: #ffffff;
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
     }
 
     main {
@@ -96,6 +99,21 @@
       background-color: #4f6f6f;
     }
 
+    #waldboden {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 45vh;
+      pointer-events: none;
+    }
+
+    #kind {
+      position: absolute;
+      width: 450px;
+      height: auto;
+      transition: transform 0.2s ease, left 0.2s ease, top 0.2s ease;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -113,9 +131,8 @@
     }
   </style>
 </head>
-<body>
 
-  <!-- PHP-Header (Navigation + Sidebar) -->
+<body>
   <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/headerneu.php"; ?>
 
   <main>
@@ -127,6 +144,11 @@
       <a href="/erwachsene/erwachsene.php">Erwachsene</a>
     </div>
   </main>
+
+  <!-- Kind im Wald -->
+  <div id="waldboden">
+    <img id="kind" src="/downloads/kind.svg" alt="Kind im Wald">
+  </div>
 
   <!-- Fuchs mit Sprechblase -->
   <div id="sprechblase-container">
@@ -141,5 +163,28 @@
 
   <!-- JavaScript -->
   <script src="/include/headerneu.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const kind = document.getElementById('kind');
+      const waldboden = document.getElementById('waldboden');
+
+      const waldbodenRect = waldboden.getBoundingClientRect();
+      const kindWidth = kind.offsetWidth;
+      const kindHeight = kind.offsetHeight;
+
+      const maxLeft = waldbodenRect.width - kindWidth;
+      const maxTop = waldbodenRect.height - kindHeight;
+
+      const randomLeft = Math.random() * maxLeft;
+      const randomTop = Math.random() * maxTop;
+
+      const relativeTop = randomTop / maxTop;
+      const scale = 1 - (relativeTop * 0.2); // max 20% kleiner
+
+      kind.style.left = `${randomLeft}px`;
+      kind.style.top = `${randomTop}px`;
+      kind.style.transform = `scale(${scale})`;
+    });
+  </script>
 </body>
 </html>
