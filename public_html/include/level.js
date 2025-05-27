@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function zeigeVeränderung(id) {
     inZusammenfassung = false;
-    aktuellerText = window.veränderungstexte[id] || ["Keine Infos."];
+    aktuellerText = window.veränderungstexte[id] || ["????? Keine Infos."];
     aktuellerIndex = 0;
     zeigeText(0);
 
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const fuchs = document.getElementById("fuchs");
     const fuchsHappy = document.getElementById("fuchs_happy");
-
     if (fuchs && fuchsHappy) {
       fuchs.style.display = "none";
       fuchsHappy.style.display = "inline";
@@ -95,20 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("waldszene").addEventListener("click", (e) => {
     const aufElement = e.target.closest("g");
     const aufBlase = e.target.closest("#sprechblase-container");
+if (!aufElement && !aufBlase) {
+  document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
 
-    if (!aufElement && !aufBlase) {
-      document.querySelectorAll("g").forEach(g => g.classList.remove("active"));
+  if (entdeckte.size === (window.erwartet || 3) && bereitZurZusammenfassung && !inZusammenfassung) {
+    bereitZurZusammenfassung = false;
+    zeigeZusammenfassung();
+  }
 
-      if (entdeckte.size === (window.erwartet || 3) && bereitZurZusammenfassung && !inZusammenfassung) {
-        bereitZurZusammenfassung = false;
-        zeigeZusammenfassung();
-      }
+  // Nur zurücksetzen, wenn NICHT in der Zusammenfassung
+  if (!inZusammenfassung) {
+    aktuellerText = window.levelEinleitung || ["Was verändert sich hier im Wald?"];
+    aktuellerIndex = 0;
+    zeigeText(0);
+  }
+}
 
-      if (!inZusammenfassung) {
-        aktuellerText = window.levelEinleitung || ["Was verändert sich hier im Wald?"];
-        aktuellerIndex = 0;
-        zeigeText(0);
-      }
-    }
   });
 });
+// JavaScript Document
