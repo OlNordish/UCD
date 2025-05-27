@@ -1,77 +1,81 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Level 1</title>
-
-  <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
-
-  <!-- CSS für Level -->
-  <link rel="stylesheet" href="/kinder/spielen/level.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 4</title>
+  <link rel="stylesheet" href="/include/headerneu.css" />
+  <link rel="stylesheet" href="/include/level.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <div id="waldszene">
-  <div class="element tier" id="borkenkaefer" style="top: 20%; left: 20%;">🪲</div>
-  <div class="element pflanze" id="baumgrau" style="top: 50%; left: 30%;">🌳</div>
-  <div class="element tier" id="eichhoernchen" style="top: 35%; left: 60%;">🐿️</div>
-  <div class="element pflanze" style="top: 60%; left: 75%;">🍂</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level4.svg'); ?>
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Fuchs: Klopf, klopf... oder doch nicht? Irgendetwas fehlt im Wald. Findest du die 3 Veränderungen?</p>
-      <button id="weiter-btn" onclick="nextLevel()">Weiter zum nächsten Level</button>
+      <p id="textfeld">Oh nein! Der Specht fehlt – was passiert jetzt im Wald?</p>
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
+      </div>
+      <div class="level-buttons" id="level-buttons">
+        <a href="level4.php" class="weiter-btn">Ja, weiter!</a>
+        <a href="/kinder/spielen.php" class="zurueck-btn">Zurück zur Übersicht</a>
+      </div>
     </div>
-    <div id="fuchs-avatar">🦊</div>
   </div>
-
-  <div id="fortschritt">0 von 3 entdeckt</div>
-  <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
-
 <script>
-  function zurStartseite() {
-    window.location.href = "/kinder/spielen.php";
-  }
+  // Konfiguration für Level 4
+  window.erwartet = 3;
+  window.levelDoneKey = "level4done";
+  window.klickbareElemente = ["laub", "eichhoernchen", "kaefer"];
 
-  function nextLevel() {
-    localStorage.setItem("level4done", "true");
-    window.location.href = "level5.php";
-  }
-
-  const veränderungen = {
-    borkenkaefer: "Oh nein, Borkenkäfer nagen an den Bäumen – der Specht fehlt!",
-    baumgrau: "Die Bäume werden grau und verlieren Blätter.",
-    eichhoernchen: "Das Eichhörnchen findet kaum noch Nahrung – zu wenig gesunde Bäume."
+  window.levelEinleitung = [
+	 "Wo ist der Specht geblieben?",
+	  "Die Insekten haben jetzt leichtes spiel",
+	  "Ein Tier ist besonders besorgt, aber wer?",
+	  "Klicke in den Wald, wenn du alles gefunden hast!",
+  ];
+  window.veränderungstexte = {
+  laub: [
+    "Überall liegt Laub!",
+    "Den Bäumen geht es nicht gut.",
+    "Sie verlieren alle Blätter."
+  ],
+  eichhoernchen: [
+    "Das Eichhörnchen sieht traurig aus.",
+    "Es sucht überall nach Essen.",
+    "Von den Bäumen fallen keine Eicheln mehr."
+  ],
+  kaefer: [
+    "Wow, so viele Käfer!",
+    "Sie nagen überall die Baumrinde an!",
+    "Das schadet den Bäumen sehr."
+  ]
   };
 
-  let gefunden = 0;
-
-  Object.keys(veränderungen).forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener('click', () => {
-      if (!el.classList.contains('gefunden')) {
-        el.classList.add('gefunden');
-        document.getElementById('textfeld').innerText = 'Fuchs: ' + veränderungen[id];
-        gefunden++;
-        document.getElementById('fortschritt').innerText = `${gefunden} von 3 entdeckt`;
-        if (gefunden === 3) {
-          document.getElementById('textfeld').innerText = 'Fuchs: Stark! Du hast alle Veränderungen erkannt!';
-          document.getElementById('weiter-btn').style.display = 'block';
-        }
-      }
-    });
-  });
-</script>
-
-<!-- Sidebar & Navigation -->
+  window.zusammenfassung = [
+    "Gut beobachtet!",
+    "Wenn der Specht fehlt, gibt es zu viele Borkenkäfer.",
+    "Sie machen die Bäume kaputt!",
+	"Ohne Bäume, keine Eicheln für die Eichhörnchen.",
+	"Zum nächsten Level?"
+  ];
+</script>	
+<script src="/include/level.js"></script>
 <script src="/include/headerneu.js"></script>
-	
 </body>
 </html>
+
+
+
+	  
+  

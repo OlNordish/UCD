@@ -33,15 +33,15 @@
   </div>
 </div>
 <script>
-  // Konfiguration für Level 2
+  // Konfiguration für Level 3
   window.erwartet = 3;
-  window.levelDoneKey = "level2done";
+  window.levelDoneKey = "level3done";
   window.klickbareElemente = ["maeuse", "junge_baeume_kaputt", "specht"];
 
   window.levelEinleitung = [
 	 "Es war still letzte Nacht.",
-	  " Keine Eule ruft mehr.",
-	  " Ein Tier ist besonders besorgt, aber wer?",
+	  "Keine Eule ruft mehr.",
+	  "Ein Tier ist besonders besorgt, aber wer?",
 	  "Klicke in den Wald, wenn du alles gefunden hast!",
   ];
   window.veränderungstexte = {
