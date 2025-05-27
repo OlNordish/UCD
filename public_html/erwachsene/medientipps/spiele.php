@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Waldspiele für Kinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spiele &amp; Rätsel</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
@@ -14,77 +14,86 @@
       font-family: 'Nunito', sans-serif;
       background: url('/bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
-      color: #ffffff;
+      color: #333333;
     }
 
     main {
       max-width: 1000px;
       margin: 4rem auto;
       padding: 2rem;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(170, 190, 165, 0.6);
       border-radius: 12px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #ffffff;
     }
 
     h1 {
       font-size: 2.5rem;
+      text-align: center;
       margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
+      color: #FFFFF;
     }
 
     p.intro {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 2rem;
+      color: #4A4A4A;
     }
 
-    .game-entry {
+    .entry-box {
       background-color: rgba(255, 255, 255, 0.95);
       color: #333;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
       margin-bottom: 2rem;
       padding: 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: center;
     }
 
-    .game-entry h3 {
-      margin-top: 0;
+    .entry-icon {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    .entry-content h2 {
       font-size: 1.4rem;
-      color: #2f4f4f;
+      margin: 0 0 0.5rem;
+      color: #5A3E36;
     }
 
-    .game-entry .publisher {
-      font-style: italic;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .game-entry p {
+    .entry-content p {
       margin: 0 0 0.75rem;
+      color: #3C3C3C;
     }
 
-    .game-entry a {
-      color: #006400;
+    .entry-content a {
+      color: #4A6D4F;
       font-weight: bold;
       text-decoration: none;
     }
 
-    .game-entry a:hover {
+    .entry-content a:hover {
       text-decoration: underline;
+      color: #365539;
     }
 
     @media (max-width: 600px) {
       main {
         padding: 1rem;
+      }
+
+      .entry-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .entry-icon {
+        margin: 0 auto;
       }
     }
   </style>
@@ -96,81 +105,101 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>🧩 Waldspiele für Kinder</h1>
-  <p class="intro">Ob Puzzle, Kartenspiel oder Rätselbogen – hier findest du Spielideen rund um Tiere, Bäume und das Leben im Wald.</p>
+  <h1>🎲 Spiele &amp; Rätsel</h1>
+  <p class="intro">Spielerisch den Wald entdecken – mit Naturpuzzles, Quizfragen und kreativen Spielideen.</p>
 
-  <section>
-    <h2>Kostenpflichtige Spiele</h2>
+  <!-- Thalia-Spiele mit Links -->
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_1.jpeg" alt="Ravensburger Puzzle" class="entry-icon">
+    <div class="entry-content">
+      <h2>Ravensburger: Tiere im Wald und auf der Wiese (Puzzle)</h2>
+      <p>Puzzlevergnügen mit Sachwissen für Kinder ab 4 Jahren.</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1066111397" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Wieso? Weshalb? Warum? Tiere im Wald und auf der Wiese (12 Teile)</h3>
-      <span class="publisher">Ravensburger</span>
-      <p>Puzzlevergnügen gepaart mit Sachwissen – puzzle dir einen kleinen Wald zusammen!</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1066111397" target="_blank" rel="noopener noreferrer">Bei Thalia ansehen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_2.jpeg" alt="Schmidt Puzzle" class="entry-icon">
+    <div class="entry-content">
+      <h2>Schmidt Spiele – Tiere im Wald (100 Teile)</h2>
+      <p>Puzzle dir deinen eigenen Wald mit detailreichen Tiermotiven!</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1058653863" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Tiere im Wald – 100 Teile Puzzle</h3>
-      <span class="publisher">Schmidt Spiele</span>
-      <p>Puzzle dir deinen eigenen Wald mit Tieren!</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1058653863" target="_blank" rel="noopener noreferrer">Bei Thalia ansehen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_3.jpg" alt="Mischwald Spiel" class="entry-icon">
+    <div class="entry-content">
+      <h2>Lookout Spiele – Mischwald</h2>
+      <p>Ein strategisches Kartenspiel rund um ein ökologisches Waldsystem.</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1069032393" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Mischwald</h3>
-      <span class="publisher">Lookout Spiele (Kosch)</span>
-      <p>Ein Kartenspiel, bei dem durch geschicktes Platzieren von Baumkarten ein ökologischer Lebensraum entsteht.</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1069032393" target="_blank" rel="noopener noreferrer">Bei Thalia ansehen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_4.jpeg" alt="Baumkronen Spiel" class="entry-icon">
+    <div class="entry-content">
+      <h2>Kosmos: Baumkronen</h2>
+      <p>Ein wunderschönes Zwei-Personen-Spiel – Regenwald aufbauen und entdecken.</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1060084139" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Baumkronen</h3>
-      <span class="publisher">KOSMOS, Tim Eisner</span>
-      <p>Karte für Karte wächst ein dichter Regenwald – ein wunderschönes Spiel zum Thema Natur.</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1060084139" target="_blank" rel="noopener noreferrer">Bei Thalia ansehen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_5.jpeg" alt="Naturmemo Wald" class="entry-icon">
+    <div class="entry-content">
+      <h2>Quelle &amp; Meyer – Natur-Memo Wald</h2>
+      <p>64 Karten für spielerisches Lernen mit Tieren und Pflanzen des Waldes.</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1046795929" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Natur-Memo Wald</h3>
-      <span class="publisher">Quelle &amp; Meyer</span>
-      <p>64 Spielkarten zum spielerischen Kennenlernen des Naturraums Wald.</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1046795929" target="_blank" rel="noopener noreferrer">Bei Thalia ansehen</a>
-    </article>
-  </section>
+  <!-- Kostenlose Spiele mit PDFs -->
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_6.png" alt="Blattdetektiv" class="entry-icon">
+    <div class="entry-content">
+      <h2>Blatt-Detektivbogen</h2>
+      <p>Mache einen Waldspaziergang und finde verschiedene Blattformen!</p>
+      <a href="/downloads/detektivbogen.pdf" download>PDF herunterladen</a>
+    </div>
+  </article>
 
-  <section>
-    <h2>Kostenlose Spiele &amp; Rätsel</h2>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_7.png" alt="Kreuzworträtsel 1" class="entry-icon">
+    <div class="entry-content">
+      <h2>Kreuzworträtsel Wald (Bildrätsel)</h2>
+      <p>Teste dein Wissen über den Wald mit einem spannenden Bilderrätsel!</p>
+      <a href="/downloads/kreuzwortraetselwald1.pdf" download>PDF herunterladen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Blatt-Detektivbogen</h3>
-      <p>Mache einen Waldspaziergang und kreuze an, was du gefunden hast!</p>
-      <a href="Blatt-Detektivbogen.pdf" download>PDF herunterladen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_8.png" alt="Kreuzworträtsel 2" class="entry-icon">
+    <div class="entry-content">
+      <h2>Kreuzworträtsel Wald (klassisch)</h2>
+      <p>Waldbegriffe von A bis Z – ideal zum Knobeln für Grundschulkinder.</p>
+      <a href="/downloads/kreuzwortraetselwald2.pdf" download>PDF herunterladen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Kreuzworträtsel – Waldwissen (Grundschule)</h3>
-      <p>Teste dein Wissen über den Wald mit einem einfachen Rätsel.</p>
-      <a href="Kreuzwortraetsel_Wald.pdf" download>PDF herunterladen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_9.png" alt="Jolinchens Waldquiz" class="entry-icon">
+    <div class="entry-content">
+      <h2>Jolinchens Waldquiz</h2>
+      <p>Teste dein Wissen mit lustigen Fragen zu Tieren und Natur.</p>
+      <a href="/downloads/waldraetsel.pdf" download>PDF herunterladen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Kreuzworträtsel – Der Wald (Online &amp; PDF)</h3>
-      <p>Ein weiteres Rätsel rund um Bäume, Tiere und Pflanzen.</p>
-      <a href="Kreuzwortraetsel_Wald_2.pdf" download>PDF herunterladen</a>
-    </article>
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Spiele/Spiel_10.png" alt="Fußabdrücke erkennen" class="entry-icon">
+    <div class="entry-content">
+      <h2>Hmm? - Fußspuren?</h2>
+      <p>Spurensuche im Wald – zeichne nach, was du entdeckt hast!</p>
+      <a href="/downloads/hmm?fußspuren?.pdf" download>PDF herunterladen</a>
+    </div>
+  </article>
 
-    <article class="game-entry">
-      <h3>Wald-Rätsel – Medientipps-Spezial</h3>
-      <p>Teste dein Wissen über den Wald mit einem Medientipps-Rätsel.</p>
-      <a href="Medientipps_Waldraetsel.pdf" download>PDF herunterladen</a>
-    </article>
-
-    <article class="game-entry">
-      <h3>Tierische Fußabdrücke erkennen</h3>
-      <p>Finde heraus, welche Tiere vor dir im Wald unterwegs waren!</p>
-      <a href="Tierische Fußabdrücke erkennen und zuordnen.pdf" download>PDF herunterladen</a>
-    </article>
-  </section>
 </main>
 
 <!-- Sidebar & Navigation -->

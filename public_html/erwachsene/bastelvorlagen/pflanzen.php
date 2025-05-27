@@ -8,70 +8,95 @@
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-    }
+ <style>
+  body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: url('/bilder/bg1.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333333;
+  }
 
+  main {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(170, 190, 165, 0.6);
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #FFFFF;
+  }
+
+  p.intro {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+  }
+
+  .entry-box {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .entry-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .entry-content h2 {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem;
+    color: #5A3E36;
+  }
+
+  .entry-content p {
+    margin: 0 0 0.75rem;
+    color: #3C3C3C;
+  }
+
+  .entry-content a {
+    color: #4A6D4F;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .entry-content a:hover {
+    text-decoration: underline;
+    color: #365539;
+  }
+
+  @media (max-width: 600px) {
     main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    p.intro {
-      font-size: 1.2rem;
-      text-align: center;
-      margin-bottom: 2rem;
+      padding: 1rem;
     }
 
     .entry-box {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #333;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
+      grid-template-columns: 1fr;
+      text-align: center;
     }
 
-    .entry-box h2 {
-      font-size: 1.4rem;
-      margin: 0 0 0.5rem;
-      color: #2f4f4f;
+    .entry-icon {
+      margin: 0 auto;
     }
-
-    .entry-box p {
-      margin: 0 0 0.75rem;
-    }
-
-    .entry-box a {
-      color: #006400;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .entry-box a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      main {
-        padding: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 
 <body>
@@ -84,21 +109,30 @@
   <p class="intro">Mal- und Bastelideen rund um Blätter, Bäume und Naturspiele.</p>
 
   <article class="entry-box">
-    <h2>Herbstblätter zum Ausmalen</h2>
-    <p>Eine bunte Malvorlage mit verschiedenen Blattformen – lass den Herbst in deinen Lieblingsfarben erstrahlen!</p>
-    <a href="/downloads/Malvorlage_Herbstbltter.pdf" download>PDF herunterladen</a>
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_6.png" alt="Herbstblätter zum Ausmalen" class="entry-icon">
+    <div class="entry-content">
+      <h2>Herbstblätter zum Ausmalen</h2>
+      <p>Eine bunte Malvorlage mit verschiedenen Blattformen – lass den Herbst in deinen Lieblingsfarben erstrahlen!</p>
+      <a href="/downloads/herbstblaetter.pdf" download>PDF herunterladen</a>
+    </div>
   </article>
 
   <article class="entry-box">
-    <h2>Blätterbuch selber machen</h2>
-    <p>Sammle, presse und entdecke die Blätter der Bäume – gestalte dein eigenes kleines Naturlexikon!</p>
-    <a href="/downloads/Bastelanleitung_Bltterbuch.pdf" download>PDF herunterladen</a>
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_7.png" alt="Blätterbuch basteln" class="entry-icon">
+    <div class="entry-content">
+      <h2>Blätterbuch selber machen</h2>
+      <p>Sammle, presse und entdecke die Blätter der Bäume – gestalte dein eigenes kleines Naturlexikon!</p>
+      <a href="/downloads/blaetterbuch.pdf" download>PDF herunterladen</a>
+    </div>
   </article>
 
   <article class="entry-box">
-    <h2>Dein eigenes Wald-Memory</h2>
-    <p>Bastle dein persönliches Memory-Spiel mit Waldtieren und Pflanzen und spiele es mit Freunden und Familie!</p>
-    <a href="/downloads/Bastelanleitung_Wald-Memory.pdf" download>PDF herunterladen</a>
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_8.png" alt="Wald-Memory basteln" class="entry-icon">
+    <div class="entry-content">
+      <h2>Dein eigenes Wald-Memory</h2>
+      <p>Bastle dein persönliches Memory-Spiel mit Waldtieren und Pflanzen und spiele es mit Freunden und Familie!</p>
+      <a href="/downloads/waldmemory.pdf" download>PDF herunterladen</a>
+    </div>
   </article>
 </main>
 

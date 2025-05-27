@@ -2,117 +2,114 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Für Erwachsene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wald erleben – Gemeinsam</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-    }
+  body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: url('/bilder/bg1.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333333;
+  }
 
-    main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background-color: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-    }
+  main {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(170, 190, 165, 0.6);
+    border-radius: 12px;
+  }
 
-    h1 {
-      font-size: 2.5rem;
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #FFFFF;
+  }
+
+  p.intro {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+  }
+
+  .entry-box {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .entry-box img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    background: #f0f0f0;
+    padding: 1rem;
+  }
+
+  .entry-box-content {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .entry-box-content h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #5A3E36;
+  }
+
+  .entry-box-content p {
+    margin: 0.5rem 0 1rem;
+    color: #3C3C3C;
+  }
+
+  .entry-box-content a {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background-color: #4A6D4F;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .entry-box-content a:hover {
+    background-color: #365539;
+  }
+
+  @media (max-width: 700px) {
+    .entry-box {
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin-bottom: 1rem;
     }
 
-    p.intro {
-      font-size: 1.2rem;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    .entry-box img {
+      width: 100px;
+      height: 100px;
     }
 
-    .bereich {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #2f4f4f;
-      border-radius: 16px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    .entry-box-content {
+      padding: 1rem;
+      align-items: center;
     }
 
-    .bereich h2 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+    .entry-box-content a {
+      margin-top: 1rem;
     }
-
-    .bereich p {
-      margin-bottom: 1.5rem;
-      color: #444;
-    }
-
-    .hauptlink {
-      display: inline-block;
-      font-size: 1.2rem;
-      background-color: #3cb371;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 0.8rem 1.4rem;
-      border-radius: 10px;
-      font-weight: bold;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-      transition: background-color 0.3s ease;
-      margin-bottom: 1.5rem;
-    }
-
-    .hauptlink:hover {
-      background-color: #2e8b57;
-    }
-
-    .unterlinks {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .unterlink {
-      font-size: 0.95rem;
-      background-color: #2f4f4f;
-      color: white;
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .unterlink:hover {
-      background-color: #456666;
-    }
-
-    @media (max-width: 600px) {
-      .bereich h2 {
-        font-size: 1.5rem;
-      }
-
-      .hauptlink {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
-      }
-
-      .unterlink {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.8rem;
-      }
-    }
+  }
   </style>
 </head>
 
@@ -122,32 +119,27 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
-  <h1>👩‍🏫 Für Erwachsene</h1>
-  <p class="intro">Hier finden Sie vertiefende Inhalte zur Umweltbildung, Bastelideen sowie medienpädagogische Materialien.</p>
+  <h1>🌲 Gemeinsam mit Ihrem kleinen Grashüpfer!</h1>
+  <p class="intro">Waldwissen vertiefen, kreativ werden, weitergeben – Materialien und Tipps für Eltern, Lehrkräfte &amp; Interessierte.</p>
 
-  <section class="bereich">
-    <h2>🎨 Bastelvorlagen</h2>
-    <p>Kreative Vorlagen zu saisonalen und waldbezogenen Themen – ideal für Kita, Schule oder Zuhause.</p>
-    <a href="/erwachsene/bastelvorlagen.php" class="hauptlink">Zu den Bastelvorlagen</a>
-    <div class="unterlinks">
-      <a href="/erwachsene/bastelvorlagen/tiere.php" class="unterlink">Tiere</a>
-      <a href="/erwachsene/bastelvorlagen/pflanzen.php" class="unterlink">Bäume &amp; Pflanzen</a>
-      <a href="/erwachsene/bastelvorlagen/umweltschutz.php" class="unterlink">Umweltschutz</a>
-      <a href="/erwachsene/bastelvorlagen/jahreszeiten.php" class="unterlink">Jahreszeiten</a>
+  <div class="entry-box">
+    <img src="/downloads/kind.svg" alt="Icon" />
+    <div class="entry-box-content">
+      <h2>Medientipps für Kinder</h2>
+      <p>Bücher, Videos, Hörspiele &amp; Spiele – kindgerecht erklärt für Eltern und Pädagog:innen zusammengestellt.</p>
+      <a href="medientipps.php">Zu den Medientipps</a>
     </div>
-  </section>
+  </div>
 
-  <section class="bereich">
-    <h2>📚 Medientipps</h2>
-    <p>Empfehlungen für Bücher, Hörspiele, Videos &amp; Spiele – für Kinder, Eltern und Pädagog*innen.</p>
-    <a href="/erwachsene/medientipps.php" class="hauptlink">Zu den Medientipps</a>
-    <div class="unterlinks">
-      <a href="/erwachsene/buecher.php" class="unterlink">Bücher</a>
-      <a href="/erwachsene/hoerspiele.php" class="unterlink">Hörspiele</a>
-      <a href="/erwachsene/videos.php" class="unterlink">Videos</a>
-      <a href="/erwachsene/spiele.php" class="unterlink">Spiele</a>
+  <div class="entry-box">
+    <img src="/downloads/kind.svg" alt="Icon" />
+    <div class="entry-box-content">
+      <h2>Bastelideen zum Thema Wald</h2>
+      <p>Jahreszeiten, Tiere, Umweltschutz – kreative Vorlagen zum Herunterladen und Loslegen.</p>
+      <a href="bastelvorlagen.php">Zu den Bastelvorlagen</a>
     </div>
-  </section>
+  </div>
+
 </main>
 
 <!-- Sidebar & Navigation -->

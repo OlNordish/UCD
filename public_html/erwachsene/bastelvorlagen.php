@@ -9,32 +9,41 @@
   <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-    }
+  body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background: url('/bilder/bg1.svg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333333;
+  }
 
-    main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-    }
+  main {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: rgba(170, 190, 165, 0.6);
+    border-radius: 12px;
+  }
 
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #FFFFF;
+  }
+
+  p.intro {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+  }
 
     p.intro {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 2rem;
+      color: #4A4A4A;
     }
 
     .entry-box {
@@ -65,17 +74,18 @@
     .entry-box-content h2 {
       margin: 0;
       font-size: 1.4rem;
-      color: #2f4f4f;
+      color: #5A3E36;
     }
 
     .entry-box-content p {
       margin: 0.5rem 0 1rem;
+      color: #3C3C3C;
     }
 
     .entry-box-content a {
       align-self: flex-start;
       padding: 0.5rem 1rem;
-      background-color: #2f4f4f;
+      background-color: #4A6D4F;
       color: #ffffff;
       border-radius: 6px;
       text-decoration: none;
@@ -83,7 +93,7 @@
     }
 
     .entry-box-content a:hover {
-      background-color: #4f6f6f;
+      background-color: #365539;
     }
 
     @media (max-width: 700px) {
@@ -120,7 +130,7 @@
   <p class="intro">Kreative Ideen zum Basteln – Tiere, Pflanzen, Wetter und mehr!</p>
 
   <div class="entry-box">
-    <img src="/img/tiere-icon.png" alt="Tiere Icon" />
+    <img src="/downloads/kind.svg" alt="Kind Icon" />
     <div class="entry-box-content">
       <h2>Tiere des Waldes</h2>
       <p>Male und bastle deine Lieblingstiere – vom Fuchs bis zum Reh.</p>
@@ -129,7 +139,7 @@
   </div>
 
   <div class="entry-box">
-    <img src="/img/pflanzen-icon.png" alt="Pflanzen Icon" />
+    <img src="/downloads/kind.svg" alt="Kind Icon" />
     <div class="entry-box-content">
       <h2>Bäume &amp; Pflanzen</h2>
       <p>Lerne Blätter und Bäume kennen – mit Vorlagen zum Sammeln und Malen.</p>
@@ -138,7 +148,7 @@
   </div>
 
   <div class="entry-box">
-    <img src="/img/umweltschutz-icon.png" alt="Umweltschutz Icon" />
+    <img src="/downloads/kind.svg" alt="Kind Icon" />
     <div class="entry-box-content">
       <h2>Umweltschutz</h2>
       <p>Wie können wir dem Wald helfen? Tipps und kreative Bastelideen.</p>
@@ -147,7 +157,7 @@
   </div>
 
   <div class="entry-box">
-    <img src="/img/jahreszeiten-icon.png" alt="Jahreszeiten Icon" />
+    <img src="/downloads/kind.svg" alt="Kind Icon" />
     <div class="entry-box-content">
       <h2>Jahreszeiten &amp; Wetter</h2>
       <p>Was passiert im Frühling, Sommer, Herbst und Winter? Bastel das Jahr!</p>
