@@ -120,7 +120,7 @@
       <h2>WAS IST WAS Junior – Wald</h2>
       <span class="author">Tessloff Verlag</span>
       <p>Hörspielwissen über den Wald für Kinder von 4–7 Jahren.</p>
-      <a href="https://www.thalia.de/shop/home/artikeldetails/A1058265069" target="_blank">Bei Thalia ansehen</a>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1009060835" target="_blank">Bei Thalia ansehen</a>
     </div>
   </article>
 

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const counterBox = document.getElementById("counter");
   const buttonsContainer = document.getElementById("level-buttons");
 
-  let aktuellerText = window.levelEinleitung || ["Was ver‰ndert sich hier im Wald?"];
+  let aktuellerText = window.levelEinleitung || ["Was ver√§ndert sich hier im Wald?"];
   let aktuellerIndex = 0;
   const entdeckte = new Set();
   let bereitZurZusammenfassung = false;
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
       inZusammenfassung && index === aktuellerText.length - 1 ? "flex" : "none";
   }
 
-  function zeigeVer‰nderung(id) {
+  function zeigeVer√§nderung(id) {
     inZusammenfassung = false;
-    aktuellerText = window.ver‰nderungstexte[id] || ["????? Keine Infos."];
+    aktuellerText = window.ver√§nderungstexte[id] || ["ü§∑‚Äç‚ôÇÔ∏è Keine Infos."];
     aktuellerIndex = 0;
     zeigeText(0);
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.cursor = "pointer";
       el.addEventListener("click", e => {
         e.stopPropagation();
-        zeigeVer‰nderung(id);
+        zeigeVer√§nderung(id);
       });
     }
   });
@@ -102,9 +102,9 @@ if (!aufElement && !aufBlase) {
     zeigeZusammenfassung();
   }
 
-  // Nur zur¸cksetzen, wenn NICHT in der Zusammenfassung
+  // Nur zur√ºcksetzen, wenn NICHT in der Zusammenfassung
   if (!inZusammenfassung) {
-    aktuellerText = window.levelEinleitung || ["Was ver‰ndert sich hier im Wald?"];
+    aktuellerText = window.levelEinleitung || ["Was ver√§ndert sich hier im Wald?"];
     aktuellerIndex = 0;
     zeigeText(0);
   }

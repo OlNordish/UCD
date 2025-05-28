@@ -109,7 +109,7 @@
   <p class="intro">Male oder bastle für die Natur: Umweltschutz und Nachhaltigkeit kindgerecht erklärt.</p>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_10.png" alt="Umweltschutz malen" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_9.png" alt="Umweltschutz malen" class="entry-icon">
     <div class="entry-content">
       <h2>Malvorlage zum Umweltschutz</h2>
       <p>Male bunte Bilder, die zeigen, wie wir unsere Natur schützen können!</p>
@@ -118,7 +118,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_11.png" alt="Erde schützen malen" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_10.png" alt="Erde schützen malen" class="entry-icon">
     <div class="entry-content">
       <h2>Malvorlage: Die Erde schützen</h2>
       <p>Gestalte tolle Bilder und lerne, wie wichtig der Schutz unserer Umwelt ist!</p>
@@ -127,7 +127,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_12.png" alt="Recycling ausmalen" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_11.png" alt="Recycling ausmalen" class="entry-icon">
     <div class="entry-content">
       <h2>Malvorlage zum Recycling</h2>
       <p>Male die Erde und Recycling-Symbole bunt aus – für mehr Umweltbewusstsein beim Malen!</p>

@@ -174,15 +174,6 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/Medientipps_Spiele/Spiel_8.png" alt="Kreuzworträtsel 2" class="entry-icon">
-    <div class="entry-content">
-      <h2>Kreuzworträtsel Wald (klassisch)</h2>
-      <p>Waldbegriffe von A bis Z – ideal zum Knobeln für Grundschulkinder.</p>
-      <a href="/downloads/kreuzwortraetselwald2.pdf" download>PDF herunterladen</a>
-    </div>
-  </article>
-
-  <article class="entry-box">
     <img src="/downloads/Medientipps_Spiele/Spiel_9.png" alt="Jolinchens Waldquiz" class="entry-icon">
     <div class="entry-content">
       <h2>Jolinchens Waldquiz</h2>
@@ -196,7 +187,7 @@
     <div class="entry-content">
       <h2>Hmm? - Fußspuren?</h2>
       <p>Spurensuche im Wald – zeichne nach, was du entdeckt hast!</p>
-      <a href="/downloads/hmm?fußspuren?.pdf" download>PDF herunterladen</a>
+      <a href="/downloads/hmmfußspuren.pdf" download>PDF herunterladen</a>
     </div>
   </article>
 

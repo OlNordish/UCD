@@ -110,7 +110,7 @@
   <p class="intro">Spielerisch durchs Jahr – mit Ausmalbildern, Bastelideen und Wetteruhren.</p>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_1.png" alt="Vorschaubild Lernuhr" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_12.png" alt="Vorschaubild Lernuhr" class="entry-icon">
     <div class="entry-content">
       <h2>Jahreszeiten-Lernuhr zum Ausschneiden</h2>
       <p>Bastle und male deine eigene Uhr, um spielerisch die vier Jahreszeiten zu lernen!</p>
@@ -119,7 +119,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_2.png" alt="Vorschaubild Jahreszeitenbaum" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_13.png" alt="Vorschaubild Jahreszeitenbaum" class="entry-icon">
     <div class="entry-content">
       <h2>Jahreszeitenbaum zum Anmalen und Basteln</h2>
       <p>Gestalte deinen eigenen Baum und entdecke, wie sich die Jahreszeiten verändern!</p>
@@ -128,7 +128,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_5.png" alt="Vorschaubild Herbstdrachen" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_14.png" alt="Vorschaubild Herbstdrachen" class="entry-icon">
     <div class="entry-content">
       <h2>Herbstdrachen zum Basteln</h2>
       <p>Baue deinen eigenen Drachen und lass ihn im Herbstwind fliegen!</p>
@@ -137,7 +137,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_6.png" alt="Vorschaubild Malvorlage Blätter" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_15.png" alt="Vorschaubild Malvorlage Blätter" class="entry-icon">
     <div class="entry-content">
       <h2>Malvorlage zu den Jahreszeiten</h2>
       <p>Male die bunten Szenen der vier Jahreszeiten aus und entdecke ihre Besonderheiten!</p>
@@ -146,7 +146,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/bastelvorlagen/Bastelvorlage_8.png" alt="Vorschaubild Symbolbilder" class="entry-icon">
+    <img src="/downloads/bastelvorlagen/Bastelvorlage_16.png" alt="Vorschaubild Symbolbilder" class="entry-icon">
     <div class="entry-content">
       <h2>Symbolbilder der Jahreszeiten</h2>
       <p>Entdecke die typischen Motive für Frühling, Sommer, Herbst und Winter zum Ausmalen!</p>
