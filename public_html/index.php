@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Wald entdecken – Startseite</title>
-  <base href="/" />
-  
-  <!-- Schriftart und Styles -->
-  <link rel="stylesheet" href="include/headerneu.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Willkommen im Wald!</title>
 
+  <!-- Globale Navigation + Styles -->
+  <link rel="stylesheet" href="/include/headerneu.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka&family=Nunito&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Nunito', sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol', 'Apple Color Emoji';
+      font-family: 'Baloo 2', cursive;
       background: url('/bilder/bg1.svg') no-repeat center center fixed;
       background-size: cover;
-      color: #ffffff;
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
+      color: #fff;
+      overflow-x: hidden;
     }
 
     main {
-      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: 5rem auto 2rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
       text-align: center;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+      color: #2f4f4f;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     }
 
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+    p.intro {
+      font-size: 1.6rem;
+      color: #333;
+      margin-bottom: 2.5rem;
     }
 
     .start-buttons {
@@ -42,149 +46,112 @@
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
     }
 
     .start-buttons a {
-      padding: 1.2rem 2.5rem;
-      font-size: 1.5rem;
+      padding: 1.5rem 3rem;
+      font-size: 2rem;
       background-color: #2f4f4f;
       color: white;
-      border-radius: 12px;
+      border-radius: 14px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, background-color 0.3s ease;
     }
 
     .start-buttons a:hover {
-      background-color: #4f6f6f;
+      background-color: #446969;
+      transform: scale(1.05);
     }
 
-    #sprechblase-container {
+    /* Elternbereich unten rechts */
+    .elternbereich-hinweis {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-      max-width: 320px;
-      z-index: 100;
+      background-color: rgba(47, 79, 79, 0.8);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-family: 'Nunito', sans-serif;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    #fuchs-avatar {
-      font-size: 3.5rem;
-      filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.4));
+    .elternbereich-hinweis a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
     }
 
-    #sprechblase {
-      background-color: rgba(255, 255, 255, 0.95);
-      color: #333;
-      padding: 1rem 1.3rem;
-      border-radius: 14px;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .elternbereich-hinweis a:hover {
+      color: #ffeb3b;
     }
 
-    #loslegen-btn {
-      margin-top: 1rem;
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      border: none;
-      background-color: #2f4f4f;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    #loslegen-btn:hover {
-      background-color: #4f6f6f;
-    }
-
+    /* Kind-Grafik im unteren Bereich */
     #waldboden {
-      position: absolute;
-      bottom: 0;
+      position: relative;
       width: 100%;
-      height: 45vh;
-      pointer-events: none;
+      height: 60vh;
+      overflow: hidden;
     }
 
     #kind {
       position: absolute;
-      width: 450px;
+      bottom: 0;
+      width: 300px;
       height: auto;
       transition: transform 0.2s ease, left 0.2s ease, top 0.2s ease;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      .start-buttons a {
-        font-size: 1.2rem;
-        padding: 1rem 2rem;
-      }
-
-      #sprechblase-container {
-        flex-direction: column-reverse;
-        align-items: flex-end;
-      }
     }
   </style>
 </head>
 
 <body>
-  <?php include $_SERVER['DOCUMENT_ROOT'] . "/include/headerneu.php"; ?>
 
+  <!-- Navigation (Burger-Menü & Logo) -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+
+  <!-- Hauptbereich für Kinder -->
   <main>
     <h1>Willkommen im Wald!</h1>
-    <p>Wähle aus, was du entdecken möchtest:</p>
-
+    <p class="intro">Bist du bereit für dein Abenteuer?</p>
     <div class="start-buttons">
-      <a href="/kinder/kinder.php">Kinder</a>
-      <a href="/erwachsene/erwachsene.php">Erwachsene</a>
+      <a href="/kinder/kinder.php">👧👦 Für Kinder</a>
     </div>
   </main>
 
-  <!-- Kind im Wald -->
+  <!-- Kind im Waldboden (Zufällige Positionierung) -->
   <div id="waldboden">
     <img id="kind" src="/downloads/kind.svg" alt="Kind im Wald">
   </div>
 
-  <!-- Fuchs mit Sprechblase -->
-  <div id="sprechblase-container">
-    <div id="sprechblase">
-      Hallo! Schön, dass du da bist.<br>
-      Willst du direkt loslegen?
-      <br><br>
-      <button id="loslegen-btn" onclick="location.href='/kinder/spielen.php'">Loslegen</button>
-    </div>
-    <div id="fuchs-avatar">🦊</div>
+  <!-- Elternbereich als dezenter Button unten rechts -->
+  <div class="elternbereich-hinweis">
+    <a href="/erwachsene/erwachsene.php">Elterninfos öffnen</a>
   </div>
 
-  <!-- JavaScript -->
-  <script src="/include/headerneu.js"></script>
+  <!-- Script zur Zufallspositionierung des Kindes -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const kind = document.getElementById('kind');
       const waldboden = document.getElementById('waldboden');
 
-      const waldbodenRect = waldboden.getBoundingClientRect();
-      const kindWidth = kind.offsetWidth;
-      const kindHeight = kind.offsetHeight;
+      const maxLeft = waldboden.clientWidth - kind.offsetWidth;
+      const maxTop = waldboden.clientHeight - kind.offsetHeight;
 
-      const maxLeft = waldbodenRect.width - kindWidth;
-      const maxTop = waldbodenRect.height - kindHeight;
+      const left = Math.random() * maxLeft;
+      const top = Math.random() * (maxTop * 0.6); // oben max. 60% der Fläche
 
-      const randomLeft = Math.random() * maxLeft;
-      const randomTop = Math.random() * maxTop;
+      const scale = 0.8 - (top / waldboden.clientHeight) * 0.2;
 
-      const relativeTop = randomTop / maxTop;
-      const scale = 1 - (relativeTop * 0.2); // max 20% kleiner
-
-      kind.style.left = `${randomLeft}px`;
-      kind.style.top = `${randomTop}px`;
+      kind.style.left = `${left}px`;
+      kind.style.top = `${top}px`;
       kind.style.transform = `scale(${scale})`;
     });
   </script>
+
+  <!-- Navigation-Logik -->
+  <script src="/include/headerneu.js"></script>
 </body>
 </html>

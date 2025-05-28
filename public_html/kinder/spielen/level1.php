@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 1</title>
+  <title>Level 4</title>
+
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css" />
+    
+  <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+
 <div id="waldszene">
   <div id="counter">0 / 3 Dinge entdeckt</div>
+    
+  <!-- Ansteuerung der SVG -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level1.svg'); ?>
+    
   <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
@@ -32,7 +40,6 @@
 </div>
 
 <script>
-  // Konfiguration für Level 1
   window.erwartet = 3;
   window.levelDoneKey = "level1done";
   window.klickbareElemente = ["maeuse", "eicheln", "samen"];
@@ -40,7 +47,7 @@
   window.levelEinleitung = [
     "Oh nein, das Eichhörnchen fehlt!",
     "Was verändert sich jetzt im Wald?",
-	"Klicke in den Wald, wenn du alles gefunden hast!"  
+    "Klicke in den Wald, wenn du alles gefunden hast!"
   ];
 
   window.veränderungstexte = {
@@ -65,11 +72,15 @@
     "Du hast es herausgefunden!",
     "Weil das Eichhörnchen fehlt, bleiben die Eicheln liegen.",
     "Die Mäuse fressen sie – aber es wachsen keine neuen Bäume mehr.",
-	 "Zum nächsten level?"
+    "Zum nächsten Level?"
   ];
 </script>
 
+<!-- Level JavaScript -->
 <script src="/include/level.js"></script>
+
+<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
+
 </body>
 </html>

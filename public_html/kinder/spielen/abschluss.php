@@ -9,24 +9,6 @@
   <link rel="stylesheet" href="/include/headerneu.css" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-    }
-
-    main {
-      min-height: 100vh;
-      padding: 6rem 2rem 3rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
     h1 {
       font-size: 3rem;
       margin-bottom: 1rem;

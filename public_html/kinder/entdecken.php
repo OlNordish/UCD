@@ -2,18 +2,13 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 1</title>
-  <link rel="stylesheet" href="/include/headerneu.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', 'Fredoka', sans-serif;
-      background-color: #22724E;
-      color: #fff;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Entdecke den Wald!</title>
 
+  <!-- Sidebar & Navigation -->
+  <link rel="stylesheet" href="/include/headerneu.css">
+
+  <style>
     #waldszene {
       width: 100%;
       max-height: calc(100vh - 60px);
@@ -118,10 +113,12 @@
 </head>
 <body>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
-<div id="waldszene">
+  <!-- Sidebar & Navigation -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+  
+  <div id="waldszene">
   <div id="counter">0 / 3 Dinge entdeckt</div>
-
+      
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level1.svg'); ?>
 
   <div id="sprechblase-container">
@@ -250,6 +247,7 @@ document.getElementById("waldszene").addEventListener("click", (e) => {
 });
 </script>
 
+<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
 </body>
 </html>

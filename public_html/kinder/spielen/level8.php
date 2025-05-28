@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Level 1</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level 4</title>
 
   <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
-
-  <!-- CSS für Level -->
-  <link rel="stylesheet" href="/kinder/spielen/level.css">
+  <link rel="stylesheet" href="/include/headerneu.css" />
+    
+  <!-- Level CSS -->
+  <link rel="stylesheet" href="/include/level.css" />
 </head>
-
 <body>
 
 <!-- Sidebar & Navigation -->

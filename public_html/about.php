@@ -5,26 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Über uns</title>
 
-  <!-- Schriftart und Styles -->
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/headerneu.css">
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #333333;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(170, 190, 165, 0.6);
-      border-radius: 12px;
-    }
-
     h1 {
       font-size: 2.5rem;
       text-align: center;
@@ -57,7 +41,7 @@
     .team-card {
       background-color: rgba(255, 255, 255, 0.95);
       border: 4px dashed #a8cfa1;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       padding: 1.5rem;
       flex: 1 1 28%;
@@ -118,6 +102,7 @@
 </head>
 <body>
 
+<!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
 
 <main>
@@ -161,6 +146,8 @@
   </div>
 </main>
 
+<!-- Sidebar & Navigation -->
 <script src="/include/headerneu.js"></script>
+    
 </body>
 </html>

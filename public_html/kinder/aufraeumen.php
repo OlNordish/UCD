@@ -9,14 +9,6 @@
   <link rel="stylesheet" href="/include/headerneu.css">
   
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #ffffff;
-    }
-
     #wald {
       position: relative;
       width: 100%;
@@ -88,7 +80,7 @@
       border-radius: 10px;
       width: 300px;
       font-size: 16px;
-      color: #333;
+      color: #333333;
     }
 
     #fuchs-avatar {

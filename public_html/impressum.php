@@ -9,27 +9,11 @@
   <link rel="stylesheet" href="/include/headerneu.css">
     
   <style>
-    body {
-      margin: 0;
-      font-family: 'Nunito', sans-serif;
-      background: url('/bilder/bg1.svg') no-repeat center center fixed;
-      background-size: cover;
-      color: #333333;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: 4rem auto;
-      padding: 2rem;
-      background: rgba(170, 190, 165, 0.6);
-      border-radius: 12px;
-    }
-
     h1 {
       font-size: 2.5rem;
       text-align: center;
       margin-bottom: 1rem;
-      color: #333;
+      color: #333333;
     }
 
     h2 {
