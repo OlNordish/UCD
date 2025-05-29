@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 4</title>
+  <title>Level 5</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css" />
@@ -11,7 +11,7 @@
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
-<body>
+<body class="level-page">
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
@@ -42,39 +42,39 @@
 <script>
   window.erwartet = 3;
   window.levelDoneKey = "level5done";
-  window.klickbareElemente = ["nagetiere", "reh_sad", "junge_baeume_kaputt"];
+  window.klickbareElemente = ["kaninchen", "rehe", "letzte_voegel"];
 
   window.levelEinleitung = [
-    "Stell dir vor, ich wäre nicht mehr hier…",
-    "Was würde im Wald passieren?",
-    "Ein Tier ist besonders traurig – aber wer?",
+    "Der Wolf ist weg – und der Wald verändert sich. Was erkennst du?",
+    "Ein Bewohner musste den Wald verlassen.",
+    "In seinem Zuhause wohnen jetzt andere Tiere!",
     "Klicke in den Wald, wenn du alles gefunden hast!"
   ];
 
   window.veränderungstexte = {
-    nagetiere: [
-      "Überall Mäuse und Kaninchen!",
-      "Niemand hält sie so gut im Zaum wie ich.",
-      "Es sind so viele! Ob die genug Essen finden?"
+    kaninchen: [
+      "Die Kaninchen werden mehr und mehr.",
+      "Bald gibt es nichtmehr genug Essen zu finden!",
+      "Auch die Sträucher sind verschwunden."
     ],
-    junge_baeume_kaputt: [
-      "Die Mäuse haben alle jungen Bäume angenagt.",
-      "Auch die Kaninchen nagen an ihnen.",
-      "So können die Bäume nicht groß werden."
+    rehe: [
+      "Zu viele Rehe – niemand hält sie in Schach.",
+      "Sie fressen alle jungen Bäume und Pflanzen an!",
+      "Es sind einfach zu viele geworden."
     ],
-    reh_sad: [
-      "Das Reh sieht hungrig aus!",
-      "Es wachsen nicht genug Blumen und Pflanzen.",
-      "Auch die Blumen sind alle weg."
+    letzte_voegel: [
+      "Kaum noch junge Pflanzen – der Wald kann sich nicht erholen.",
+      "Somit mussten Euele und Specht auf den letzten gesunden Baum ziehen.",
+      "Für das Eichhörnchen gibt es hier keinen Platz mehr."
     ]
   };
-
+ 
   window.zusammenfassung = [
-    "Alles entdeckt!",
-    "Wenn ich fehle, haben die Mäuse und Kaninchen die Kontrolle.",
-    "Sie suchen nach Essen und machen junge Bäume kaputt!",
-    "So gibt es auch für das Reh nichts mehr zu fressen.",
-    "Weiter zum nächsten Level?"
+    "Wow! Gut beobachtet!",
+    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen",
+    "So kann der Wald nicht nachwachsen. Es gibt nicht genug Bäume zum Wohnen.",
+    "Darum haben Specht und Eule den Baum des Eichhörnchens besetzt.", 
+    "Zum nächsten Level?"
   ];
 </script>
 

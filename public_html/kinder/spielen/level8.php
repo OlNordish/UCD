@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 4</title>
+  <title>Level 8</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css" />
@@ -11,69 +11,78 @@
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
-<body>
+<body class="level-page">
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <div id="waldszene">
-  <div class="element tier" id="reh" style="top: 25%; left: 15%;">🦌</div>
-  <div class="element tier" id="kaninchen" style="top: 35%; left: 25%;">🐰</div>
-  <div class="element pflanze" id="jungpflanzen" style="top: 60%; left: 20%;">🌱</div>
-  <div class="element pflanze" id="lichterwald" style="top: 50%; left: 70%;">🌤️</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
+
+  <!-- Ansteuerung der SVG -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level8.svg'); ?>
+
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Fuchs: Der Wolf ist weg – und der Wald verändert sich. Was erkennst du?</p>
-      <button id="weiter-btn" onclick="nextLevel()">Fertig!</button>
+      <p id="textfeld">Lade...</p>
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
+      </div>
+      <div class="level-buttons" id="level-buttons">
+        <a href="abschluss.php" class="weiter-btn">Ja, weiter!</a>
+        <a href="/kinder/spielen.php" class="zurueck-btn">Zurück zur Übersicht</a>
+      </div>
     </div>
-    <div id="fuchs-avatar">🦊</div>
   </div>
-
-  <div id="fortschritt">0 von 3 entdeckt</div>
-  <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
 
 <script>
-  function zurStartseite() {
-    window.location.href = "/kinder/spielen.php";
-  }
+  window.erwartet = 3;
+  window.levelDoneKey = "level8done";
+  window.klickbareElemente = ["nagetiere", "reh_sad", "junge_baeume_kaputt"];
 
-  function nextLevel() {
-    localStorage.setItem("level8done", "true");
-    window.location.href = "abschluss.php";
-  }
+  window.levelEinleitung = [
+    "Stell dir vor, ich wäre nicht mehr hier…",
+    "Was würde im Wald passieren?",
+    "Ein Tier ist besonders traurig – aber wer?",
+    "Klicke in den Wald, wenn du alles gefunden hast!"
+  ];
 
-  const veränderungen = {
-    reh: "Zu viele Rehe – niemand hält sie in Schach.",
-    kaninchen: "Auch die Kaninchen werden mehr und mehr.",
-    jungpflanzen: "Kaum noch junge Pflanzen – der Wald kann sich nicht erholen.",
-    lichterwald: "Der Wald wird licht – überall fehlt Nachwuchs."
+  window.veränderungstexte = {
+    nagetiere: [
+      "Überall Mäuse und Kaninchen!",
+      "Niemand hält sie so gut im Zaum wie ich.",
+      "Es sind so viele! Ob die genug Essen finden?"
+    ],
+    junge_baeume_kaputt: [
+      "Die Mäuse haben alle jungen Bäume angenagt.",
+      "Auch die Kaninchen nagen an ihnen.",
+      "So können die Bäume nicht groß werden."
+    ],
+    reh_sad: [
+      "Das Reh sieht hungrig aus!",
+      "Es wachsen nicht genug Blumen und Pflanzen.",
+      "Auch die Blumen sind alle weg."
+    ]
   };
 
-  let gefunden = 0;
-  const max = 3;
-  const richtigeElemente = ["reh", "kaninchen", "jungpflanzen"];
-
-  richtigeElemente.forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener("click", () => {
-      if (!el.classList.contains("gefunden")) {
-        el.classList.add("gefunden");
-        document.getElementById("textfeld").innerText = "Fuchs: " + veränderungen[id];
-        gefunden++;
-        document.getElementById("fortschritt").innerText = `${gefunden} von ${max} entdeckt`;
-        if (gefunden === max) {
-          document.getElementById("textfeld").innerText = "Fuchs: Sehr gut! Jetzt weißt du, wie wichtig der Wolf ist.";
-          document.getElementById("weiter-btn").style.display = "block";
-        }
-      }
-    });
-  });
+  window.zusammenfassung = [
+    "Alles entdeckt!",
+    "Wenn ich fehle, haben die Mäuse und Kaninchen die Kontrolle.",
+    "Sie suchen nach Essen und machen junge Bäume kaputt!",
+    "So gibt es auch für das Reh nichts mehr zu fressen.",
+    "Weiter zum nächsten Level?"
+  ];
 </script>
+
+<!-- Level JavaScript -->
+<script src="/include/level.js"></script>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/header.js"></script>
-	
+
 </body>
 </html>

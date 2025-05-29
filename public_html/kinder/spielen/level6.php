@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 4</title>
+  <title>Level 6</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css" />
@@ -11,7 +11,7 @@
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
-<body>
+<body class="level-page">
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>

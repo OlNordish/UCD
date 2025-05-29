@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Level 4</title>
+  <title>Level 7</title>
 
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css" />
@@ -11,66 +11,78 @@
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
-<body>
+<body class="level-page">
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <div id="waldszene">
-  <div class="element pflanze" id="altebaeume" style="top: 20%; left: 15%;">🌳</div>
-  <div class="element tier" id="eichhoernchen" style="top: 35%; left: 25%;">🐿️</div>
-  <div class="element tier" id="specht" style="top: 50%; left: 30%;">🐦</div>
-  <div class="element tier" id="reh" style="top: 40%; left: 75%;">🦌</div>
+  <div id="counter">0 / 3 Dinge entdeckt</div>
+
+  <!-- Ansteuerung der SVG -->
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level7.svg'); ?>
+
+  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
-      <p id="textfeld">Fuchs: Zu viele Rehe? Der Wald sieht verändert aus… Was fällt dir auf?</p>
-      <button id="weiter-btn" onclick="nextLevel()">Weiter zum nächsten Level</button>
+      <p id="textfeld">Lade...</p>
+      <div class="pfeile">
+        <button class="pfeil" id="prev" disabled>&larr;</button>
+        <button class="pfeil" id="next" disabled>&rarr;</button>
+      </div>
+      <div class="level-buttons" id="level-buttons">
+        <a href="level8.php" class="weiter-btn">Ja, weiter!</a>
+        <a href="/kinder/spielen.php" class="zurueck-btn">Zurück zur Übersicht</a>
+      </div>
     </div>
-    <div id="fuchs-avatar">🦊</div>
   </div>
-
-  <div id="fortschritt">0 von 3 entdeckt</div>
-  <button id="startseite-btn" onclick="zurStartseite()">Zurück zur Spielübersicht</button>
 </div>
 
 <script>
-  function zurStartseite() {
-    window.location.href = "/kinder/spielen.php";
-  }
+  window.erwartet = 3;
+  window.levelDoneKey = "level7done";
+  window.klickbareElemente = ["junger_baum_kaputt", "specht", "eule_sad"];
 
-  function nextLevel() {
-    localStorage.setItem("level7done", "true");
-    window.location.href = "level8.php";
-  }
+  window.levelEinleitung = [
+    "Zu viele Rehe! Der Wald sieht verändert aus… Was fällt dir auf",
+    "Ein Bewohner musste den Wald verlassen.",
+    "In seinem Zuhause wohnen jetzt andere Tiere!",
+    "Klicke in den Wald, wenn du alles gefunden hast!"
+  ];
 
-  const veränderungen = {
-    altebaeume: "Nur noch alte Bäume – junge Triebe wurden alle gefressen.",
-    eichhoernchen: "Das Eichhörnchen hat keinen Schutz mehr – es flüchtet.",
-    specht: "Der Specht findet kaum noch gesunde Bäume – schlecht für ihn!"
+  window.veränderungstexte = {
+    junger_baum_kaputt: [
+      "Der letze junge Baum. Auch er sieht nicht gut aus.",
+      "Die Rehe haben alle Triebe angefressen.",
+      "Auch die Sträucher sind verschwunden."
+    ],
+    specht: [
+      "Der Specht musste den Baum wechseln.",
+      "Er hat immer weniger Bäume zur Auswahl!",
+      "Er und sein Mitbewohner haben das Eichhörnchen vertrieben."
+    ],
+    eule_sad: [
+      "Die Eule hat einen neuen Unterschlupf gefunden!",
+      "Es gibt zu wenig gesunde Bäume zum wohnen.",
+      "Sie und ihr Mitbewohner haben das Eichhörnchen vertrieben."
+    ]
   };
-
-  let gefunden = 0;
-
-  Object.keys(veränderungen).forEach(id => {
-    const el = document.getElementById(id);
-    el.addEventListener('click', () => {
-      if (!el.classList.contains('gefunden')) {
-        el.classList.add('gefunden');
-        document.getElementById('textfeld').innerText = 'Fuchs: ' + veränderungen[id];
-        gefunden++;
-        document.getElementById('fortschritt').innerText = `${gefunden} von 3 entdeckt`;
-        if (gefunden === 3) {
-          document.getElementById('textfeld').innerText = 'Fuchs: Klasse! Du hast den Wald gut beobachtet.';
-          document.getElementById('weiter-btn').style.display = 'block';
-        }
-      }
-    });
-  });
+ 
+  window.zusammenfassung = [
+    "Wow! Gut beobachtet!",
+    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen",
+    "So kann der Wald nicht nachwachsen. Es gibt nicht genug Bäume zum Wohnen.",
+    "Darum haben Specht und Eule den Baum des Eichhörnchens besetzt.", 
+    "Zum nächsten Level?"
+  ];
 </script>
+
+<!-- Level JavaScript -->
+<script src="/include/level.js"></script>
 
 <!-- Sidebar & Navigation -->
 <script src="/include/header.js"></script>
-	
+
 </body>
 </html>
