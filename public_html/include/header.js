@@ -4,10 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const submenuBastel = document.getElementById("submenu-bastel");
   const submenuMedien = document.getElementById("submenu-medien");
 
-  window.toggleSidebar = function () {
+window.toggleSidebar = function () {
+  const isOpen = sidebar.classList.contains("active");
+
+  if (isOpen) {
+    sidebar.classList.remove("active");
+    overlay.style.display = "none";
+    hideSubmenus();
+  } else {
     sidebar.classList.add("active");
     overlay.style.display = "block";
-  };
+  }
+};
 
   window.closeSidebar = function () {
     sidebar.classList.remove("active");
