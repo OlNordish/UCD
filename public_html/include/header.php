@@ -6,7 +6,6 @@
 <?php
 // Dateinamen zu Anzeigenamen
 $breadcrumbLabels = [
-    'erwachsene' => 'Erwachsenenbereich',
     'bastelvorlagen' => 'Bastelvorlagen',
     'jahreszeiten' => 'Jahreszeiten',
     'pflanzen' => 'Pflanzen & B&auml;ume',
@@ -17,10 +16,18 @@ $breadcrumbLabels = [
     'hoerspiele' => 'H&ouml;rspiele',
     'spiele' => 'Spiele',
     'videos' => 'Videos',
-    'kinder' => 'Kinderbereich',
     'entdecken' => 'Auf Spurensuche',
     'aufraeumen' => 'Saubere Sache!',
     'veraenderungen' => 'Forschen & Verstehen',
+    'level1' => 'Los gehts: Level 1',
+    'level2' => 'Level 2',
+    'level3' => 'Level 3',
+    'level4' => 'Level 4',
+    'level5' => 'Level 5',
+    'level6' => 'Level 6',
+    'level7' => 'Level 7',
+    'level8' => 'Fast geschafft: Level 8',
+    'abschluss' => 'Meisterdetektiv',
 ];
 
 // Aktueller Pfad
@@ -53,10 +60,10 @@ if (!empty($displayPath)) {
   </div>
   <a href="/index.php" class="logo">
     <img src="/bilder/fuchs.svg" alt="Logo Fuchs" style="height: 40px; vertical-align: middle;">
-    <span style="margin-left: 10px;">Waldzeit</span>
   </a>
   <title>Waldzeit Navigation</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet">
 </nav>
 
 <!-- Sidebar -->
@@ -65,17 +72,22 @@ if (!empty($displayPath)) {
     <ul>
       <!-- Kinderbereich -->
       <li>
-        <h2 style="color: #ffeb3b;"><a href="/kinder/kinder.php" style="color: #ffeb3b;">Kinderbereich</a></h2>
+        <h2><a href="/kinder/fuchsbau.php" style="color: #FF974D;">Fuchsbau</a></h2>
       </li>
       <li><a href="/kinder/entdecken.php">&#x1F50D; Auf Spurensuche</a></li>
       <li><a href="/kinder/aufraeumen.php">&#x1F9F9; Saubere Sache!</a></li>
-      <li><a href="/kinder/spielen.php">&#x1F52C; Forschen &amp; Verstehen</a></li>
+      <li><a href="/kinder/spielen.php">&#x1F52C; Walddetektiv</a></li>
 
       <li><hr style="border-color: rgba(255,255,255,0.2); margin: 1rem 0;"></li>
 
       <!-- Erwachsene -->
       <li>
-        <h2><a href="/erwachsene/erwachsene.php">F&uuml;r Erwachsene</a></h2>
+    <h2>
+  <a href="/erwachsene/begleitmaterial.php" style="text-decoration: none; color: inherit;" style="font-size: 0.05rem !important; font-weight: 300 !important;">
+    zusammen:wachsen
+  </a>
+</h2>
+
       </li>
       <li>
         <button class="submenu-btn" data-submenu="submenu-bastel" aria-haspopup="true">&#x2702;&#xFE0F; Bastelvorlagen</button>
@@ -87,7 +99,7 @@ if (!empty($displayPath)) {
   </nav>
 
   <div class="sidebar-footer">
-    <a href="/about.php">&Uuml;ber uns</a>
+    <a href="/team.php">&Uuml;ber uns</a>
     <a href="/impressum.php">Impressum</a>
   </div>
 </aside>

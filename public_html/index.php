@@ -99,7 +99,7 @@
           <a href="/kinder/entdecken.php">🔍 Entdecken</a>
           <a href="/kinder/spielen.php">🎲 Spielen</a>
           <a href="/kinder/aufraeumen.php">🧹 Aufräumen</a>
-          <a href="/kinder/kinder.php">👧 Zur Übersicht</a>
+          <a href="/kinder/fuchsbau.php">👧 Zur Übersicht</a>
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
       <div class="entry-content">
         <h2>Für Erwachsene</h2>
         <p>Materialien &amp; Tipps für Eltern, Pädagog:innen und Naturfreunde.</p>
-        <a href="/erwachsene/erwachsene.php">Zum Elternbereich</a>
+        <a href="/erwachsene/begleitmaterial.php">Zum Elternbereich</a>
       </div>
     </div>
 
