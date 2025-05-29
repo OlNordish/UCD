@@ -72,29 +72,56 @@ a:hover {
   text-decoration: none;
 }
 
-
+/* === Dateipfad im Header === */
 /* === Navigation === */
 .header-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
   background-color: #2f4f4f;
   color: white;
   padding: 10px 20px;
   z-index: 1000;
-  position: relative;
 }
 
+/* === Burger-Menü === */
 .burger {
   font-size: 24px;
   cursor: pointer;
+  z-index: 2;
 }
 
+/* === Breadcrumb (zwischen Burger & Logo) === */
+.breadcrumb-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: left;
+  pointer-events: none; /* Nicht klickbar */
+  z-index: 1;
+}
+
+.breadcrumb-path {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  padding: 2px 8px;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+/* === Logo: optisch zentriert (unabhängig vom Flexfluss) === */
 .logo {
-  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
+  z-index: 3;
 }
 
 /* === Sidebar === */

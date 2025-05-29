@@ -1,6 +1,56 @@
 <!-- Navigation -->
 <nav class="header-nav">
   <div class="burger" onclick="toggleSidebar()">&#x2630;</div>
+  <div class="breadcrumb-wrapper">
+  <div class="breadcrumb-path">
+<?php
+// Dateinamen zu Anzeigenamen
+$breadcrumbLabels = [
+    'erwachsene' => 'Erwachsenenbereich',
+    'bastelvorlagen' => 'Bastelvorlagen',
+    'jahreszeiten' => 'Jahreszeiten',
+    'pflanzen' => 'Pflanzen & B&auml;ume',
+    'tiere' => 'Tiere des Waldes',
+    'umweltschutz' => 'Umweltschutz',
+    'medientipps' => 'Medientipps',
+    'buecher' => 'Buchempfehlungen',
+    'hoerspiele' => 'H&ouml;rspiele',
+    'spiele' => 'Spiele',
+    'videos' => 'Videos',
+    'kinder' => 'Kinderbereich',
+    'entdecken' => 'Auf Spurensuche',
+    'aufraeumen' => 'Saubere Sache!',
+    'veraenderungen' => 'Forschen & Verstehen',
+];
+
+// Aktueller Pfad
+$currentPath = $_SERVER['PHP_SELF'];
+
+if (preg_match('#/index\.php$#', $currentPath)) {
+    $displayPath = '';
+} else {
+    $path = ltrim($currentPath, '/');
+    $path = preg_replace('/\.php$/', '', $path);
+    $parts = explode('/', $path);
+
+    $filteredParts = array_filter($parts, function($part) {
+        return strtolower($part) !== 'index';
+    });
+
+    // Labels statt Rohteile verwenden
+    $niceParts = array_map(function($part) use ($breadcrumbLabels) {
+        return $breadcrumbLabels[$part] ?? ucfirst($part);
+    }, $filteredParts);
+
+    $displayPath = implode(' <span style="opacity: 0.6;">&#8594;</span> ', $niceParts);
+}
+
+if (!empty($displayPath)) {
+    echo '<div class="breadcrumb-path">' . $displayPath . '</div>';
+}
+?>
+  </div>
+  </div>
   <a href="/index.php" class="logo">
     <img src="/bilder/fuchs.svg" alt="Logo Fuchs" style="height: 40px; vertical-align: middle;">
     <span style="margin-left: 10px;">Waldzeit</span>
