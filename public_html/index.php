@@ -82,7 +82,7 @@
 <body>
 
 <!-- Sidebar & Navigation -->
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <main>
   <h1>🌳 Willkommen bei Waldzeit!</h1>

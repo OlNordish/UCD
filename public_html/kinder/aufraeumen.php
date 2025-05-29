@@ -100,7 +100,7 @@
 <body>
 
 <!-- Sidebar & Navigation -->
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <div id="wald">
   <div class="baum" style="top: 10%; left: 20%;"></div>

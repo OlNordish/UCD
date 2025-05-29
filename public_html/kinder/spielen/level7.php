@@ -14,7 +14,7 @@
 <body>
 
 <!-- Sidebar & Navigation -->
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/headerneu.php'); ?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <div id="waldszene">
   <div class="element pflanze" id="altebaeume" style="top: 20%; left: 15%;">🌳</div>
