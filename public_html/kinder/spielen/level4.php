@@ -11,7 +11,7 @@
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
-<body>
+<body class="level-page">
 
 <!-- Sidebar & Navigation -->
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
