@@ -6,7 +6,7 @@
   <title>Aufräumen</title>
   
   <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
+  <link rel="stylesheet" href="/include/header.css">
   
   <style>
     #wald {
@@ -158,7 +158,7 @@
 </script>
 
 <!-- Sidebar & Navigation -->
-<script src="/include/headerneu.js"></script>
+<script src="/include/header.js"></script>
 	
 </body>
 </html>

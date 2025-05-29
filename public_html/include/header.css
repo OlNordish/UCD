@@ -1,0 +1,399 @@
+/* Navigation */
+/* === Globale Schriftarten & Layout === */
+body {
+  margin: 0;
+  font-family: 'Baloo 2', cursive;
+  background: url('/bilder/bg1.svg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+main {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(170, 190, 165, 0.6);
+  border-radius: 12px;
+}
+
+/* === Überschriften-Stile === */
+h1 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Fredoka', sans-serif;
+  color: #444;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Optional: Fließtext explizit (kann entfallen, wenn body schon Nunito nutzt) */
+p, li, a {
+  font-family: 'Nunito', sans-serif;
+}
+
+.header-nav {
+display: flex;
+align-items: center;
+background-color: #2f4f4f;
+color: white;
+padding: 10px 20px;
+z-index: 1000;
+position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #2f4f4f;
+  color: white;
+  padding: 10px 20px;
+  z-index: 1000;
+  position: relative;
+}
+
+.burger {
+font-size: 24px;
+cursor: pointer;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.logo {
+margin: 0 auto;
+color: white;
+text-decoration: none;
+font-size: 20px;
+font-weight: bold;
+  margin: 0 auto;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Sidebar */
+/* === Sidebar === */
+.sidebar {
+position: fixed;
+top: 0;
+left: -220px;
+width: 220px;
+height: 100%;
+background-color: #2f4f4f;
+color: white;
+padding: 20px;
+box-sizing: border-box;
+transition: left 0.3s ease;
+z-index: 100;
+overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background-color: #2f4f4f;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar.active {
+left: 0;
+  left: 0;
+}
+
+.sidebar ul {
+list-style: none;
+padding: 0;
+margin: 0;
+padding-top: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.sidebar li {
+margin: 10px 0;
+  margin: 10px 0;
+}
+
+.sidebar a,
+.submenu-btn {
+display: block;
+color: white;
+text-decoration: none;
+background: none;
+border: none;
+font-size: 15px;
+padding: 5px 0;
+cursor: pointer;
+text-align: left;
+width: 100%;
+  display: block;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: 15px;
+  padding: 5px 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+/* Bereichsüberschriften mit Link */
+.sidebar h2 {
+font-size: 14px;
+margin-top: 30px;
+margin-bottom: 10px;
+padding-bottom: 4px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+color: #ccc;
+text-transform: uppercase;
+letter-spacing: 1px;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sidebar h2 a {
+color: #ccc;
+text-decoration: none;
+display: block;
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar h2 a:hover {
+text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* Submenü-Sidebar */
+/* === Submenü-Sidebar === */
+.submenu-sidebar {
+position: fixed;
+top: 0;
+left: -220px;
+width: 220px;
+height: 100%;
+background-color: #3a5f5f;
+color: white;
+padding: 20px;
+box-sizing: border-box;
+transition: left 0.3s ease;
+z-index: 99;
+overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: -220px;
+  width: 220px;
+  height: 100%;
+  background-color: #3a5f5f;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: left 0.3s ease;
+  z-index: 99;
+  overflow-y: auto;
+}
+
+.submenu-sidebar.active {
+left: 220px;
+  left: 220px;
+}
+
+.submenu-sidebar ul {
+list-style: none;
+padding: 0;
+margin: 0;
+padding-top: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-top: 40px;
+}
+
+.submenu-sidebar li {
+margin: 10px 0;
+  margin: 10px 0;
+}
+
+.submenu-sidebar a {
+color: white;
+text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+/* Footer in Sidebar */
+/* === Sidebar Footer === */
+.sidebar-footer {
+position: absolute;
+bottom: 20px;
+left: 20px;
+right: 20px;
+font-size: 13px;
+color: #ccc;
+display: flex;
+flex-direction: column;
+gap: 5px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  font-size: 13px;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-footer a {
+color: #ccc;
+text-decoration: none;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.sidebar-footer a:hover {
+text-decoration: underline;
+  text-decoration: underline;
+}
+
+/* Overlay */
+/* === Overlay === */
+#overlay {
+position: fixed;
+top: 0;
+left: 0;
+background: rgba(0,0,0,0.5);
+width: 100%;
+height: 100%;
+z-index: 90;
+display: none;
+}
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 90;
+  display: none;
+}
+
+/* === Entdecken-spezifische Stile === */
+#waldszene {
+  width: 100%;
+  max-height: calc(100vh - 60px);
+  position: relative;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#sprechblase-container {
+  position: absolute;
+  bottom: 2%;
+  right: 15%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+#sprechblase {
+  background: rgba(255, 249, 196, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 20px 24px;
+  border-radius: 20px;
+  width: 360px;
+  height: 160px;
+  font-size: 28px;
+  color: #222;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  line-height: 1.5;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Baloo 2', sans-serif;
+  pointer-events: auto;
+}
+
+.pfeile {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.pfeil {
+  background: #ffeb3b;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pfeil:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+g.active {
+  filter: drop-shadow(0 0 10px yellow);
+  transform: scale(1.1);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+#counter {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 20px;
+  z-index: 200;
+  pointer-events: none;
+}
+
+@keyframes wackeln {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+g.wackel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wackeln 0.6s ease;
+}

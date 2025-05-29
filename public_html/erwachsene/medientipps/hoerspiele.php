@@ -6,7 +6,7 @@
   <title>Hörspielempfehlungen</title>
 
   <!-- Sidebar & Navigation -->    
-  <link rel="stylesheet" href="/include/headerneu.css">
+  <link rel="stylesheet" href="/include/header.css">
 
   <style>
     h1 {
@@ -99,7 +99,7 @@
   <p class="intro">Spannende Geschichten und Geräusche aus dem Wald – ideal für kleine Naturfreunde.</p>
 
   <article class="entry-box">
-    <img src="/downloads/Medientipps_Hoerspiele/Hoerspiel_1.jpg" alt="Cover WAS IST WAS Junior – Im Wald" class="entry-icon">
+    <img src="/downloads/Medientipps_Hoerspiele/Hoerspiel_1.jpeg" alt="Cover WAS IST WAS Junior – Im Wald" class="entry-icon">
     <div class="entry-content">
       <h2>WAS IST WAS Junior – Im Wald</h2>
       <span class="author">Friederike Wilhelmi, Luis-Max Anders</span>
@@ -109,7 +109,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/Medientipps_Hoerspiele/Hoerspiel_2.jpg" alt="Cover WAS IST WAS – Wilde Wälder / Lebendiger Boden" class="entry-icon">
+    <img src="/downloads/Medientipps_Hoerspiele/hoerspiel_2.jpg" alt="Cover WAS IST WAS – Wilde Wälder / Lebendiger Boden" class="entry-icon">
     <div class="entry-content">
       <h2>Wilde Wälder / Lebendiger Boden</h2>
       <span class="author">Manfred Baur, Kristiane Semar</span>
@@ -119,7 +119,7 @@
   </article>
 
   <article class="entry-box">
-    <img src="/downloads/Medientipps_Hoerspiele/Hoerspiel_3.jpg" alt="Cover Kleine Helden im Wald" class="entry-icon">
+    <img src="/downloads/Medientipps_Hoerspiele/hoerspiel_3.jpeg" alt="Cover Kleine Helden im Wald" class="entry-icon">
     <div class="entry-content">
       <h2>Kleine Helden im Wald</h2>
       <span class="author">Matthias Meyer-Göllner</span>
@@ -127,10 +127,20 @@
       <a href="https://www.thalia.de/shop/home/artikeldetails/A1038147083" target="_blank">Bei Thalia ansehen</a>
     </div>
   </article>
+    
+  <article class="entry-box">
+    <img src="/downloads/Medientipps_Hoerspiele/hoerspiel_4.jpeg" alt="Cover Was hör ich da? Im Wald" class="entry-icon">
+    <div class="entry-content">
+      <h2>Was hör ich da? Im Wald</h2>
+      <span class="author">Jens-Uwe Bartholomäus</span>
+      <p>Hören sich unsere Schritte auf dem Waldboden anders an als die eines Rehs oder eines Fuchses? Und wer kann eine schimpfende Amsel von einem rufenden Schwarzspecht unterscheiden? Finde es heraus!</p>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/A1000892071" target="_blank">Bei Thalia ansehen</a>
+    </div>
+  </article>
 </main>
 
 <!-- Sidebar & Navigation -->
-<script src="/include/headerneu.js"></script>
+<script src="/include/header.js"></script>
 
 </body>
 </html>

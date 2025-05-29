@@ -6,7 +6,7 @@
   <title>Entdecke den Wald!</title>
 
   <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/headerneu.css">
+  <link rel="stylesheet" href="/include/header.css">
 
   <style>
     #waldszene {
@@ -248,6 +248,6 @@ document.getElementById("waldszene").addEventListener("click", (e) => {
 </script>
 
 <!-- Sidebar & Navigation -->
-<script src="/include/headerneu.js"></script>
+<script src="/include/header.js"></script>
 </body>
 </html>
