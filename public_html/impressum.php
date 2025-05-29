@@ -7,47 +7,8 @@
     
   <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css">
-    
-  <style>
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #333333;
-    }
-
-    h2 {
-      color: #5A3E36;
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    h2 {
-      color: #5A3E36;
-      font-size: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    p, li {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #3C3C3C;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    a {
-      color: #4A6D4F;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
+    
 <body>
 
 <!-- Sidebar & Navigation -->
@@ -225,7 +186,7 @@
   </li>
     <li>
     <strong>Hmm? - Fußspuren?</strong><br>
-    Teste dein Wissen mit lustigen Fragen zu Tieren und Natur.<br>
+    Finde heraus, welche Tiere vor dir im Wald unterwegs waren!<br>
     <a href="https://www.aok.de/pk/magazin/cms/fileadmin/gemeinschaftlich/pdf/jolinchen-waldraetsel-oktober.pdf" target="_blank">Eigenanfertigung</a>
   </li>
 </ul>

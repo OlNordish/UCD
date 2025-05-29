@@ -1,6 +1,6 @@
+document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
-
   const submenuBastel = document.getElementById("submenu-bastel");
   const submenuMedien = document.getElementById("submenu-medien");
 
@@ -16,8 +16,8 @@
   };
 
   window.hideSubmenus = function () {
-    submenuBastel.classList.remove("active");
-    submenuMedien.classList.remove("active");
+    submenuBastel?.classList.remove("active");
+    submenuMedien?.classList.remove("active");
   };
 
   document.querySelectorAll(".submenu-btn").forEach(button => {

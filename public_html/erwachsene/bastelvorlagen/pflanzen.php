@@ -9,13 +9,6 @@
   <link rel="stylesheet" href="/include/header.css">
 
  <style>
-  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-    color: #FFFFF;
-  }
-
   p.intro {
     font-size: 1.2rem;
     text-align: center;
@@ -24,16 +17,16 @@
   }
 
   .entry-box {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #333;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    margin-bottom: 2rem;
-    padding: 1.5rem;
+    width: 90%;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1rem;
     align-items: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    padding: 1.5rem;
   }
 
   .entry-icon {
@@ -64,21 +57,6 @@
   .entry-content a:hover {
     text-decoration: underline;
     color: #365539;
-  }
-
-  @media (max-width: 600px) {
-    main {
-      padding: 1rem;
-    }
-
-    .entry-box {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .entry-icon {
-      margin: 0 auto;
-    }
   }
 </style>
 </head>

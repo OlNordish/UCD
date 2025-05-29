@@ -9,32 +9,26 @@
   <link rel="stylesheet" href="/include/header.css">
 
   <style>
-    h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #333;
-    }
-
     .intro {
-      background-color: #fff;
+      background-color: #ffffff;
       border-radius: 12px;
       padding: 1.5rem;
       margin-bottom: 3rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      font-family: 'Nunito', sans-serif;
     }
 
     .intro p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       line-height: 1.6;
       color: #3C3C3C;
-      margin: 0 0 1rem;
+      margin-bottom: 1rem;
     }
 
     .team-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
       gap: 2rem;
     }
 
@@ -44,13 +38,11 @@
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       padding: 1.5rem;
-      flex: 1 1 28%;
+      flex: 1 1 280px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      position: relative;
-      overflow: hidden;
       transition: transform 0.2s;
     }
 
@@ -72,31 +64,32 @@
       font-size: 1.3rem;
       color: #4a5e3b;
       margin: 0.5rem 0 0.4rem;
+      font-family: 'Fredoka', sans-serif;
     }
 
     .team-card p {
       font-size: 0.95rem;
       color: #3C3C3C;
       margin: 0.3rem 0;
+      font-family: 'Nunito', sans-serif;
     }
 
     .team-card .matrikel {
       font-style: italic;
       color: #6b6b6b;
       font-size: 0.85rem;
-      margin-top: 0.2rem;
     }
 
-    @media (max-width: 800px) {
-      .team-container {
-        flex-direction: column;
-        align-items: center;
-      }
+    .team-card a {
+      color: #4A6D4F;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
 
-      .team-card {
-        width: 100%;
-        max-width: 400px;
-      }
+    .team-card a:hover {
+      text-decoration: underline;
+      color: #365539;
     }
   </style>
 </head>
