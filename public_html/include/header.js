@@ -24,13 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const targetId = button.getAttribute("data-submenu");
       const submenu = document.getElementById(targetId);
-      const isVisible = submenu.classList.contains("active");
+      const isVisible = submenu?.classList.contains("active");
 
       hideSubmenus();
 
-      if (!isVisible) {
+      if (!isVisible && submenu) {
         submenu.classList.add("active");
+        submenu.style.top = "0"; // ✅ WICHTIG: fixiert das Submenü oben
+        overlay.style.display = "block";
       }
     });
   });
 });
+

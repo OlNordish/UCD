@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="header-nav">
-  <div class="burger" onclick="toggleSidebar()">☰</div>
+  <div class="burger" onclick="toggleSidebar()">x</div>
   <a href="/index.php" class="logo">
     <img src="/bilder/fuchs.svg" alt="Logo Fuchs" style="height: 40px; vertical-align: middle;">
     <span style="margin-left: 10px;">Waldzeit</span>
@@ -15,53 +15,53 @@
     <ul>
       <!-- Kinderbereich -->
       <li>
-        <h2 style="color: #ffeb3b;"><a href="/kinder/kinder.php" style="color: #ffeb3b;">👧 Kinderbereich</a></h2>
+        <h2 style="color: #ffeb3b;"><a href="/kinder/kinder.php" style="color: #ffeb3b;">Kinderbereich</a></h2>
       </li>
-      <li><a href="/kinder/entdecken.php">🔍 Auf Spurensuche</a></li>
-      <li><a href="/kinder/aufraeumen.php">🧹 Saubere Sache!</a></li>
-      <li><a href="/kinder/spielen.php">🧠 Forschen &amp; Verstehen</a></li>
+      <li><a href="/kinder/entdecken.php">Auf Spurensuche</a></li>
+      <li><a href="/kinder/aufraeumen.php">Saubere Sache!</a></li>
+      <li><a href="/kinder/spielen.php">Forschen &amp; Verstehen</a></li>
 
       <li><hr style="border-color: rgba(255,255,255,0.2); margin: 1rem 0;"></li>
 
       <!-- Erwachsene -->
       <li>
-        <h2><a href="/erwachsene/erwachsene.php">👩‍🏫 Für Erwachsene</a></h2>
+        <h2><a href="/erwachsene/erwachsene.php">F�r Erwachsene</a></h2>
       </li>
       <li>
-        <button class="submenu-btn" data-submenu="submenu-bastel" aria-haspopup="true">🎨 Bastelvorlagen</button>
+        <button class="submenu-btn" data-submenu="submenu-bastel" aria-haspopup="true">Bastelvorlagen</button>
       </li>
       <li>
-        <button class="submenu-btn" data-submenu="submenu-medien" aria-haspopup="true">🎧 Medientipps</button>
+        <button class="submenu-btn" data-submenu="submenu-medien" aria-haspopup="true">Medientipps</button>
       </li>
     </ul>
   </nav>
 
   <div class="sidebar-footer">
-    <a href="/about.php">ℹ️ Über uns</a>
-    <a href="/impressum.php">📄 Impressum</a>
+    <a href="/about.php">�ber uns</a>
+    <a href="/impressum.php">Impressum</a>
   </div>
 </aside>
 
-<!-- Submenü Bastelvorlagen -->
-<aside class="submenu-sidebar" id="submenu-bastel" onmouseleave="hideSubmenus()" style="top: 280px;">
-  <nav aria-label="Bastelvorlagen Untermenü">
+<!-- Submen� Bastelvorlagen -->
+<aside class="submenu-sidebar" id="submenu-bastel" onmouseleave="hideSubmenus()">
+  <nav aria-label="Bastelvorlagen Untermen�">
     <ul>
-      <li><a href="/erwachsene/bastelvorlagen/tiere.php">🦊 Tiere</a></li>
-      <li><a href="/erwachsene/bastelvorlagen/pflanzen.php">🌿 Pflanzen</a></li>
-      <li><a href="/erwachsene/bastelvorlagen/umweltschutz.php">🌍 Umweltschutz</a></li>
-      <li><a href="/erwachsene/bastelvorlagen/jahreszeiten.php">🍂 Jahreszeiten</a></li>
+      <li><a href="/erwachsene/bastelvorlagen/tiere.php">Tiere</a></li>
+      <li><a href="/erwachsene/bastelvorlagen/pflanzen.php">Pflanzen</a></li>
+      <li><a href="/erwachsene/bastelvorlagen/umweltschutz.php">Umweltschutz</a></li>
+      <li><a href="/erwachsene/bastelvorlagen/jahreszeiten.php">Jahreszeiten</a></li>
     </ul>
   </nav>
 </aside>
 
-<!-- Submenü Medientipps -->
-<aside class="submenu-sidebar" id="submenu-medien" onmouseleave="hideSubmenus()" style="top: 280px;">
-  <nav aria-label="Medientipps Untermenü">
+<!-- Submen� Medientipps -->
+<aside class="submenu-sidebar" id="submenu-medien" onmouseleave="hideSubmenus()">
+  <nav aria-label="Medientipps Untermen�">
     <ul>
-      <li><a href="/erwachsene/medientipps/buecher.php">📚 Bücher</a></li>
-      <li><a href="/erwachsene/medientipps/hoerspiele.php">🎵 Hörspiele</a></li>
-      <li><a href="/erwachsene/medientipps/videos.php">🎬 Videos</a></li>
-      <li><a href="/erwachsene/medientipps/spiele.php">🕹️ Spiele</a></li>
+      <li><a href="/erwachsene/medientipps/buecher.php">B�cher</a></li>
+      <li><a href="/erwachsene/medientipps/hoerspiele.php">H�spiele</a></li>
+      <li><a href="/erwachsene/medientipps/videos.php">Videos</a></li>
+      <li><a href="/erwachsene/medientipps/spiele.php">Spiele</a></li>
     </ul>
   </nav>
 </aside>
