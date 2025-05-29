@@ -37,8 +37,8 @@
   </nav>
 
   <div class="sidebar-footer">
-    <a href="/about.php">&#x2139;&#xFE0F; &Uuml;ber uns</a>
-    <a href="/impressum.php">&#x1F4C4; Impressum</a>
+    <a href="/about.php">&Uuml;ber uns</a>
+    <a href="/impressum.php">Impressum</a>
   </div>
 </aside>
 

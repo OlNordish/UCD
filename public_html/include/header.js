@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!isVisible && submenu) {
         submenu.classList.add("active");
-        submenu.style.top = "0"; // ✅ WICHTIG: fixiert das Submenü oben
+        submenu.style.top = "0";
         overlay.style.display = "block";
       }
     });
