@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function zeigeVeränderung(id) {
     inZusammenfassung = false;
-    aktuellerText = window.veränderungstexte[id] || ["🤷‍♂️ Keine Infos."];
+    aktuellerText = window.veränderungstexte[id] || ["Keine Infos."];
     aktuellerIndex = 0;
     zeigeText(0);
 
