@@ -54,7 +54,7 @@
   window.veränderungstexte = {
     kaninchen: [
       "Die Kaninchen werden mehr und mehr.",
-      "Bald gibt es nichtmehr genug Essen zu finden!",
+      "Bald gibt es nicht mehr genug Essen zu finden!",
       "Auch die Sträucher sind verschwunden."
     ],
     rehe: [
