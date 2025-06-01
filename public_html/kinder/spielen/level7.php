@@ -65,7 +65,8 @@
   window.zusammenfassung = [
     "Wow! Gut beobachtet!",
     "Zu viele Rehe fressen alle jungen Bäume und Pflanzen",
-    "So kann der Wald nicht nachwachsen. Es gibt nicht genug Bäume zum Wohnen.",
+    "So kann der Wald nicht nachwachsen.",
+	"Es gibt nicht genug Bäume zum Wohnen.",
     "Darum haben Specht und Eule den Baum des Eichhörnchens besetzt.", 
     "Zum nächsten Level?"
   ];

@@ -65,8 +65,8 @@
     "Wow, du hast alles entdeckt!",
     "Bei so vielen Kaninchen ist schnell kein Futter mehr übrig.",
     "Sträucher und Pflanzen versorgen Tiere mit Beeren, Wurzeln und Knospen.",
-    "Noch geht es den Kaninchen gut, aber auch sie haben bald nichts mehr zu fressen.",
-    "Möchtest du zum nächsten Level?"
+    "Noch geht es den Kaninchen gut, aber das Futter wird weniger...",
+    "Weiter zum nächsten Level?"
   ];
 </script>
 

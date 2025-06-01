@@ -67,7 +67,7 @@
     "Wenn ich fehle, haben die Mäuse und Kaninchen die Kontrolle.",
     "Sie suchen nach Essen und machen junge Bäume kaputt!",
     "So gibt es auch für das Reh nichts mehr zu fressen.",
-    "Weiter zum nächsten Level?"
+    "Weiter zur Übersicht?"
   ];
 </script>
 

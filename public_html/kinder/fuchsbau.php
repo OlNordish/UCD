@@ -103,7 +103,7 @@
       <div class="entry-content">
         <h2>Veränderungen verstehen</h2>
         <p>Was passiert, wenn Tiere fehlen? Lerne die Zusammenhänge im Wald kennen.</p>
-        <a href="veraenderungen.php">Mehr erfahren</a>
+        <a href="spielen.php">Mehr erfahren</a>
       </div>
     </div>
 

@@ -21,7 +21,7 @@
     }
 
     .muell.dragging {
-      opacity: 0.7;
+     
       cursor: grabbing;
     }
 
@@ -192,7 +192,8 @@
   let offsetY = 0;
 
   const texte = [
-    "Toll, der Wald ist wieder sauber!",
+    "Toll, der Wald ist wieder sauber und gesund!",
+	"Auch die Tiere fühlen sich hier wieder wohl!",
     "Danke für deine Hilfe!"
   ];
   let currentText = 0;

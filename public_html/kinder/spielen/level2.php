@@ -55,9 +55,9 @@
       "Ohne Mäuse wachsen mehr Bäume."
     ],
     eule_sad: [
-      "Ich finde keine Nahrung mehr.",
-      "Die Nächte sind still geworden.",
-      "Keine Mäuse, kein Futter für mich."
+      "Die Eule findet keine Nahrung mehr.",
+      "Sie wird wohl nicht mehr lange hier bleiben.",
+      "Keine Mäuse, kein Futter für sie."
     ]
   };
 
