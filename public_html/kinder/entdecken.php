@@ -239,7 +239,7 @@
 
   <!-- Ansteuerung der SVG -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/entdecken.svg'); ?>
-  <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
+  <a id="zurueck-btn" href="/kinder/fuchsbau.php">← Zurück</a>
 
   <div id="sprechblase-container">
     <div id="sprechblase">
@@ -263,7 +263,7 @@
   window.klickbareElemente = ["maus", "eichhoernchen", "fuchs", "eule", "specht", "kaninchen", "reh", "wolf", "kaefer"];
 
   window.levelEinleitung = [
-    "Hey du! Du bist neu hier...",
+    "Hey du! Du bist neu hier... schau dich um!",
     "Ich bin der schlaue Fuchs.",
     "Willkommen im Wald!",
     "Dies ist mein Zuhause, aber ich bin hier nicht allein.",
