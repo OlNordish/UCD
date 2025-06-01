@@ -81,7 +81,7 @@
   <div class="entry-grid">
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Bücher" class="entry-icon" />
+      <img src="/downloads/buecher.png" alt="Icon Bücher" class="entry-icon" />
       <div class="entry-content">
         <h2>Bücher</h2>
         <p>Spannende und kindgerechte Bücher über Waldtiere, Pflanzen und Umweltschutz.</p>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Hörspiele" class="entry-icon" />
+      <img src="/downloads/hoerspiele.png" alt="Icon Hörspiele" class="entry-icon" />
       <div class="entry-content">
         <h2>Hörspiele</h2>
         <p>Waldabenteuer zum Anhören – ideal für Kita, Grundschule oder Zuhause.</p>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Videos" class="entry-icon" />
+      <img src="/downloads/videos.png" alt="Icon Videos" class="entry-icon" />
       <div class="entry-content">
         <h2>Videos</h2>
         <p>Dokumentationen und Kinderserien rund um den Lebensraum Wald.</p>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Spiele" class="entry-icon" />
+      <img src="/downloads/spiele.png" alt="Icon Spiele" class="entry-icon" />
       <div class="entry-content">
         <h2>Spiele &amp; Rätsel</h2>
         <p>Wald entdecken mit Puzzles, Rätseln und Spielideen für drinnen &amp; draußen.</p>

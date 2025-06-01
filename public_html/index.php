@@ -7,32 +7,20 @@
   <link rel="stylesheet" href="/include/header.css">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka:wght@400;500&family=Nunito&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Nunito', sans-serif;
-      margin: 0;
-      background-color: #f8f9f5;
-      color: #2f4f4f;
-    }
-
-    main {
-      max-height: 100vh;
-      overflow: hidden;
-    }
-
     .intro-section {
       text-align: center;
-      margin: 1.5rem auto 1.5rem;
+      margin: 1.5rem auto;
     }
 
     .intro-section h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #fff;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 1rem;
     }
 
     .intro-section p {
-      font-size: 1.3rem;
-      color: #333333;
+      font-size: 1.2rem;
       max-width: 700px;
       margin: 1rem auto 0;
       background: rgba(255, 255, 255, 0.2);
@@ -44,7 +32,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1rem;
+      margin: 2rem 0;
     }
 
     .kinderbereich img {
@@ -53,7 +41,7 @@
     }
 
     .kinderbereich h2 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #fff;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
       margin-bottom: 1rem;
@@ -97,9 +85,9 @@
     }
 
     .elternbereich h3 {
-      font-size: 1.8rem;
-      color: #333;
+      font-size: 1.5rem;
       font-family: 'Fredoka', sans-serif;
+      color: #3a3a3a;
     }
 
     .elternbereich p {
@@ -149,31 +137,5 @@
   </section>
 
   <script src="/include/header.js"></script>
-</body>
-</html>
-</section>
-
-<section class="kinderbereich">
-  <img src="/bilder/fuchs.svg" alt="Fuchs Illustration" />
-  <h2>Kinderbereich</h2>
-  <div class="kindertext-eingebettet">
-    <p>Spannendes für kleine Entdecker: Tiere, Pflanzen, Spiele &amp; mehr.</p>
-  </div>
-  <div class="button-links">
-    <a href="/kinder/entdecken.php">🔍 Entdecken</a>
-    <a href="/kinder/spielen.php">🎲 Spielen</a>
-    <a href="/kinder/aufraeumen.php">🧹 Aufräumen</a>
-    <a href="/kinder/fuchsbau.php">👧 Übersicht</a>
-  </div>
-</section>
-
-<section class="elternbereich">
-  <h3>👨‍👩‍👧 Elternbereich</h3>
-  <p>Dieser Bereich richtet sich an alle, die Kinder beim Entdecken des Waldes begleiten. Ob zu Hause oder draußen: Hier finden Erwachsene Anregungen, um Themen zu vertiefen und das Naturerlebnis gemeinsam zu gestalten.</p>
-  <p>Von Mal- und Bastelvorlagen über Medientipps bis hin zu pädagogischen Ideen – das Begleitmaterial lädt dazu ein, spielerisch Umweltbewusstsein zu fördern und mit allen Sinnen in den Wald einzutauchen.</p>
-  <a href="/erwachsene/begleitmaterial.php">Begleitmaterial öffnen</a>
-</section>
-
-<script src="/include/header.js"></script>
 </body>
 </html>

@@ -81,7 +81,7 @@
   <div class="entry-grid">
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Medientipps" class="entry-icon" />
+      <img src="/downloads/medientipps.png" alt="Icon Medientipps" class="entry-icon" />
       <div class="entry-content">
         <h2>Medientipps für Kinder</h2>
         <p>Bücher, Videos, Hörspiele &amp; Spiele – kindgerecht erklärt für Eltern und Pädagog:innen zusammengestellt.</p>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Bastelideen" class="entry-icon" />
+      <img src="/downloads/bastelvorlagen.png" alt="Icon Bastelvorlagen" class="entry-icon" />
       <div class="entry-content">
         <h2>Bastelideen zum Thema Wald</h2>
         <p>Jahreszeiten, Tiere, Umweltschutz – kreative Vorlagen zum Herunterladen und Loslegen.</p>

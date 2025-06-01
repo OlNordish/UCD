@@ -81,7 +81,7 @@
   <div class="entry-grid">
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Tiere" class="entry-icon" />
+      <img src="/downloads/tiere.png" alt="Icon Tiere" class="entry-icon" />
       <div class="entry-content">
         <h2>Tiere des Waldes</h2>
         <p>Male und bastle deine Lieblingstiere – vom Fuchs bis zum Reh.</p>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Pflanzen" class="entry-icon" />
+      <img src="/downloads/pflanzen.png" alt="Icon Pflanzen" class="entry-icon" />
       <div class="entry-content">
         <h2>Bäume &amp; Pflanzen</h2>
         <p>Lerne Blätter und Bäume kennen – mit Vorlagen zum Sammeln und Malen.</p>
@@ -99,7 +99,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Umweltschutz" class="entry-icon" />
+      <img src="/downloads/umweltschutz.png" alt="Icon Umweltschutz" class="entry-icon" />
       <div class="entry-content">
         <h2>Umweltschutz</h2>
         <p>Wie können wir dem Wald helfen? Tipps und kreative Bastelideen.</p>
@@ -108,7 +108,7 @@
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Icon Jahreszeiten" class="entry-icon" />
+      <img src="/downloads/jahreszeiten.png" alt="Icon Jahreszeiten" class="entry-icon" />
       <div class="entry-content">
         <h2>Jahreszeiten &amp; Wetter</h2>
         <p>Was passiert im Frühling, Sommer, Herbst und Winter? Bastel das Jahr!</p>

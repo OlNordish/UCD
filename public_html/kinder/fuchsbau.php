@@ -75,35 +75,35 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <main>
-  <h1>🌲 Hallo, Entdecker!</h1>
+  <h1>🌲 Hallo, Entdecker*in!</h1>
   <p class="intro">Was möchtest du heute im Wald erleben? Wähle aus, was dir Spaß macht!</p>
 
   <div class="entry-grid">
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Entdecken-Icon" class="entry-icon" />
+      <img src="/downloads/entdecken.png" alt="Entdecken-Icon" class="entry-icon" />
       <div class="entry-content">
-        <h2>Wald entdecken</h2>
+        <h2>Auf Spurensuche</h2>
         <p>Beobachte Tiere, Pflanzen und entdecke versteckte Dinge im Wald.</p>
         <a href="entdecken.php">Jetzt entdecken</a>
       </div>
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Aufräumen-Icon" class="entry-icon" />
+      <img src="/downloads/aufraeumen.png" alt="Aufräumen-Icon" class="entry-icon" />
       <div class="entry-content">
-        <h2>Aufräumen im Wald</h2>
+        <h2>Saubere Sache!</h2>
         <p>Hilf mit, den Wald sauber zu halten – spielerisch und mit Sinn!</p>
         <a href="aufraeumen.php">Jetzt aufräumen</a>
       </div>
     </div>
 
     <div class="entry-box">
-      <img src="/downloads/kind.svg" alt="Veränderungen-Icon" class="entry-icon" />
+      <img src="/downloads/veraenderungen.png" alt="Veränderungen-Icon" class="entry-icon" />
       <div class="entry-content">
-        <h2>Veränderungen verstehen</h2>
+        <h2>Walddetektiv</h2>
         <p>Was passiert, wenn Tiere fehlen? Lerne die Zusammenhänge im Wald kennen.</p>
-        <a href="spielen.php">Mehr erfahren</a>
+        <a href="spielen.php">Veränderungen kennenlernen</a>
       </div>
     </div>
 
