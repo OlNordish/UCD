@@ -5,98 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Waldzeit – Startseite</title>
   <link rel="stylesheet" href="/include/header.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka:wght@400;500&family=Nunito&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background-color: #f8f9f5;
+      color: #2f4f4f;
+    }
+
+    main {
+      max-height: 100vh;
+      overflow: hidden;
+    }
+
     .intro-section {
-      padding-top: 4rem;
       text-align: center;
+      margin: 1.5rem auto 1.5rem;
     }
 
     .intro-section h1 {
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
 
     .intro-section p {
-      font-size: 1.2rem;
-      color: #222;
+      font-size: 1.3rem;
+      color: #333333;
+      max-width: 700px;
+      margin: 1rem auto 0;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
     }
 
     .kinderbereich {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 3rem;
+      padding: 1rem;
     }
 
     .kinderbereich img {
-      width: 180px;
-      margin-bottom: 1.5rem;
+      width: 200px;
+      margin-bottom: 1rem;
     }
 
     .kinderbereich h2 {
-      font-size: 2rem;
-      color: #2f4f4f;
-      margin-bottom: 0.5rem;
-    }
-
-    .kinderbereich p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-      color: #333;
-      text-align: center;
-      max-width: 500px;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      margin-bottom: 1rem;
     }
 
     .button-links {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
+      flex-wrap: nowrap;
       justify-content: center;
+      align-items: center;
       gap: 1rem;
+      max-width: 90%;
+      flex-shrink: 0;
     }
 
     .button-links a {
       background-color: #4A6D4F;
       color: white;
       text-decoration: none;
-      padding: 0.7rem 1.4rem;
+      padding: 0.8rem 1.4rem;
       border-radius: 12px;
-      font-weight: bold;
       font-size: 1rem;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      white-space: nowrap;
     }
 
     .button-links a:hover {
       background-color: #365539;
+      transform: scale(1.05);
     }
 
     .elternbereich {
       max-width: 700px;
-      margin: 4rem auto 2rem;
-      padding: 1.5rem 2rem;
-      background-color: rgba(255, 255, 255, 0.9);
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 16px;
-      color: #2f4f4f;
-      font-family: 'Nunito', sans-serif;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     }
 
     .elternbereich h3 {
-      margin-top: 0;
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: #333;
       font-family: 'Fredoka', sans-serif;
     }
 
     .elternbereich p {
       font-size: 1rem;
-      line-height: 1.5;
+      line-height: 1.6;
       color: #444;
-      margin-bottom: 1rem;
     }
 
     .elternbereich a {
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       color: #2f4f4f;
       font-weight: bold;
       text-decoration: underline;
@@ -107,20 +121,44 @@
     }
   </style>
 </head>
-
 <body>
+  <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
+  <main>
+    <section class="intro-section">
+      <h1>🌳 Willkommen bei Waldzeit!</h1>
+      <p>Entdecke den Wald spielerisch – mit spannenden Inhalten für Kinder, Eltern und alle Naturentdecker.</p>
+    </section>
 
-<section class="intro-section">
-  <h1>🌳 Willkommen bei Waldzeit!</h1>
-  <p>Entdecke den Wald spielerisch – für Kinder, Eltern und alle Naturentdecker.</p>
+    <section class="kinderbereich">
+      <img src="/bilder/fuchs.svg" alt="Fuchs Illustration">
+      <h2>Kinderbereich</h2>
+      <div class="button-links">
+        <a href="/kinder/entdecken.php">🔍 Auf Spurensuche</a>
+        <a href="/kinder/aufraeumen.php">🧹 Saubere Sache!</a>
+        <a href="/kinder/spielen.php">🎲 Walddetektiv</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="elternbereich">
+    <h3>👨‍👩‍👧 Elternbereich</h3>
+    <p>Dieser Bereich richtet sich an alle, die Kinder beim Entdecken des Waldes begleiten. Ob zu Hause oder draußen: Hier finden Erwachsene Anregungen, um Themen zu vertiefen und das Naturerlebnis gemeinsam zu gestalten.</p>
+    <p>Von Mal- und Bastelvorlagen über Medientipps bis hin zu pädagogischen Ideen – das Begleitmaterial lädt dazu ein, spielerisch Umweltbewusstsein zu fördern und mit allen Sinnen in den Wald einzutauchen.</p>
+    <a href="/erwachsene/begleitmaterial.php">Begleitmaterial öffnen</a>
+  </section>
+
+  <script src="/include/header.js"></script>
+</body>
+</html>
 </section>
 
 <section class="kinderbereich">
   <img src="/bilder/fuchs.svg" alt="Fuchs Illustration" />
   <h2>Kinderbereich</h2>
-  <p>Spannendes für kleine Entdecker: Tiere, Pflanzen, Spiele &amp; mehr.</p>
+  <div class="kindertext-eingebettet">
+    <p>Spannendes für kleine Entdecker: Tiere, Pflanzen, Spiele &amp; mehr.</p>
+  </div>
   <div class="button-links">
     <a href="/kinder/entdecken.php">🔍 Entdecken</a>
     <a href="/kinder/spielen.php">🎲 Spielen</a>
