@@ -4,18 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Level 3</title>
-
-  <!-- Sidebar & Navigation -->
-  <link rel="stylesheet" href="/include/header.css" />
     
   <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 </head>
 <body class="level-page">
-
-<!-- Sidebar & Navigation -->
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
-
 <div id="waldszene">
   <div id="counter">0 / 3 Dinge entdeckt</div>
 
@@ -80,9 +73,6 @@
 
 <!-- Level JavaScript -->
 <script src="/include/level.js"></script>
-
-<!-- Sidebar & Navigation -->
-<script src="/include/header.js"></script>
 
 </body>
 </html>

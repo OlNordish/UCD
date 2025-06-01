@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Entdecken</title>
 
-  <link rel="stylesheet" href="/include/header.css" />
+  <!-- Level CSS -->
   <link rel="stylesheet" href="/include/level.css" />
 
   <style>
@@ -14,10 +14,6 @@
       font-family: 'Baloo 2', cursive;
       background-color: #22724E !important;
       color: #fff !important;
-    }
-
-    header, nav {
-      max-width: none !important;
     }
 
     #waldszene {
@@ -232,9 +228,6 @@
   </style>
 </head>
 <body class="level-page">
-
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
-
 <div id="waldszene">
   <div id="audio-status">
     <span class="audio-label">Tierstimmen</span>
@@ -244,6 +237,7 @@
 
   <div id="counter">0 / 9 Tiere entdeckt</div>
 
+  <!-- Ansteuerung der SVG -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/entdecken.svg'); ?>
   <a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 

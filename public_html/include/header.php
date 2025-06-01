@@ -1,5 +1,5 @@
 <!-- Navigation -->
-<nav class="header-nav">
+<nav id="header" class="header-nav">
   <div class="burger" onclick="toggleSidebar()">&#x2630;</div>
   <div class="breadcrumb-wrapper">
   <div class="breadcrumb-path">

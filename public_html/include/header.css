@@ -81,6 +81,12 @@ a:hover {
 
 /* === Dateipfad im Header === */
 /* === Navigation === */
+
+#header {
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
 .header-nav {
   display: flex;
   align-items: center;

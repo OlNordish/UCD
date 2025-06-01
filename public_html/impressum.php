@@ -38,11 +38,18 @@
   <h2>Haftungsausschluss</h2>
   <p>Einige Inhalte dieser Website wurden von externen Quellen übernommen. Fehler oder Ungenauigkeiten können daher nicht vollständig ausgeschlossen werden. Dies gilt auch für Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
 
-  <h2>Audioquellen</h2>
-  <p>Unsere Audiodateien sind von <a href="https://pixabay.com/de/sound-effects/" target="_blank">https://pixabay.com/de/sound-effects/</a></p>
-
-    <h2>Inhaltliche Quellen</h2>
-
+    
+<h2>Inhaltliche Quellen</h2>
+    
+    <h3>Audioquellen</h3>
+    <ul>
+      <li>
+        <a href="https://pixabay.com/de/sound-effects/" target="_blank">Pixabay</a>
+      </li>
+      <li>
+        <a href="https://undersoundmusic.net" target="_blank">Undersoundmusic</a>
+      </li>
+    </ul>
     <h3>Mal- und Bastelvorlagen</h3>
     <ul>
       <li><a href="https://baumhausbande.com/basteln/basteln-im-herbst/waldtiere-basteln/" target="_blank">Baumhausbande – Waldtiere basteln</a></li>
