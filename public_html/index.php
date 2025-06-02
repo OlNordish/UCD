@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Waldzeit – Startseite</title>
+    
+  <!-- Sidebar & Navigation -->
   <link rel="stylesheet" href="/include/header.css">
+    
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka:wght@400;500&family=Nunito&display=swap" rel="stylesheet">
   <style>
     .intro-section {
@@ -110,6 +113,8 @@
   </style>
 </head>
 <body>
+ 
+  <!-- Sidebar & Navigation -->
   <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
   <main>
@@ -119,7 +124,7 @@
     </section>
 
     <section class="kinderbereich">
-      <img src="/bilder/fuchs.svg" alt="Fuchs Illustration">
+      <img src="/downloads/index.png" alt="Wald Illustration mit Mutter, Sohn und Fuchs">
       <h2>Kinderbereich</h2>
       <div class="button-links">
         <a href="/kinder/entdecken.php">🔍 Auf Spurensuche</a>
@@ -136,6 +141,8 @@
     <a href="/erwachsene/begleitmaterial.php">Begleitmaterial öffnen</a>
   </section>
 
+  <!-- Sidebar & Navigation -->
   <script src="/include/header.js"></script>
+
 </body>
 </html>

@@ -75,7 +75,7 @@
 <?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
 
 <main>
-  <h1>🌲 Hallo, Entdecker*in!</h1>
+  <h1>🌲 Hallo, Entdecker:in!</h1>
   <p class="intro">Was möchtest du heute im Wald erleben? Wähle aus, was dir Spaß macht!</p>
 
   <div class="entry-grid">
