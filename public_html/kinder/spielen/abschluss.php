@@ -20,7 +20,7 @@
       max-width: 900px;
       margin: 4rem auto;
       padding: 2rem;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(170, 190, 165, 0.6);
       border-radius: 16px;
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -161,7 +161,7 @@
 
 <main>
   <h1>🎉 Super gemacht!</h1>
-  <img src="/bilder/fuchs.svg" alt="Fuchs Illustration" class="abschluss-fuchs">
+  <img src="/bilder/fuchs_happy.svg" alt="Fuchs Illustration" class="abschluss-fuchs">
   <p>Du hast alle 8 Level abgeschlossen und den Wald genau beobachtet.<br>
   Jetzt weißt du, dass alles im Wald zusammenhängt – ein lebendes Netzwerk!</p>
 
