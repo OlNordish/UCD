@@ -132,10 +132,10 @@
   </style>
 </head>
 <body class="level-page">
-
+	
   <a href="fuchsbau.php" id="zurueck-btn">← Zurück</a>
-
   <div id="waldszene" style="background-color: #22724E;">
+	  
     <img src="../bilder/aufrauemen_light.svg" alt="Waldszene" style="width:100%; height:auto;" />
     <img id="wald-gesund" src="../bilder/aufrauemen_fertig.svg"
          alt="Waldszene fertig"
@@ -152,8 +152,8 @@
 	  <img src="../bilder/muell8.svg" class="muell" id="muell2" style="bottom:30%; left:76%; width:80px;">
 
     <!-- Eimer -->
-    <img id="eimer-zu" src="../bilder/eimer_zu.svg" style="position:absolute; bottom:10%; left:25%; width:100px; z-index:10; display:block;" />
-    <img id="eimer-auf" src="../bilder/eimer_auf.svg" style="position:absolute; bottom:10%; left:25%; width:100px; z-index:11; display:none;" />
+    <img id="eimer-zu" src="../bilder/eimer_zu.svg" style="position:absolute; bottom:10%; left:25%; width:150px; z-index:10; display:block;" />
+    <img id="eimer-auf" src="../bilder/eimer_auf.svg" style="position:absolute; bottom:10%; left:25%; width:150px; z-index:11; display:none;" />
 
     <!-- Counter -->
     <div id="counter">0/8 erledigt</div>
