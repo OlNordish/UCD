@@ -133,7 +133,7 @@
 </head>
 <body class="level-page">
 
-  <a href="fuchsbau.php" id="zurueck-btn">Zurück</a>
+  <a href="fuchsbau.php" id="zurueck-btn">← Zurück</a>
 
   <div id="waldszene" style="background-color: #22724E;">
     <img src="../bilder/aufrauemen_light.svg" alt="Waldszene" style="width:100%; height:auto;" />
