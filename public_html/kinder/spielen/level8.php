@@ -58,7 +58,7 @@
     ],
     reh_sad: [
       "Das Reh sieht hungrig aus!",
-      "Es wachsen nicht genug Blumen und Pflanzen.",
+      "Es wachsen nicht genug Sträucher und Pflanzen.",
       "Auch die Blumen sind alle weg."
     ]
   };

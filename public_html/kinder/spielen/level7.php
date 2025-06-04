@@ -39,7 +39,7 @@
   window.klickbareElemente = ["junger_baum_kaputt", "specht", "eule_sad"];
 
   window.levelEinleitung = [
-    "Zu viele Rehe! Der Wald sieht verändert aus… Was fällt dir auf",
+    "Zu viele Rehe! Der Wald sieht verändert aus… Was fällt dir auf?",
     "Ein Bewohner musste den Wald verlassen.",
     "In seinem Zuhause wohnen jetzt andere Tiere!",
     "Klicke in den Wald, wenn du alles gefunden hast!"
@@ -47,7 +47,7 @@
 
   window.veränderungstexte = {
     junger_baum_kaputt: [
-      "Der letze junge Baum. Auch er sieht nicht gut aus.",
+      "Der letzte junge Baum. Auch er sieht nicht gut aus.",
       "Die Rehe haben alle Triebe angefressen.",
       "Auch die Sträucher sind verschwunden."
     ],
@@ -58,14 +58,14 @@
     ],
     eule_sad: [
       "Die Eule hat einen neuen Unterschlupf gefunden!",
-      "Es gibt zu wenig gesunde Bäume zum wohnen.",
+      "Es gibt zu wenig gesunde Bäume zum Wohnen.",
       "Sie und ihr Mitbewohner haben das Eichhörnchen vertrieben."
     ]
   };
  
   window.zusammenfassung = [
     "Wow! Gut beobachtet!",
-    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen",
+    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen.",
     "So kann der Wald nicht nachwachsen.",
 	"Es gibt nicht genug Bäume zum Wohnen.",
     "Darum haben Specht und Eule den Baum des Eichhörnchens besetzt.", 

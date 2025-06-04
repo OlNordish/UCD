@@ -279,7 +279,7 @@
     fuchs: ["Haha! Genau so!",
 "Du kannst die Lautstärke oben rechts ändern oder den Ton pausieren.",
 "Die anderen Tiere erzählen dir etwas über sich.",			
-"Ich Zuerst: Ich esse Mäuse und manchmal Beeren!",
+"Ich zuerst: Ich esse Mäuse und manchmal Beeren!",
 		   "Hast du alles entdeckt oder gelesen klicke einfach auf eine freie Fläche im Wald!"],
     eule: ["Huhuu! Ich bin die Eule.", "Ich jage nachts Mäuse und Frösche."],
     specht: ["Klopf, klopf – ich bin der Specht!", "Ich hacke mit meinem Schnabel Insekten aus Bäumen."],

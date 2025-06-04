@@ -58,14 +58,14 @@
     ],
     letzte_voegel: [
       "Kaum noch junge Pflanzen – der Wald kann sich nicht erholen.",
-      "Somit mussten Euele und Specht auf den letzten gesunden Baum ziehen.",
+      "Somit mussten Eule und Specht auf den letzten gesunden Baum ziehen.",
       "Für das Eichhörnchen gibt es hier keinen Platz mehr."
     ]
   };
  
   window.zusammenfassung = [
     "Wow! Gut beobachtet!",
-    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen",
+    "Zu viele Rehe fressen alle jungen Bäume und Pflanzen.",
     "So kann der Wald nicht nachwachsen.",
 	"Es gibt nicht genug Bäume zum Wohnen.",
     "Darum haben Specht und Eule den Baum des Eichhörnchens besetzt.", 
