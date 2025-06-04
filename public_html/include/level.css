@@ -1,197 +1,175 @@
-/* Basisstruktur für Level-Seiten */
+/* Basisstruktur für alle Level-Seiten */
 .level-page {
-  margin: 0;
-  font-family: 'Baloo 2', cursive;
-  background-color: #22724E !important;
-  color: #fff !important;
+	margin: 0;
+	font-family: 'Baloo 2', cursive;
+	background-color: #22724E !important;
+	color: #fff !important;
 }
-
-/* Header & Navigation breiter darstellen */
+/* Header & Navigation breiter*/
 .level-page header,
 .level-page nav {
-  max-width: none !important;
+	max-width: none !important;
 }
-
 /* SVG-Szene */
 .level-page #waldszene {
-  width: 100%;
-  max-height: calc(100vh - 60px);
-  position: relative;
+	width: 100%;
+	max-height: calc(100vh - 60px);
+	position: relative;
 }
-
 /* SVG anpassen */
 .level-page svg {
-  width: 100%;
-  height: auto;
-  display: block;
+	width: 100%;
+	height: auto;
+	display: block;
 }
-
 /* Sprechblase */
 .level-page #sprechblase-container {
-  position: absolute;
-  bottom: 2%;
-  right: 15%;
-  display: flex;
-  align-items: flex-end;
-  gap: 10px;
-  z-index: 100;
-  pointer-events: none;
+	position: absolute;
+	bottom: 2%;
+	right: 15%;
+	display: flex;
+	align-items: flex-end;
+	gap: 10px;
+	z-index: 100;
+	pointer-events: none;
 }
-
 .level-page #sprechblase {
-  background: rgba(255, 249, 196, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 20px 24px;
-  border-radius: 20px;
-  width: 360px;
-  height: 160px;
-  font-size: 28px;
-  color: #222;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-  line-height: 1.5;
-  overflow: hidden;
-  position: relative;
-  font-family: 'Baloo 2', sans-serif;
-  pointer-events: auto;
-  z-index: 110;
+	background: rgba(255, 249, 196, 0.5);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	padding: 20px 24px;
+	border-radius: 20px;
+	width: 360px;
+	height: 160px;
+	font-size: 28px;
+	color: #222;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+	line-height: 1.5;
+	overflow: hidden;
+	position: relative;
+	font-family: 'Baloo 2', sans-serif;
+	pointer-events: auto;
+	z-index: 110;
 }
-
 /* Text in Sprechblase */ 
 .level-page #sprechblase p {
-  font-family: 'Baloo 2', sans-serif !important;
-  font-size: 28px !important;
-  color: #222;
+	font-family: 'Baloo 2', sans-serif !important;
+	font-size: 28px !important;
+	color: #222;
 }
-
 /* Pfeile innerhalb der Sprechblase */
 .level-page .pfeile {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  gap: 10px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	display: flex;
+	gap: 10px;
 }
-
 .level-page .pfeil {
-  background: #ffeb3b;
-  border: none;
-  border-radius: 50%;
-  font-size: 20px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	background: #ffeb3b;
+	border: none;
+	border-radius: 50%;
+	font-size: 20px;
+	width: 32px;
+	height: 32px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
-
 .level-page .pfeil:disabled {
-  opacity: 0.4;
-  cursor: default;
+	opacity: 0.4;
+	cursor: default;
 }
-
 /* Level-Navigationsbuttons */
 .level-page .level-buttons {
-  margin-top: 8px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
+	margin-top: 8px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 10px;
+	flex-wrap: wrap;
 }
-
 .level-page .level-buttons a {
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 18px;
-  text-decoration: none;
-  white-space: nowrap;
-  max-width: 48%;
-  text-align: center;
-  flex: 1 1 auto;
+	padding: 6px 12px;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 18px;
+	text-decoration: none;
+	white-space: nowrap;
+	max-width: 48%;
+	text-align: center;
+	flex: 1 1 auto;
 }
-
 .level-page .weiter-btn {
-  background: #ffeb3b;
-  color: #222;
+	background: #ffeb3b;
+	color: #222;
 }
-
 .level-page .zurueck-btn {
-  background: #ccc;
-  color: #222;
+	background: #ccc;
+	color: #222;
 }
-
-
 /* Hervorhebung bei Entdeckung */
 .level-page g.active {
-  filter: drop-shadow(0 0 10px yellow);
-  transform: scale(1.1);
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 0.3s ease;
+	filter: drop-shadow(0 0 10px yellow);
+	transform: scale(1.1);
+	transform-box: fill-box;
+	transform-origin: center;
+	transition: transform 0.3s ease;
 }
-
 /* Entdeckt-Zähler */
 .level-page #counter {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: 20px;
-  z-index: 200;
-  pointer-events: none;
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	background: rgba(255, 255, 255, 0.2);
+	padding: 10px 16px;
+	border-radius: 10px;
+	font-family: 'Baloo 2', sans-serif;
+	font-size: 20px;
+	z-index: 200;
+	pointer-events: none;
 }
-
 @keyframes pulse {
-  0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
-  50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
-  100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+	0% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
+	50% { transform: scale(1.2); background-color: rgba(255,255,255,0.5); }
+	100% { transform: scale(1); background-color: rgba(255,255,255,0.2); }
 }
-
 .level-page #counter.pulse {
-  animation: pulse 0.5s ease;
+	animation: pulse 0.5s ease;
 }
-
 /* Wackelanimation bei Erfolg */
 @keyframes wackeln {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(2deg); }
-  75% { transform: rotate(-2deg); }
+	0%, 100% { transform: rotate(0deg); }
+	25% { transform: rotate(2deg); }
+	75% { transform: rotate(-2deg); }
 }
-
 .level-page g.wackel {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: wackeln 0.6s ease;
+	transform-box: fill-box;
+	transform-origin: center;
+	animation: wackeln 0.6s ease;
 }
-
 /* Zurück-Button oben links */
 .level-page #zurueck-btn {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  background: rgba(255,255,255,0.2);
-  padding: 10px 16px;
-  border-radius: 10px;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  z-index: 90;
-  pointer-events: auto;
-  transition: background 0.3s ease;
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	background: rgba(255,255,255,0.2);
+	padding: 10px 16px;
+	border-radius: 10px;
+	font-family: 'Baloo 2', sans-serif;
+	font-size: 20px;
+	color: white;
+	text-decoration: none;
+	z-index: 90;
+	pointer-events: auto;
+	transition: background 0.3s ease;
 }
-
 .level-page #zurueck-btn:hover {
-  background: rgba(255,255,255,0.35);
+	background: rgba(255,255,255,0.35);
 }
 .level-page #fuchs_happy {
-  display: none;
+	display: none;
 }
 
 
