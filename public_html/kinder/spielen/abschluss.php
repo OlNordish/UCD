@@ -15,7 +15,7 @@
 				margin: 0;
 				background-color: #f8f9f5;
 				color: #2f4f4f;
-			}
+			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
 			main {
 				max-width: 900px;
 				margin: 4rem auto;
@@ -49,7 +49,7 @@
 				display: flex;
 				justify-content: center;
 				flex-wrap: wrap;
-				gap: 1rem;
+				gap: 1rem; /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/display */
 			}
 			.button-group button {
 				font-size: 1rem;
@@ -59,14 +59,14 @@
 				border-radius: 12px;
 				cursor: pointer;
 				transition: background-color 0.3s ease, transform 0.2s ease;
-				color: white;
+				color: white; 
 			}
 			.btn-uebersicht {
 				background-color: #4A6D4F;
 			}
 			.btn-uebersicht:hover {
 				background-color: #365539;
-				transform: scale(1.05);
+				transform: scale(1.05); /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
 			}
 			.btn-reset {
 				background-color: #d9534f;
@@ -86,7 +86,8 @@
 				display: none;
 				align-items: center;
 				justify-content: center;
-			}
+			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/position */
+
 			.modal-content {
 				background: #fff;
 				padding: 30px;
@@ -131,55 +132,50 @@
 				h1 {
 					font-size: 2.2rem;
 				}
-				
-      p {
-        font-size: 1.1rem;
-      }
-    }
-  </style>
-</head>
-<body>
+				p {
+					font-size: 1.1rem;
+				}
+			}/* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/@media */
+		</style>
+	</head>
+	<body>
+		<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
+		
+		<main>
+			<h1>🎉 Super gemacht!</h1>
+			<img src="/bilder/fuchs_happy.svg" alt="Fuchs Illustration" class="abschluss-fuchs">
+			<p>Du hast alle 8 Level abgeschlossen und den Wald genau beobachtet.<br>
+				Jetzt weißt du, dass alles im Wald zusammenhängt – ein lebendes Netzwerk!</p>
 
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
-
-<main>
-  <h1>🎉 Super gemacht!</h1>
-  <img src="/bilder/fuchs_happy.svg" alt="Fuchs Illustration" class="abschluss-fuchs">
-  <p>Du hast alle 8 Level abgeschlossen und den Wald genau beobachtet.<br>
-  Jetzt weißt du, dass alles im Wald zusammenhängt – ein lebendes Netzwerk!</p>
-
-  <div class="button-group">
-    <button class="btn-uebersicht" onclick="window.location.href='/kinder/spielen.php'">🔍 Zurück zur Spielübersicht</button>
-    <button class="btn-reset" onclick="zeigeResetDialog()">🔄 Spiel zurücksetzen</button>
-  </div>
-</main>
-
-<!-- MODAL -->
-<div id="confirmModal" class="modal">
-  <div class="modal-content">
-    <p>Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.</p>
-    <div class="modal-buttons">
-      <button id="confirmJa">Ja, löschen</button>
-      <button id="confirmAbbrechen">Abbrechen</button>
-    </div>
-  </div>
-</div>
-
-<script>
-  function zeigeResetDialog() {
-    document.getElementById("confirmModal").style.display = "flex";
-  }
-
-  document.getElementById("confirmJa").addEventListener("click", () => {
-    localStorage.clear();
-    window.location.href = '/kinder/spielen.php';
-  });
-
-  document.getElementById("confirmAbbrechen").addEventListener("click", () => {
-    document.getElementById("confirmModal").style.display = "none";
-  });
-</script>
-
-<script src="/include/header.js"></script>
-</body>
+			<div class="button-group">
+				<button class="btn-uebersicht" onclick="window.location.href='/kinder/spielen.php'">🔍 Zurück zur Spielübersicht</button>
+				<button class="btn-reset" onclick="zeigeResetDialog()">🔄 Spiel zurücksetzen</button>
+			</div>
+		</main>
+		
+		<!-- MODAL -->
+		<div id="confirmModal" class="modal">
+			<div class="modal-content">
+				<p>Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.</p>
+				<div class="modal-buttons">
+					<button id="confirmJa">Ja, löschen</button>
+					<button id="confirmAbbrechen">Abbrechen</button>
+				</div>
+			</div>
+		</div>
+		<script>
+			function zeigeResetDialog() {
+				document.getElementById("confirmModal").style.display = "flex";
+			} 
+			document.getElementById("confirmJa").addEventListener("click", () => {
+				localStorage.clear();
+				window.location.href = '/kinder/spielen.php';
+			}); // Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear // https://developer.mozilla.org/en-US/docs/Web/API/Location
+			
+			document.getElementById("confirmAbbrechen").addEventListener("click", () => {
+				document.getElementById("confirmModal").style.display = "none";
+			});
+		</script>
+		<script src="/include/header.js"></script>
+	</body>
 </html>
