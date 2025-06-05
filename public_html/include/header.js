@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			sidebar.classList.add("active");
 			overlay.style.display = "block";
 		}
-	};
+	};  // Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 	
 	window.closeSidebar = function () {
 		sidebar.classList.remove("active");
-		overlay.style.display = "none";
+		overlay.style.display = "none"; // Quelle: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 		hideSubmenus();
 	};
 	window.hideSubmenus = function () {
 		submenuBastel?.classList.remove("active");
 		submenuMedien?.classList.remove("active");
-	};
+	}; // Quelle: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
 	document.querySelectorAll(".submenu-btn").forEach(button => {
 	button.addEventListener("click", () => {
 	const targetId = button.getAttribute("data-submenu");
@@ -39,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	overlay.style.display = "block";
 	}
 	});
-	});
+	});// Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll // https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute
 });

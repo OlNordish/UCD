@@ -21,7 +21,7 @@
 				<div id="sprechblase">
 					<p id="textfeld">Lade...</p>
 					<div class="pfeile">
-						<button class="pfeil" id="prev" disabled>&larr;</button> <!--  Quelle (lvl 1-8, einmalige Aufführung hier): https://www.w3schools.com/charsets/ref_utf_arrows.asp --> 
+						<button class="pfeil" id="prev" disabled>&larr;</button> <!--  Quelle (lvl 1-8, einmalige Aufführung für alle Level hier): https://www.w3schools.com/charsets/ref_utf_arrows.asp --> 
 						<button class="pfeil" id="next" disabled>&rarr;</button>
 					</div>
 					<div class="level-buttons" id="level-buttons">
@@ -34,7 +34,7 @@
 		
 		<script>
 			window.erwartet = 3;
-			window.levelDoneKey = "level1done"; // Quelle (lvl 1-8, einmalige Aufführung hier): https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage 
+			window.levelDoneKey = "level1done"; // Quelle (lvl 1-8, einmalige Aufführung für alle Level hier): https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage 
 			window.klickbareElemente = ["maeuse", "eicheln", "samen"];
 			
 			window.levelEinleitung = [

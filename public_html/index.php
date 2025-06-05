@@ -50,11 +50,11 @@
 				display: flex;
 				flex-direction: row;
 				flex-wrap: nowrap;
-				justify-content: center;
+				justify-content: center; /* Quelle: https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/justify-content */
 				align-items: center;
 				gap: 1rem;
 				max-width: 90%;
-				flex-shrink: 0;
+				flex-shrink: 0; /* Quelle: https://developer.mozilla.org/de/docs/Web/CSS/flex-shrink */
 			}
 			.button-links a {
 				background-color: #4A6D4F;
@@ -65,7 +65,7 @@
 				font-size: 1rem;
 				font-weight: bold;
 				transition: transform 0.2s ease, background-color 0.3s ease;
-				white-space: nowrap;
+				white-space: nowrap; /* Quelle: https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/white-space */ 
 			}
 			.button-links a:hover {
 				background-color: #365539;
@@ -94,7 +94,7 @@
 				margin-top: 1rem;
 				color: #2f4f4f;
 				font-weight: bold;
-				text-decoration: underline;
+				text-decoration: underline; /* Quelle: https://wiki.selfhtml.org/wiki/CSS/Eigenschaften/text-decoration */
 			}
 			.elternbereich a:hover {
 				text-decoration: none;
