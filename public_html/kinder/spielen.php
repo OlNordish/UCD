@@ -50,7 +50,7 @@
 				gap: 40px;
 				margin: 40px 0;
 				justify-content: center;
-			}
+			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns */
 			.level-tile {
 				padding: 8px;
 				display: flex;
@@ -78,7 +78,7 @@
 			}
 			.level-tile.active:hover {
 				background-color: #369d60;
-			}
+			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events */
 			#reset-btn {
 				margin-top: 30px;
 				padding: 12px 28px;
@@ -109,7 +109,7 @@
 				display: none;
 				align-items: center;
 				justify-content: center;
-			}
+			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/position */
 			.modal-content {
 				background: #fff;
 				padding: 30px;
@@ -153,7 +153,7 @@
 			@media (min-width: 1024px) {
 				.level-grid {
 					grid-template-columns: repeat(4, 1fr);
-				}
+				} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/@media */
 			}
 			@media (max-width: 768px) {
 				.level-grid {
@@ -209,15 +209,16 @@
 				if (unlocked) tile.classList.add("active");
 				if (completed) tile.classList.add("completed");
 				grid.appendChild(tile);
-			}
+			} // Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage // https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild
+
 			
 			function resetSpiel() {
 				document.getElementById("confirmModal").style.display = "flex";
-			}
+			} // Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/display
 			document.getElementById("confirmJa").addEventListener("click", () => {
 				localStorage.clear();
 				location.reload();
-			});
+			});// Quelle: https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear // https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
 			document.getElementById("confirmAbbrechen").addEventListener("click", () => {
 				document.getElementById("confirmModal").style.display = "none";
 			});
