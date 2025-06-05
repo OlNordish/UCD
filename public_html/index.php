@@ -120,7 +120,7 @@
   <main>
     <section class="intro-section">
       <h1>🌳 Willkommen bei Waldzeit!</h1>
-      <p>Entdecke den Wald spielerisch – mit spannenden Inhalten für Kinder, Eltern und alle Naturentdecker.</p>
+      <p>Entdecke den Wald spielerisch – mit spannenden Inhalten für Kinder, Eltern und alle Naturentdecker:in.</p>
     </section>
 
     <section class="kinderbereich">
@@ -129,7 +129,7 @@
       <div class="button-links">
         <a href="/kinder/entdecken.php">🔍 Auf Spurensuche</a>
         <a href="/kinder/aufraeumen.php">🧹 Saubere Sache!</a>
-        <a href="/kinder/spielen.php">🎲 Walddetektiv</a>
+        <a href="/kinder/spielen.php">🎲 Walddetektiv:in</a>
       </div>
     </section>
   </main>

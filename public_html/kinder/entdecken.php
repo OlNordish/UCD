@@ -239,7 +239,7 @@
 						"Ich bin der schlaue Fuchs.",
 						"Willkommen im Wald!",
 						"Dies ist mein Zuhause, aber ich bin hier nicht allein.",
-						"Du kannst mit den anderen Waldbewohnern sprechen. Ich zeig dir wie:",
+						"Du kannst mit den anderen Waldbewohnern:innen sprechen. Ich zeig dir wie:",
 						"Klicke einfach auf das Tier mit dem du sprechen möchtest.",
 						"Guck, hier! Fang mit mir an! Klick auf mich!"
 					];
