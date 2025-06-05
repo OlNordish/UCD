@@ -139,7 +139,7 @@
 		</style>
 	</head>
 	<body>
-		<?php include($_SERVER['DOCUMENT_ROOT'] . '/include/header.php'); ?>
+		<?php include(__DIR__ . '/../../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
 		
 		<main>
 			<h1>🎉 Super gemacht!</h1>

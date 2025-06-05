@@ -14,7 +14,7 @@
 			<div id="counter">0 / 3 Dinge entdeckt</div>
 			
 			<!-- Ansteuerung der SVG -->
-			<?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/level8.svg'); ?>
+			<?php include(__DIR__ . '/../../bilder/level8.svg');?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
 			
 			<a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 			<div id="sprechblase-container">

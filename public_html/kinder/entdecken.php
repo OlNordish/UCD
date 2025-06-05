@@ -213,7 +213,7 @@
 			<div id="counter">0 / 9 Tiere entdeckt</div>
 			
 			<!-- Ansteuerung der SVG -->
-			<?php include($_SERVER['DOCUMENT_ROOT'] . '/bilder/entdecken.svg'); ?>
+			<?php include(__DIR__ . '/../bilder/level1.svg');?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
 			
 			<a id="zurueck-btn" href="/kinder/fuchsbau.php">← Zurück</a>
 			<div id="sprechblase-container">
