@@ -64,7 +64,7 @@
 	<body>
 		
 		<!-- Sidebar & Navigation -->
-		<?php include(__DIR__ . '/../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+		<?php include('../include/header.php'); ?>
 		
 		<main>
 			<h1>🌲 Hallo, Entdecker:in!</h1>
@@ -91,7 +91,7 @@
 				<div class="entry-box">
 					<img src="/downloads/veraenderungen.png" alt="Veränderungen-Icon" class="entry-icon" />
 					<div class="entry-content">
-						<h2>Walddetektiv</h2>
+						<h2>Walddetektiv:in</h2>
 						<p>Was passiert, wenn Tiere fehlen? Lerne die Zusammenhänge im Wald kennen.</p>
 						
 						<a href="spielen.php">Veränderungen kennenlernen</a>
@@ -102,5 +102,6 @@
 		
 		<!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

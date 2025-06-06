@@ -57,7 +57,7 @@
     <body>
 
         <!-- Sidebar & Navigation -->
-        <?php include("../../include/header.php"); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+        <?php include("../../include/header.php"); ?>
 
         <main>
             <h1>📅 Jahreszeiten &amp; Wetter</h1>
@@ -108,8 +108,9 @@
             </div>
           </article>
         </main>
-
+        
         <!-- Sidebar & Navigation -->
         <script src="../../include/header.js"></script>
+        
     </body>
 </html>

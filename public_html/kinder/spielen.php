@@ -9,25 +9,6 @@
 		<link rel="stylesheet" href="/include/header.css">
 		
 		<style>
-			main {
-				max-width: 800px;
-				margin: 2rem auto;
-				padding: 40px 40px 20px;
-				background: rgba(170, 190, 165, 0.6);
-				border-radius: 15px;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: left;
-			}
-			h1 {
-				font-family: 'Baloo 2', sans-serif;
-				font-size: 2.5rem;
-				font-weight: 700;
-				color: #333333;
-				text-align: center;
-				margin-bottom: 1rem;
-			}
 			.start-btn {
 				margin-bottom: 0px;
 				padding: 20px 40px;
@@ -171,18 +152,19 @@
 		</style>
 	</head>
 	<body>
-		<?php include(__DIR__ . '/../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
-		<div id="overlay" onclick="toggleSidebar()"></div>
+		
+        <!-- Sidebar & Navigation -->
+        <?php include('../include/header.php'); ?>
 		
 		<main>
 			<h1>Wähle ein Level</h1>
 			
-			<button class="start-btn" onclick="startSpiel()">🎮 Spiel starten</button>
+			<button class="start-btn" onclick="startSpiel()">🎮 Level starten</button>
 			<div class="level-grid" id="levelGrid"></div>
 			<button id="reset-btn" onclick="resetSpiel()">🔄 Neu beginnen</button>
 		</main>
 		
-		<!-- Moal / Hinweis -->
+		<!-- Modal / Hinweis -->
 		<div id="confirmModal" class="modal">
 			
 			<div class="modal-content">
@@ -236,6 +218,9 @@
 				window.location.href = `/kinder/spielen/level${lastUnlockedLevel}.php`;
 			}
 		</script>
+        
+        <!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

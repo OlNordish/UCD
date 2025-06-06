@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
-	<head>
-		<meta charset="UTF-8" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Wald aufräumen</title>
 		<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+        
+        <!-- Level CSS -->
 		<link rel="stylesheet" href="/include/level.css" />
 		
 		<style>
@@ -140,7 +143,7 @@
 			<img id="eimer-auf" src="../bilder/eimer_auf.svg" style="position:absolute; bottom:10%; left:25%; width:150px; z-index:11; display:none;" />
 			
 			<!-- Counter -->
-			<div id="counter">0/8 erledigt</div>
+			<div id="counter">0 / 3 Müll eingesammelt</div>
 			
 			<!-- Sprechblase -->
 			<div id="sprechblase-container">
@@ -249,7 +252,7 @@
 					if (overlaps) {
 						muell.style.display = 'none';
 						gesammelt++;
-						counter.textContent = `${gesammelt}/8 erledigt`;
+						counter.textContent = `${gesammelt}/8 Müll eingesammelt`;
 						counter.classList.add('pulse');
 						setTimeout(() => counter.classList.remove('pulse'), 500); // Quelle: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 						if (gesammelt === 8) {

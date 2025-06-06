@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		
 		if (!entdeckte.has(id)) {
 			entdeckte.add(id);
-			counterBox.innerText = `${entdeckte.size} / ${window.erwartet || 3} Dinge entdeckt`;
+			counterBox.innerText = `${entdeckte.size} / ${window.erwartet || 3} Veränderungen entdeckt`;
 			counterBox.classList.remove("pulse");
 			void counterBox.offsetWidth; // Quelle: https://css-tricks.com/restart-css-animation/
 			counterBox.classList.add("pulse");

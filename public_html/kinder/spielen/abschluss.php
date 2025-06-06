@@ -3,34 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		
 		<title>Geschafft!</title>
+        
+        <!-- Sidebar & Navigation -->
 		<link rel="stylesheet" href="/include/header.css">
 		
-		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka:wght@400;500&family=Nunito&display=swap" rel="stylesheet">
-		
 		<style>
-			body {
-				font-family: 'Nunito', sans-serif;
-				margin: 0;
-				background-color: #f8f9f5;
-				color: #2f4f4f;
-			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
-			main {
-				max-width: 900px;
-				margin: 4rem auto;
-				padding: 2rem;
-				background: rgba(170, 190, 165, 0.6);
-				border-radius: 16px;
-				text-align: center;
-				box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-			}
-			h1 {
-				font-size: 3rem;
-				color: #2f4f4f;
-				margin-bottom: 1rem;
-				text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-			}
 			.abschluss-fuchs {
 				width: 180px;
 				margin: 1.5rem auto 1rem;
@@ -75,7 +53,6 @@
 				background-color: #c9302c;
 				transform: scale(1.05);
 			}
-			
 			/* Modal / Hinweise */
 			.modal {
 				position: fixed;
@@ -87,7 +64,6 @@
 				align-items: center;
 				justify-content: center;
 			} /* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/position */
-
 			.modal-content {
 				background: #fff;
 				padding: 30px;
@@ -128,18 +104,12 @@
 			#confirmAbbrechen:hover {
 				background-color: #bbb;
 			}
-			@media (max-width: 600px) {
-				h1 {
-					font-size: 2.2rem;
-				}
-				p {
-					font-size: 1.1rem;
-				}
-			}/* Quelle: https://developer.mozilla.org/en-US/docs/Web/CSS/@media */
 		</style>
 	</head>
 	<body>
-		<?php include(__DIR__ . '/../../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+        
+        <!-- Sidebar & Navigation -->
+		<?php include('../../include/header.php'); ?>
 		
 		<main>
 			<h1>🎉 Super gemacht!</h1>
@@ -153,7 +123,7 @@
 			</div>
 		</main>
 		
-		<!-- MODAL -->
+		<!-- Modal / Hinweis -->
 		<div id="confirmModal" class="modal">
 			<div class="modal-content">
 				<p>Willst du wirklich neu beginnen? Dein gesamter Fortschritt wird gelöscht.</p>
@@ -176,6 +146,9 @@
 				document.getElementById("confirmModal").style.display = "none";
 			});
 		</script>
+        
+        <!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

@@ -3,13 +3,10 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
 		<title>Waldzeit – Startseite</title>
 		
 		<!-- Sidebar & Navigation -->
 		<link rel="stylesheet" href="/include/header.css">
-		
-		<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fredoka:wght@400;500&family=Nunito&display=swap" rel="stylesheet">
 		
 		<style>
 			.intro-section {
@@ -104,7 +101,7 @@
 	<body>
 		
 		<!-- Sidebar & Navigation -->
-		<?php include(__DIR__ . '/include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+		<?php include('include/header.php'); ?>
 		
 		<main>
 			<section class="intro-section">
@@ -131,5 +128,6 @@
 		
 		<!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

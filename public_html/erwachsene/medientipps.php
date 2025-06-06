@@ -62,8 +62,10 @@
 		</style>
 	</head>
 	<body>
+        
 		<!-- Sidebar & Navigation -->
-		<?php include(__DIR__ . '/../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+		<?php include('../include/header.php'); ?>
+        
 		<main>
 			<h1>📚 Medientipps</h1>
 			<p class="intro">Entdecke Bücher, Hörspiele, Videos und Spiele rund um den Wald – für Kinder leicht erklärt und liebevoll gestaltet.</p>
@@ -102,7 +104,9 @@
 				</div>
 			</div>
 		</main>
+        
 		<!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

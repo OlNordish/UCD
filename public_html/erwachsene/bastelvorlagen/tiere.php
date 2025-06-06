@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Tiere des Waldes</title>
+        
         <!-- Sidebar & Navigation -->
         <link rel="stylesheet" href="../../include/header.css">
 
@@ -56,7 +57,7 @@
     <body>
         
         <!-- Sidebar & Navigation -->
-        <?php include('../../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+        <?php include('../../include/header.php'); ?>
         
         <main>
             <h1>🦊 Tiere des Waldes</h1>
@@ -107,7 +108,9 @@
                 </div>
             </article>
         </main>
+                
         <!-- Sidebar & Navigation -->
         <script src="../../include/header.js"></script>
+                
     </body>
 </html>

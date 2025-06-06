@@ -64,7 +64,7 @@
 	<body>
 		
 		<!-- Sidebar & Navigation -->
-		<?php include(__DIR__ . '/../include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+		<?php include('../include/header.php'); ?>
 		
 		<main>
 			<h1>🌲 Gemeinsam mit Ihrem kleinen Grashüpfer!</h1>
@@ -88,7 +88,9 @@
 				</div>
 			</div>
 		</main>
+        
 		<!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
 	</body>
 </html>

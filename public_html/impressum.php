@@ -3,17 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
 		<title>Impressum</title>
+        
 		<!-- Sidebar & Navigation -->
 		<link rel="stylesheet" href="/include/header.css">
+        
 	</head>
 	<body>
+        
 		<!-- Sidebar & Navigation -->
-		<?php include(__DIR__ . '/include/header.php'); ?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+		<?php include('include/header.php'); ?>
+        
 		<main>
 			<h1>Impressum</h1>
-			<h2>Verantwortlich für den Inhalt</h2>
+			
+            <h2>Verantwortlich für den Inhalt</h2>
 			<p>Diese Website ist im Rahmen des Moduls User Centered Design bei Prof. Götz Greiner und Dipl.-Phys. Thomas Severiens im Studiengang Medienwirtschaft und Journalismus entstanden.</p>
 			<p><strong>Verantwortlich für Inhalte, Entwicklung und Gestaltung sind:</strong></p>
 			<ul>
@@ -21,16 +25,21 @@
 				<li>Florian Kolb (florian.kolb@student.jade-hs.de), Matrikelnummer: 6050360</li>
 				<li>Friederike Kroeger (friederike.kroeger@student.jade-hs.de), Matrikelnummer: 6047189</li>
 			</ul>
-			<h2>Institution</h2>
+			
+            <h2>Institution</h2>
 			<p>Jade Hochschule Wilhelmshaven/Oldenburg/Elsfleth<br>
 				Friedrich-Paffrath-Straße 101<br>
 				26389 Wilhelmshaven<br>
 				Telefon: 04421-985-0</p>
-			<h2>Datenschutzhinweis</h2>
+			
+            <h2>Datenschutzhinweis</h2>
 			<p>Diese Webseite verwendet keine Cookies und erhebt keine personenbezogenen Daten.</p>
-			<h2>Haftungsausschluss</h2>
+			
+            <h2>Haftungsausschluss</h2>
 			<p>Einige Inhalte dieser Website wurden von externen Quellen übernommen. Fehler oder Ungenauigkeiten können daher nicht vollständig ausgeschlossen werden. Dies gilt auch für Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
-			<h2>Inhaltliche Quellen</h2>
+			
+            <h2>Inhaltliche Quellen</h2>
+            
 			<h3>Audioquellen</h3>
 			<ul>
 				<li>
@@ -40,7 +49,8 @@
 					<a href="https://undersoundmusic.net" target="_blank">Undersoundmusic</a>
 				</li>
 			</ul>
-			<h3>Mal- und Bastelvorlagen</h3>
+			
+            <h3>Mal- und Bastelvorlagen</h3>
 			<ul>
 				<li><a href="https://baumhausbande.com/basteln/basteln-im-herbst/waldtiere-basteln/" target="_blank">Baumhausbande – Waldtiere basteln</a></li>
 				<li><a href="https://baumhausbande.com/site/assets/files/32267/vogel_basteln_anleitung_neu.pdf" target="_blank">Vogel Bastelanleitung (PDF)</a></li>
@@ -52,7 +62,8 @@
 				<li><a href="https://magazin.waschbaer.de/wp-content/uploads/2023/10/anleitung-diy-drachen-basteln.pdf" target="_blank">Waschbär Magazin – Drachen basteln</a></li>
 				<li><a href="https://www.kinder-malvorlagen.com/zum-ausmalen/vorlagen-jahreszeiten.php" target="_blank">Kinder-Malvorlagen – Jahreszeiten</a></li>
 			</ul>
-			<h3>Bücher</h3>
+			
+            <h3>Bücher</h3>
 			<ul>
 				<li>
 					<strong>Das große Waldbuch: Entdecke über 350 Tiere und Pflanzen</strong><br>
@@ -85,7 +96,8 @@
 					<a href="https://www.thalia.de/shop/home/artikeldetails/A1046987362" target="_blank">Bei Thalia ansehen</a>
 				</li>
 			</ul>
-			<h3>Hörspiele</h3>
+			
+            <h3>Hörspiele</h3>
 			<ul>
 				<li>
 					<strong>WAS IST WAS Junior – Wald</strong><br>
@@ -112,7 +124,8 @@
 					<a href="https://www.thalia.de/shop/home/artikeldetails/A1054164339" target="_blank">Bei Thalia ansehen</a>
 				</li>
 			</ul>
-			<h3>Videos &amp;Filme</h3>
+			
+            <h3>Videos &amp; Filme</h3>
 			<ul>
 				<li>
 					<strong>Anna und der wilde Wald</strong><br>
@@ -140,7 +153,8 @@
 					<a href="https://kinder.wdr.de/video-was-lebt-unter-einem-stein-im-wald-100.html" target="_blank">Zur Sendung</a>
 				</li>
 			</ul>
-			<h3>Spiele</h3>
+			
+            <h3>Spiele</h3>
 			<ul>
 				<li>
 					<strong>Lookout Spiele – Mischwald</strong><br>
@@ -183,8 +197,10 @@
 					<a href="https://www.aok.de/pk/magazin/cms/fileadmin/gemeinschaftlich/pdf/jolinchen-waldraetsel-oktober.pdf" target="_blank">Eigenanfertigung</a>
 				</li>
 			</ul>
-		</main>
+        </main>
+        
 		<!-- Sidebar & Navigation -->
 		<script src="/include/header.js"></script>
+        
     </body>
 </html>

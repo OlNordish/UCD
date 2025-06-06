@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Level 1</title>
-	<link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">	
-	
-	<!-- Level CSS -->
-	<link rel="stylesheet" href="/include/level.css" />
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Level 1</title>
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">	
+
+        <!-- Level CSS -->
+        <link rel="stylesheet" href="/include/level.css"/>
+        
+    </head>
 	<body class="level-page">
 		<div id="waldszene">
-			<div id="counter">0 / 3 Dinge entdeckt</div>
+			<div id="counter">0 / 3 Veränderungen entdeckt</div>
 			
 			<!-- Ansteuerung der SVG -->
-			<?php include(__DIR__ . '/../../bilder/level1.svg');?> <!-- Quelle: https://www.devrobot.de/how-to-include-der-beste-weg-dateien-in-php-einzubinden/ -->
+			<?php include('../../bilder/level1.svg');?>
 			
 			<a id="zurueck-btn" href="/kinder/spielen.php">← Zurück</a>
 			<div id="sprechblase-container">
@@ -66,7 +67,9 @@
 				"Zum nächsten Level?"
 			];
 		</script>
+        
 		<!-- Level JavaScript -->
 		<script src="/include/level.js"></script>
+        
 	</body>
 </html>

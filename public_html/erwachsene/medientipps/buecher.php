@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Buchempfehlungen</title>
+        
         <!-- Sidebar & Navigation -->
         <link rel="stylesheet" href="../../include/header.css">
 
@@ -112,7 +113,9 @@
                 </div>
             </article>
         </main>
+        
         <!-- Sidebar & Navigation -->
         <script src="../../include/header.js"></script>
+        
     </body>
 </html>
