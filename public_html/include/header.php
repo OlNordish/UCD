@@ -4,7 +4,7 @@
   <div class="breadcrumb-wrapper">
   <div class="breadcrumb-path">
     <?php
-        // Quelle: https://www.codewall.co.uk/create-dynamic-breadcrumbs-using-php/
+        // Quelle: https://php.fyi/articles/php-breadcrumbs
         // Dateinamen zu Anzeigenamen
         $breadcrumbLabels = [
             'bastelvorlagen' => 'Bastelvorlagen',
@@ -25,28 +25,28 @@
         // Quelle: https://www.php.net/manual/en/reserved.variables.server.php
         // Aktueller Pfad
         $currentPath = $_SERVER['PHP_SELF'];
-
+      // Quelle: https://www.php.net/manual/en/function.preg-match.php
         if (preg_match('#/index\.php$#', $currentPath)) {
             $displayPath = '';
         } else {
             $path = ltrim($currentPath, '/');
-            $path = preg_replace('/\.php$/', '', $path);
-            $parts = explode('/', $path);
-
+            $path = preg_replace('/\.php$/', '', $path); // Quelle: https://www.php.net/manual/en/function.preg-replace.php
+            $parts = explode('/', $path); // Quelle: https://www.php.net/manual/en/function.explode.php
+            // Quelle: https://www.php.net/manual/en/function.array-filter.php
             $filteredParts = array_filter($parts, function($part) {
                 return strtolower($part) !== 'index';
             });
-
+            // Quelle: https://www.php.net/manual/en/function.array-map.php
             // Labels statt Rohteile verwenden
             $niceParts = array_map(function($part) use ($breadcrumbLabels) {
-                return $breadcrumbLabels[$part] ?? ucfirst($part);
+                return $breadcrumbLabels[$part] ?? ucfirst($part); // Quelle: https://www.php.net/manual/en/function.ucfirst.php
             }, $filteredParts);
-            // Quelle: https://www.w3schools.com/howto/howto_css_breadcrumbs.asp (Layout-Stilidee)
+            // Quelle: https://www.w3schools.com/howto/howto_css_breadcrumbs.asp
             $displayPath = implode(' <span style="opacity: 0.6;">&#8594;</span> ', $niceParts);
         }
 
         if (!empty($displayPath)) {
-            echo '<div class="breadcrumb-path">' . $displayPath . '</div>';
+            echo '<div class="breadcrumb-path">' . $displayPath . '</div>'; // Quelle: https://www.php.net/manual/en/function.echo.php
         }
     ?>
   </div>
